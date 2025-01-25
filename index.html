@@ -42,21 +42,28 @@
     <script>
         function askBot() {
             const userInput = document.getElementById("userInput").value;
-            fetch('https://api.openai.com/v1/completions', {
+            fetch('https://api.gemini.com/v1/completions', {  // Gemini API uç noktası
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA-uBzk8AZNngAOowha1KlD4PWUA'
+                    'Authorization': AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA  // Gemini API anahtarınızı buraya ekleyin
                 },
                 body: JSON.stringify({
-                    model: "text-davinci-003",
+                    model: "gemini-model-003",  // Gemini'nin doğru model adını kullanın
                     prompt: userInput,
                     max_tokens: 150
                 })
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById("botResponse").innerText = data.choices[0].text.trim();
+                if (data && data.choices && data.choices.length > 0) {
+                    document.getElementById("botResponse").innerText = data.choices[0].text.trim();
+                } else {
+                    document.getElementById("botResponse").innerText = "Yanıt alınamadı.";
+                }
+            })
+            .catch(error => {
+                document.getElementById("botResponse").innerText = "Hata: " + error.message;
             });
         }
     </script>
