@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Cryptomentorai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #botResponse {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ask to mentor</h1>
+    <textarea id="userInput" placeholder="write..."></textarea>
+    <button onclick="askBot()">Ask</button>
+    <div id="botResponse"></div>
+
+    <script>
+        function askBot() {
+            const userInput = document.getElementById("userInput").value;
+            fetch('https://api.openai.com/v1/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer LVasNnQ1IeSoQkS5KcVCdi9civLv3N0POLmKppzaT3BlbkFJLZ3dnivkOvDnXrkhy9ctffA2DN8cEx_hY9VrQwD3PqXrSalVBaLKLRbdz9luJSoRaZZ1cVuVAA'
+                },
+                body: JSON.stringify({
+                    model: "text-davinci-003",
+                    prompt: userInput,
+                    max_tokens: 150
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("botResponse").innerText = data.choices[0].text.trim();
+            });
+        }
+    </script>
+</body>
+</html>
