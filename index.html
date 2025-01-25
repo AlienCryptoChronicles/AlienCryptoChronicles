@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Kripto Botu</title>
+    <title>Kripto Asistanı</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,28 +42,33 @@
     <script>
         function askBot() {
             const userInput = document.getElementById("userInput").value;
-            fetch('https://api.gemini.com/v1/completions', {  // Gemini API uç noktası
+            
+            // Gemini API uç noktası
+            fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA'  // Gemini API anahtarınızı buraya ekleyin
                 },
                 body: JSON.stringify({
-                    model: "gemini-model-003",  // Gemini'nin doğru model adını kullanın
-                    prompt: userInput,
-                    max_tokens: 150
+                    contents: [{
+                        parts: [{
+                            text: userInput // Kullanıcıdan alınan metin
+                        }]
+                    }]
                 })
             })
             .then(response => response.json())
             .then(data => {
-                if (data && data.choices && data.choices.length > 0) {
+                // Botun yanıtını sayfada göster
+                if (data && data.choices && data.choices[0] && data.choices[0].text) {
                     document.getElementById("botResponse").innerText = data.choices[0].text.trim();
                 } else {
-                    document.getElementById("botResponse").innerText = "Yanıt alınamadı.";
+                    document.getElementById("botResponse").innerText = "Üzgünüz, bir hata oluştu.";
                 }
             })
             .catch(error => {
-                document.getElementById("botResponse").innerText = "Hata: " + error.message;
+                console.error('Error:', error);
+                document.getElementById("botResponse").innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
             });
         }
     </script>
