@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Kripto Asistanı</title>
+    <title>Kripto Asistanına Sorun</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,31 +43,30 @@
         function askBot() {
             const userInput = document.getElementById("userInput").value;
             
-            // Gemini API uç noktası
-            fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA', {
+            // Gemini API uç noktası ve anahtar
+            const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA'; // API anahtarınızı buraya ekleyin
+
+            // API isteği yapma
+            fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': 'Bearer AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA' // Buraya gerçek API anahtarınızı ekleyin
                 },
                 body: JSON.stringify({
                     contents: [{
-                        parts: [{
-                            text: userInput // Kullanıcıdan alınan metin
-                        }]
+                        parts: [{ text: userInput }]
                     }]
                 })
             })
             .then(response => response.json())
             .then(data => {
-                // Botun yanıtını sayfada göster
-                if (data && data.choices && data.choices[0] && data.choices[0].text) {
-                    document.getElementById("botResponse").innerText = data.choices[0].text.trim();
-                } else {
-                    document.getElementById("botResponse").innerText = "Üzgünüz, bir hata oluştu.";
-                }
+                // API yanıtını ekranda göster
+                const botText = data.choices && data.choices[0] ? data.choices[0].text.trim() : "Yanıt alınamadı.";
+                document.getElementById("botResponse").innerText = botText;
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('API hatası:', error);
                 document.getElementById("botResponse").innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
             });
         }
