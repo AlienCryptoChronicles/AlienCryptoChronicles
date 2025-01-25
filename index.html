@@ -40,35 +40,25 @@
     <div id="botResponse"></div>
 
     <script>
-        function askBot() {
+        async function askBot() {
             const userInput = document.getElementById("userInput").value;
-            
-            // Gemini API uç noktası ve anahtar
-            const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA'; // API anahtarınızı buraya ekleyin
+            const apiUrl = "https://api-inference.huggingface.co/models/gpt2";  // Modeli burada belirtiyoruz (GPT-2 kullanıyoruz)
+            const apiKey = "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"; // Hugging Face API anahtarınızı buraya ekleyin
 
-            // API isteği yapma
-            fetch(apiUrl, {
-                method: 'POST',
+            // API'ye istek gönderme
+            const response = await fetch(apiUrl, {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer AIzaSyDj_Us7zX2IV4UzFF6SY4Zmfsbx3McqXcA' // Buraya gerçek API anahtarınızı ekleyin
+                    "Authorization": `Bearer ${apiKey}`,
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{ text: userInput }]
-                    }]
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // API yanıtını ekranda göster
-                const botText = data.choices && data.choices[0] ? data.choices[0].text.trim() : "Yanıt alınamadı.";
-                document.getElementById("botResponse").innerText = botText;
-            })
-            .catch(error => {
-                console.error('API hatası:', error);
-                document.getElementById("botResponse").innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
+                body: JSON.stringify({ inputs: userInput })
             });
+
+            const data = await response.json();
+            const botText = data[0]?.generated_text || "Yanıt alınamadı.";
+
+            document.getElementById("botResponse").innerText = botText;
         }
     </script>
 </body>
