@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #0f0c29; /* Koyu arka plan */
+            background-color: #0f0c29;
             color: white;
             font-family: 'Courier New', Courier, monospace;
             height: 100vh;
@@ -19,35 +19,34 @@
             position: relative;
             width: 100%;
             height: 100%;
-            background-color: #0f0c29; /* Koyu uzay rengi */
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background: #0f0c29; /* Uzay teması */
         }
 
-        /* Pixel art uzay arka planı */
+        /* Pixel art tarzında uzay arka planı */
         .space::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-            box-shadow: 
-                50px 50px 0 2px rgba(0, 255, 255, 0.7), 
-                100px 100px 0 3px rgba(255, 0, 255, 0.6),
-                150px 150px 0 4px rgba(255, 255, 0, 0.5),
-                200px 200px 0 5px rgba(0, 255, 0, 0.4),
-                250px 250px 0 6px rgba(255, 165, 0, 0.3);
+            box-shadow:
+                100px 100px 0 2px rgba(0, 255, 255, 0.7), 
+                200px 200px 0 3px rgba(255, 0, 255, 0.6),
+                300px 300px 0 4px rgba(255, 255, 0, 0.5),
+                400px 400px 0 5px rgba(0, 255, 0, 0.4),
+                500px 500px 0 6px rgba(255, 165, 0, 0.3);
         }
 
+        /* Neon Pixel Art Uzaylı */
         .alien-container {
-            position: relative;
             z-index: 2;
             text-align: center;
         }
 
-        /* Neon Pixel Art Alien */
         .alien {
             font-size: 30px;
             line-height: 30px;
@@ -57,16 +56,17 @@
 
         .alien span {
             display: inline-block;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
         }
 
+        /* Pixel art uzaylı */
         .alien span.pixel {
             background-color: lime;
+            margin: 2px;
             display: inline-block;
             width: 20px;
             height: 20px;
-            margin: 2px;
             box-shadow: 0 0 5px lime, 0 0 10px lime;
         }
 
@@ -78,6 +78,7 @@
             box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
         }
 
+        /* Kripto alıntıları */
         .quote {
             margin-top: 20px;
             font-size: 18px;
@@ -87,7 +88,7 @@
             box-shadow: 0 0 15px #ff6f61;
         }
 
-        /* Pixel planet */
+        /* Planet ve shooting star */
         .planet {
             position: absolute;
             bottom: 10%;
@@ -127,7 +128,7 @@
         <div class="alien-container">
             <div class="neon-border">
                 <div class="alien">
-                    <!-- Pixel art for Alien -->
+                    <!-- Uzaylı pixel art çizimi -->
                     <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
                     <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
                     <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
