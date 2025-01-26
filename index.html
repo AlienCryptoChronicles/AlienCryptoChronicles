@@ -65,8 +65,8 @@
 <body>
 
     <h1>Crypto Alien: The Crypto From Space</h1>
-    <!-- Görselleri Unsplash CDN'den alıyoruz -->
-    <img id="alienImage" src="https://images.unsplash.com/photo-1593642532971-6b8b7bb6fd63" alt="Crypto Alien Image">
+    <!-- Görselleri doğrudan internetten, Unsplash gibi bir kaynaktan alıyoruz -->
+    <img id="alienImage" src="https://images.unsplash.com/photo-1620600298716-3a01613c2993" alt="Crypto Alien Image">
     
     <div class="message" id="message">Welcome, Earthling! I'm your Crypto Alien.</div>
     
@@ -96,9 +96,9 @@
             document.getElementById('message').innerText = randomMessage;
 
             const randomImage = [
-                "https://images.unsplash.com/photo-1593642532971-6b8b7bb6fd63", // İlk uzaylı görseli
-                "https://images.unsplash.com/photo-1568024737-1bcf9187ed3b", // İkinci uzaylı görseli
-                "https://images.unsplash.com/photo-1504083793197-f65a4299b2b0"  // Üçüncü uzaylı görseli
+                "https://images.unsplash.com/photo-1620600298716-3a01613c2993", // Crypto Alien Image
+                "https://images.unsplash.com/photo-1590193871462-35a55f9f551f", // Another Image
+                "https://images.unsplash.com/photo-1617120777411-d7bb47fd57d1"  // Another Image
             ];
             const randomImageURL = randomImage[Math.floor(Math.random() * randomImage.length)];
             document.getElementById('alienImage').src = randomImageURL;
