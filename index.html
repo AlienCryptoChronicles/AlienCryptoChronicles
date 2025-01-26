@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Alien - The Crypto From Space</title>
+    <title>Crypto Alien: The Crypto From Space</title>
     <style>
         body {
             background-color: #1e1e2f;
@@ -65,8 +65,7 @@
 <body>
 
     <h1>Crypto Alien: The Crypto From Space</h1>
-    <!-- Görselleri doğrudan internetten, Unsplash gibi bir kaynaktan alıyoruz -->
-    <img id="alienImage" src="https://images.unsplash.com/photo-1620600298716-3a01613c2993" alt="Crypto Alien Image">
+    <div id="alienImages"></div> <!-- Görselleri dinamik olarak buraya ekleyeceğiz -->
     
     <div class="message" id="message">Welcome, Earthling! I'm your Crypto Alien.</div>
     
@@ -74,39 +73,7 @@
 
     <div class="animated-text" id="alienText"></div>
 
-    <script>
-        const alienMessages = [
-            "Crypto is the future. Are you ready to join us?",
-            "We come from space, and we brought the best crypto technologies!",
-            "Invest in crypto, and you’ll join the intergalactic economy!",
-            "The future of money is digital, and it’s time to invest!",
-            "We’ve been mining crypto from the deepest galaxies!"
-        ];
-
-        const alienPhrases = [
-            "The planets are aligned for crypto profits!",
-            "Earth’s economy is about to be disrupted!",
-            "The crypto revolution is coming from the stars!",
-            "To the moon and beyond with crypto!",
-            "Space is the limit for crypto investments!"
-        ];
-
-        function changeMessage() {
-            const randomMessage = alienMessages[Math.floor(Math.random() * alienMessages.length)];
-            document.getElementById('message').innerText = randomMessage;
-
-            const randomImage = [
-                "https://images.unsplash.com/photo-1620600298716-3a01613c2993", // Crypto Alien Image
-                "https://images.unsplash.com/photo-1590193871462-35a55f9f551f", // Another Image
-                "https://images.unsplash.com/photo-1617120777411-d7bb47fd57d1"  // Another Image
-            ];
-            const randomImageURL = randomImage[Math.floor(Math.random() * randomImage.length)];
-            document.getElementById('alienImage').src = randomImageURL;
-
-            const randomText = alienPhrases[Math.floor(Math.random() * alienPhrases.length)];
-            document.getElementById('alienText').innerText = randomText;
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
