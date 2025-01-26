@@ -3,129 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzaylıların Kripto Yorumu</title>
+    <title>Crypto Aliens - Ana Sayfa</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0f0c29; 
+            box-sizing: border-box;
+            background: black;
             color: white;
-            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
             height: 100vh;
-            overflow: hidden;
         }
 
-        .space {
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 1rem;
+            text-align: center;
             position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background-color: #0f0c29;
         }
 
-        .space::before {
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        /* Retro Uzay Arka Planı */
+        body::before {
             content: '';
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #00ff00, #ff00ff); 
-            box-shadow: 
-                100px 100px 0 5px rgba(0, 255, 255, 0.6), 
-                200px 300px 0 6px rgba(255, 165, 0, 0.5), 
-                300px 400px 0 4px rgba(255, 255, 0, 0.3), 
-                400px 500px 0 6px rgba(0, 255, 0, 0.4), 
-                500px 600px 0 8px rgba(255, 0, 255, 0.7),
-                150px 150px 0 3px rgba(255, 0, 0, 0.2), 
-                250px 250px 0 2px rgba(0, 255, 0, 0.1); 
+            background: black;
+            background-image: radial-gradient(circle, white 2px, transparent 2px);
+            background-size: 20px 20px;
+            z-index: -1;
         }
 
-        .planet {
+        /* Retro Uzaylı Çizimi */
+        .alien {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to right, #39FF14, #32CD32);
+            position: relative;
+            margin: 50px auto;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(45deg);
+        }
+
+        .alien::before, .alien::after {
+            content: '';
             position: absolute;
-            bottom: 10%;
-            right: 20%;
-            width: 150px;
-            height: 150px;
-            background-color: #ff5733;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right, #39FF14, #32CD32);
             border-radius: 50%;
-            box-shadow: 0 0 30px #ff5733;
         }
 
-        .star {
+        .alien::before {
+            top: -25px;
+            left: 0;
+        }
+
+        .alien::after {
+            top: 0;
+            left: -25px;
+        }
+
+        .alien .eye {
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: #fff;
+            background: white;
             border-radius: 50%;
-            box-shadow: 0 0 5px #fff;
         }
 
-        .star:nth-child(1) { top: 30%; left: 20%; }
-        .star:nth-child(2) { top: 10%; left: 70%; }
-        .star:nth-child(3) { top: 50%; left: 60%; }
-        .star:nth-child(4) { top: 70%; left: 80%; }
-        .star:nth-child(5) { top: 90%; left: 10%; }
-
-        .alien-container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+        .alien .eye.left {
+            top: 20px;
+            left: 20px;
         }
 
-        .alien {
-            display: grid;
-            grid-template-columns: repeat(6, 20px);
-            grid-template-rows: repeat(6, 20px);
-            gap: 2px;
-            margin: 0 auto;
-            transform: scale(1.2);
+        .alien .eye.right {
+            top: 20px;
+            right: 20px;
         }
 
-        .pixel {
-            width: 20px;
-            height: 20px;
-            background-color: #00ffff; 
-            box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
-        }
-
-        .pixel.off {
-            background-color: transparent;
-        }
-
-        .crypto {
-            background-color: gold;
-            border-radius: 50%;
-            grid-row: 3;
-            grid-column: 5;
-        }
-
-        .neon-border {
-            border: 5px solid #39ff14;
-            padding: 20px;
-            display: inline-block;
-            box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
-        }
-
-        .quote {
-            margin-top: 20px;
-            font-size: 18px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 15px #ff6f61;
-        }
-
-        .shooting-star {
-            position: absolute;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0));
-            top: 20%;
-            left: 10%;
-            animation: shooting 2s linear infinite;
-        }
-
-        @keyframes shooting {
-            from {
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkında</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Crypto Aliens'e Hoşgeldiniz!</h1>
+        <p>Kripto paralar hakkında uzaylıların mizahi yorumlarını keşfedin.</p>
+        <div class="alien">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Crypto Aliens</p>
+    </footer>
+</body>
+</html>
