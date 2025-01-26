@@ -6,26 +6,86 @@
     <title>Crypto Alien - The Crypto From Space</title>
     <style>
         body {
-            background-color: #1e1e2f;
-            font-family: 'Arial', sans-serif;
+            background-color: #0d0d2b;
             color: #fff;
             text-align: center;
             margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
+
         h1 {
             color: #39FF14;
             font-size: 60px;
             margin-top: 100px;
             text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.5);
         }
-        #alienImage {
-            width: 300px;
-            height: 300px;
-            margin-top: 20px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
+
+        .alien {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            margin: 50px auto;
+            animation: bounce 1s infinite ease-in-out;
         }
+
+        /* Uzaylı karakterlerinin stilleri */
+        .alien.green {
+            background-color: #39FF14;
+        }
+
+        .alien.blue {
+            background-color: #1E90FF;
+        }
+
+        .alien.pink {
+            background-color: #FF69B4;
+        }
+
+        .alien::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: 15%;
+            width: 70%;
+            height: 20%;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .alien::after {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 10%;
+            height: 10%;
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        /* Yıldız arka plan animasyonu */
+        @keyframes stars {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(50%);
+            }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #fff, transparent);
+            animation: stars 20s infinite linear;
+            opacity: 0.2;
+        }
+
         .button {
             background-color: #39FF14;
             color: black;
@@ -38,44 +98,57 @@
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
         }
+
         .button:hover {
             background-color: #32CD32;
             transform: scale(1.1);
         }
-        .message {
-            font-size: 24px;
-            margin-top: 30px;
-            color: #aaa;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .animated-text {
-            font-size: 28px;
-            color: #FF69B4;
-            font-weight: bold;
-            animation: bounce 1s infinite;
-        }
+
         @keyframes bounce {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-20px); }
             100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
+    <div class="stars"></div>
     <h1>Crypto Alien: The Crypto From Space</h1>
-    <!-- Başlangıç görselini düzgün bir şekilde ekledik -->
-    <img id="alienImage" src="https://images.unsplash.com/photo-1620600298716-3a01613c2993" alt="Crypto Alien Image">
-    
-    <div class="message" id="message">Welcome, Earthling! I'm your Crypto Alien.</div>
-    
-    <button class="button">Join The Crypto Revolution From Space!</button>
 
-    <div class="animated-text" id="alienText"></div>
+    <!-- Başlangıçta yeşil uzaylı -->
+    <div class="alien green"></div>
 
-    <!-- JavaScript dosyanızın URL'sini ekliyoruz -->
-    <script src="https://github.com/osmangazid/cryptomentorai/raw/main/script.js"></script>
+    <button class="button" id="changeAlienButton">Join The Crypto Revolution From Space!</button>
+
+    <script>
+        const aliens = ['green', 'blue', 'pink'];
+        const alienMessages = [
+            "Crypto is the future. Are you ready to join us?",
+            "We come from space, and we brought the best crypto technologies!",
+            "Invest in crypto, and you’ll join the intergalactic economy!",
+            "The future of money is digital, and it’s time to invest!",
+            "We’ve been mining crypto from the deepest galaxies!"
+        ];
+
+        let alienIndex = 0;
+        let messageIndex = 0;
+
+        const button = document.getElementById('changeAlienButton');
+        const alien = document.querySelector('.alien');
+        const h1 = document.querySelector('h1');
+
+        // Button'a tıklanınca uzaylıyı değiştir ve mesajı değiştir
+        button.addEventListener('click', () => {
+            // Uzaylıyı değiştir
+            alienIndex = (alienIndex + 1) % aliens.length;
+            alien.className = `alien ${aliens[alienIndex]}`;
+
+            // Mesajı değiştir
+            messageIndex = (messageIndex + 1) % alienMessages.length;
+            h1.textContent = alienMessages[messageIndex];
+        });
+    </script>
 
 </body>
 </html>
