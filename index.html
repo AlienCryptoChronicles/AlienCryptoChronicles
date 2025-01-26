@@ -3,75 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Doge Fun</title>
+    <title>Uzaylı Eğlencesi</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #1e1e2f;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
             text-align: center;
-            margin: 0;
             padding: 0;
+            margin: 0;
         }
         h1 {
-            color: #ff6347;
-            margin-top: 50px;
+            color: #39FF14;
+            font-size: 60px;
+            margin-top: 100px;
+            text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.5);
         }
-        #dogeImage {
+        #alienImage {
             width: 300px;
             height: 300px;
-            object-fit: cover;
             margin-top: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
         .button {
-            background-color: #ff6347;
-            color: white;
+            background-color: #39FF14;
+            color: black;
             border: none;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 15px 40px;
+            font-size: 20px;
             cursor: pointer;
             margin-top: 30px;
-            transition: background-color 0.3s;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
         }
         .button:hover {
-            background-color: #e03e2b;
+            background-color: #32CD32;
+            transform: scale(1.1);
         }
         .message {
             font-size: 24px;
-            color: #333;
-            margin-top: 20px;
+            margin-top: 30px;
+            color: #aaa;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .animated-text {
+            font-size: 28px;
+            color: #FF69B4;
+            font-weight: bold;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <h1>Hot Doge On Sol</h1>
-    <img id="dogeImage" src="https://www.placecage.com/300/300" alt="Doge Image">
+    <h1>Uzaylı Eğlencesi!</h1>
+    <img id="alienImage" src="https://img.freepik.com/free-vector/cute-alien-illustration_23-2149194669.jpg" alt="Uzaylı Karakteri">
     
-    <button class="button" onclick="changeMessage()">Click Me for Doge Fun!</button>
+    <div class="message" id="message">Merhaba Yeryüzü sakinleri!</div>
     
-    <div class="message" id="message">Welcome to the world of Hot Doge!</div>
+    <button class="button" onclick="changeMessage()">Uzaylı Eğlencesine Katıl!</button>
+
+    <div class="animated-text" id="alienText"></div>
 
     <script>
-        const messages = [
-            "Much wow!",
-            "So cool!",
-            "Very Doge, much wow!",
-            "Hot Doge is here!",
-            "WOW! Click again for more fun!"
+        const alienMessages = [
+            "Beni tanımadınız mı? Ben uzaylıyım!",
+            "Wow! Çok ilginç bir gezegen burası!",
+            "Burası çok farklı... Ama sevdim!",
+            "Uzaydan selamlar, insanlar!",
+            "Hadi bakalım, eğlencenin zamanı!"
+        ];
+
+        const alienPhrases = [
+            "Dünya'da neler oluyor böyle?",
+            "Uzak galaksilerde bu kadar eğlenceli şeyler yok!",
+            "Benim gezegenimde, her şey çok daha renkli!",
+            "Evet, gerçekten uzaylıyım. Şaka değil!"
         ];
 
         function changeMessage() {
-            const randomIndex = Math.floor(Math.random() * messages.length);
-            document.getElementById('message').innerText = messages[randomIndex];
+            const randomMessage = alienMessages[Math.floor(Math.random() * alienMessages.length)];
+            document.getElementById('message').innerText = randomMessage;
 
-            // Change Doge image randomly (using a random doge meme URL for fun)
-            const dogeImages = [
-                "https://www.placecage.com/300/300",
-                "https://www.placecage.com/300/301",
-                "https://www.placecage.com/300/302"
+            const randomImage = [
+                "https://img.freepik.com/free-vector/cute-alien-illustration_23-2149194669.jpg",
+                "https://img.freepik.com/free-vector/space-alien-planet-scene_23-2149194633.jpg",
+                "https://img.freepik.com/free-vector/cute-space-alien-cartoon-character_23-2149194668.jpg"
             ];
-            const randomImage = dogeImages[Math.floor(Math.random() * dogeImages.length)];
-            document.getElementById('dogeImage').src = randomImage;
+            const randomImageURL = randomImage[Math.floor(Math.random() * randomImage.length)];
+            document.getElementById('alienImage').src = randomImageURL;
+
+            const randomText = alienPhrases[Math.floor(Math.random() * alienPhrases.length)];
+            document.getElementById('alienText').innerText = randomText;
         }
     </script>
 
