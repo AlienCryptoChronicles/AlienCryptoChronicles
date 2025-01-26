@@ -3,151 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzaylıların Kripto Yorumu</title>
+    <title>Uzaylı Kripto Yorumu</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: black;
+            background-color: black;
             color: white;
-            overflow: hidden;
-        }
-
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            z-index: 10;
-            position: relative;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
             font-size: 3rem;
-            color: #00ff99;
-            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
         }
 
         .alien {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(8, 20px);
+            justify-content: center;
+            margin: 20px auto;
         }
 
-        .message {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff99;
-            border-radius: 15px;
-            padding: 20px;
-            font-size: 1.2rem;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 0 10px #00ff99;
+        .pixel {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
         }
 
-        .message:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
+        /* Alien Pixel Colors */
+        .green { background-color: #00ff00; }
+        .blue { background-color: #00ccff; }
+        .white { background-color: #ffffff; }
+
+        #quote {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #00ffcc;
         }
 
         button {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 1rem;
+            background-color: #00ffcc;
             border: none;
-            background: #00ff99;
-            color: black;
             border-radius: 5px;
+            color: black;
             cursor: pointer;
-            box-shadow: 0 0 10px #00ff99;
         }
 
         button:hover {
-            background: #00cc77;
+            background-color: #00cc99;
         }
     </style>
 </head>
 <body>
-    <canvas id="starCanvas"></canvas>
+    <h1>Uzaylı Kripto Yorumları</h1>
 
-    <div class="container">
-        <h1>Uzaylıların Kripto Yorumu</h1>
-        <img class="alien" id="alienImage" src="https://i.imgur.com/J2zoHkB.png" alt="Uzaylı">
-        <div class="message" id="messageBox">Dogecoin ile Mars'ta koloniler kuracağız!</div>
-        <button onclick="generateMessage()">Uzaylının Yeni Yorumu</button>
+    <!-- Pixel Art Alien -->
+    <div class="alien">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel blue"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel blue"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel green"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
     </div>
 
+    <div id="quote">Uzaylılar sizinle kripto hakkında konuşmak istiyor!</div>
+
+    <button onclick="generateQuote()">Ne Diyorlar?</button>
+
     <script>
-        // Rastgele yıldız efektleri için
-        const canvas = document.getElementById("starCanvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const stars = Array(200).fill().map(() => {
-            return {
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 1.5,
-                alpha: Math.random()
-            };
-        });
-
-        function drawStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "white";
-            stars.forEach(star => {
-                ctx.globalAlpha = star.alpha;
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.globalAlpha = 1;
-            });
-        }
-
-        function twinkleStars() {
-            stars.forEach(star => {
-                star.alpha += (Math.random() - 0.5) * 0.1;
-                star.alpha = Math.max(Math.min(star.alpha, 1), 0);
-            });
-            drawStars();
-            requestAnimationFrame(twinkleStars);
-        }
-
-        twinkleStars();
-
-        // Uzaylı mesajları ve görselleri için
-        const messages = [
-            "Bitcoin mi? Uzayda sadece antimadde kullanıyoruz!",
-            "Ethereum, Venüs'teki NFT'ler için mükemmel bir seçim.",
-            "Dogecoin ile Mars'ta koloniler kuracağız!",
-            "Kripto kervanı geçiyor, sen hala madencilikte misin?",
-            "Plüton'da tüm ödemeler Stellar ile yapılıyor!",
-            "Uzay vergi dairesi: Sadece Litecoin kabul ederiz!",
-            "Satürn halkaları bile bu kadar değerli değil, al Dogecoin!"
+        const quotes = [
+            "Kripto para birimlerinin geleceği galaktik ticaret!",
+            "Bitcoin'i 3 ışık yılı önce keşfettik, şimdi Mars'ta popüler!",
+            "Ethereum, uzaylılar arasında favori bir platform!",
+            "Kripto varlıklarınızı koruyun, galaksiler arası dolandırıcılar her yerde!",
+            "NFT'ler, uzay sanatı koleksiyoncuları arasında çok popüler!"
         ];
 
-        const alienImages = [
-            "https://i.imgur.com/J2zoHkB.png",
-            "https://i.imgur.com/NqGpZQ9.png",
-            "https://i.imgur.com/zsJ3Z8k.png",
-            "https://i.imgur.com/8pZfV5E.png"
-        ];
-
-        function generateMessage() {
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            const randomImage = alienImages[Math.floor(Math.random() * alienImages.length)];
-
-            document.getElementById("messageBox").innerText = randomMessage;
-            document.getElementById("alienImage").src = randomImage;
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
         }
     </script>
 </body>
