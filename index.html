@@ -142,6 +142,32 @@
 
         <div class="alien-container">
             <div class="neon-border">
-                <div class
+                <div class="alien">
+                    <!-- Uzaylı pixel art çizimi -->
+                    <div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><br>
+                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel off"></div><br>
+                    <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><br>
+                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><br>
+                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><br>
+                </div>
+            </div>
+            <div class="quote" id="quote">"Kripto evreni, kaosun sanatı!"</div>
+        </div>
+    </div>
 
-                    
+    <script>
+        const quotes = [
+            "Kripto evreni, kaosun sanatı!",
+            "Bitcoin, galaksiler arası bir altın standardıdır!",
+            "Ethereum, yıldızlar arasında akıllı bir ağdır!",
+            "Altcoinler uzayın jokerleridir!",
+            "HODL, uzay gemisinin yakıtıdır!"
+        ];
+
+        document.querySelector(".alien-container").addEventListener("click", () => {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById("quote").innerText = randomQuote;
+        });
+    </script>
+</body>
+</html>
