@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Kripto Asistanına Sorun</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face GPT-2 Test</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +37,7 @@
     </style>
 </head>
 <body>
-    <h1>Kripto Asistanına Sorun</h1>
+    <h1>Hugging Face GPT-2 Test</h1>
     <textarea id="userInput" placeholder="Sorunuzu yazın..."></textarea>
     <button onclick="askBot()">Sor</button>
     <div id="botResponse"></div>
@@ -42,23 +45,33 @@
     <script>
         async function askBot() {
             const userInput = document.getElementById("userInput").value;
-            const apiUrl = "https://api-inference.huggingface.co/models/gpt2";  // Modeli burada belirtiyoruz (GPT-2 kullanıyoruz)
+
+            // API bilgileri
+            const apiUrl = "https://api-inference.huggingface.co/models/openai-community/gpt2"; // Model API URL'si
             const apiKey = "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"; // Hugging Face API anahtarınızı buraya ekleyin
 
-            // API'ye istek gönderme
-            const response = await fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${apiKey}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ inputs: userInput })
-            });
+            try {
+                // API'ye istek gönderme
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${apiKey}`, // API anahtarı ile yetkilendirme
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ inputs: userInput }) // Kullanıcı girişini gönderme
+                });
 
-            const data = await response.json();
-            const botText = data[0]?.generated_text || "Yanıt alınamadı.";
-
-            document.getElementById("botResponse").innerText = botText;
+                if (response.ok) {
+                    const data = await response.json();
+                    const botText = data[0]?.generated_text || "Yanıt alınamadı.";
+                    document.getElementById("botResponse").innerText = botText; // Yanıtı gösterme
+                } else {
+                    document.getElementById("botResponse").innerText = `Hata: ${response.status} ${response.statusText}`;
+                }
+            } catch (error) {
+                console.error("Hata:", error);
+                document.getElementById("botResponse").innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
+            }
         }
     </script>
 </body>
