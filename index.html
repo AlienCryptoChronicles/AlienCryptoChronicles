@@ -3,152 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Alien - The Crypto From Space</title>
+    <title>Uzaylıların Kripto Yorumları</title>
     <style>
         body {
-            background-color: #0d0d2b;
-            color: #fff;
-            text-align: center;
             margin: 0;
+            padding: 0;
             font-family: 'Arial', sans-serif;
+            color: white;
+            background: radial-gradient(circle at bottom, #000428, #004e92);
+            height: 100vh;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        h1 {
-            color: #39FF14;
-            font-size: 60px;
-            margin-top: 100px;
-            text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.5);
+        .neon-text {
+            font-size: 2rem;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #00f, 0 0 70px #00f, 0 0 80px #00f;
+            animation: glow 1.5s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 5px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #00f, 0 0 70px #00f, 0 0 80px #00f;
+            }
+            50% {
+                text-shadow: 0 0 10px #f0f, 0 0 25px #f0f, 0 0 50px #f0f, 0 0 60px #0ff, 0 0 100px #0ff;
+            }
         }
 
         .alien {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
+            background-color: lime;
             border-radius: 50%;
+            border: 5px solid #0ff;
             position: relative;
-            margin: 50px auto;
-            animation: bounce 1s infinite ease-in-out;
+            box-shadow: 0 0 15px #0ff, 0 0 30px #00f;
         }
 
-        /* Uzaylı karakterlerinin stilleri */
-        .alien.green {
-            background-color: #39FF14;
-        }
-
-        .alien.blue {
-            background-color: #1E90FF;
-        }
-
-        .alien.pink {
-            background-color: #FF69B4;
-        }
-
-        .alien::before {
-            content: '';
-            position: absolute;
-            top: 25%;
-            left: 15%;
-            width: 70%;
-            height: 20%;
-            background-color: #fff;
-            border-radius: 50%;
-        }
-
+        .alien::before,
         .alien::after {
             content: '';
             position: absolute;
-            top: 25%;
-            left: 25%;
-            width: 10%;
-            height: 10%;
-            background-color: #000;
+            width: 30px;
+            height: 50px;
+            background: #0ff;
             border-radius: 50%;
+            top: 30px;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #00f;
         }
 
-        /* Yıldız arka plan animasyonu */
-        @keyframes stars {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(50%);
-            }
+        .alien::before {
+            left: 30px;
         }
 
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, #fff, transparent);
-            animation: stars 20s infinite linear;
-            opacity: 0.2;
+        .alien::after {
+            right: 30px;
         }
 
         .button {
-            background-color: #39FF14;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0ff;
             color: black;
             border: none;
-            padding: 15px 40px;
-            font-size: 20px;
-            cursor: pointer;
-            margin-top: 30px;
             border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px #0ff, 0 0 30px #00f;
         }
 
         .button:hover {
-            background-color: #32CD32;
-            transform: scale(1.1);
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
+            background-color: #00f;
+            color: white;
+            box-shadow: 0 0 20px #f0f, 0 0 40px #f0f;
         }
     </style>
 </head>
 <body>
-
-    <div class="stars"></div>
-    <h1>Crypto Alien: The Crypto From Space</h1>
-
-    <!-- Başlangıçta yeşil uzaylı -->
-    <div class="alien green"></div>
-
-    <button class="button" id="changeAlienButton">Join The Crypto Revolution From Space!</button>
+    <div class="alien"></div>
+    <h1 class="neon-text" id="quote">Uzaylılar Kripto Hakkında Konuşuyor...</h1>
+    <button class="button" onclick="generateQuote()">Ne Diyorlar?</button>
 
     <script>
-        const aliens = ['green', 'blue', 'pink'];
-        const alienMessages = [
-            "Crypto is the future. Are you ready to join us?",
-            "We come from space, and we brought the best crypto technologies!",
-            "Invest in crypto, and you’ll join the intergalactic economy!",
-            "The future of money is digital, and it’s time to invest!",
-            "We’ve been mining crypto from the deepest galaxies!"
+        const quotes = [
+            "Bitcoin, evrendeki en iyi yatırım aracı!",
+            "Ethereum ile Mars'ta bir şirket kurdum!",
+            "Dogecoin, uzay gemisi yakıtı olarak kullanılabilir!",
+            "NFT'ler bizim uzay sanatı koleksiyonlarımızın temeli.",
+            "Uzayda işlem ücreti yok, bu yüzden Stellar kullanıyoruz!",
+            "Shiba Inu, galaksiler arası bir mizah projesidir.",
+            "Solana ile zamanlar arası ticaret yaptık.",
+            "Kriptolar, bizimle insanlar arasındaki iletişim için mükemmel."
         ];
 
-        let alienIndex = 0;
-        let messageIndex = 0;
-
-        const button = document.getElementById('changeAlienButton');
-        const alien = document.querySelector('.alien');
-        const h1 = document.querySelector('h1');
-
-        // Button'a tıklanınca uzaylıyı değiştir ve mesajı değiştir
-        button.addEventListener('click', () => {
-            // Uzaylıyı değiştir
-            alienIndex = (alienIndex + 1) % aliens.length;
-            alien.className = `alien ${aliens[alienIndex]}`;
-
-            // Mesajı değiştir
-            messageIndex = (messageIndex + 1) % alienMessages.length;
-            h1.textContent = alienMessages[messageIndex];
-        });
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = quotes[randomIndex];
+        }
     </script>
-
 </body>
 </html>
