@@ -8,54 +8,72 @@
         body {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+            background: #0f0c29; /* Koyu arka plan */
             color: white;
             font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
             height: 100vh;
+            overflow: hidden;
         }
 
         .space {
             position: relative;
             width: 100%;
             height: 100%;
+            background-color: #0f0c29; /* Koyu uzay rengi */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
         }
 
-        .stars {
+        /* Pixel art uzay arka planı */
+        .space::before {
+            content: '';
             position: absolute;
             width: 100%;
             height: 100%;
-            background: url('https://i.imgur.com/4g6nU89.png'); /* Yıldızlar */
-            background-size: cover;
-            z-index: 1;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            box-shadow: 
+                50px 50px 0 2px rgba(0, 255, 255, 0.7), 
+                100px 100px 0 3px rgba(255, 0, 255, 0.6),
+                150px 150px 0 4px rgba(255, 255, 0, 0.5),
+                200px 200px 0 5px rgba(0, 255, 0, 0.4),
+                250px 250px 0 6px rgba(255, 165, 0, 0.3);
         }
 
         .alien-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            position: relative;
             z-index: 2;
+            text-align: center;
         }
 
+        /* Neon Pixel Art Alien */
         .alien {
-            font-size: 12px;
-            line-height: 10px;
+            font-size: 30px;
+            line-height: 30px;
+            text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime;
             color: lime;
-            text-shadow: 0 0 5px lime, 0 0 10px lime;
         }
 
         .alien span {
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 30px;
+            height: 30px;
         }
 
+        .alien span.pixel {
+            background-color: lime;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+            box-shadow: 0 0 5px lime, 0 0 10px lime;
+        }
+
+        /* Neon border for Alien */
         .neon-border {
             border: 5px solid #39ff14;
-            padding: 10px;
+            padding: 20px;
             display: inline-block;
             box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
         }
@@ -69,16 +87,16 @@
             box-shadow: 0 0 15px #ff6f61;
         }
 
+        /* Pixel planet */
         .planet {
             position: absolute;
             bottom: 10%;
             right: 20%;
             width: 150px;
             height: 150px;
-            background: radial-gradient(circle, #ff5733, #900c3f);
+            background-color: #ff5733;
             border-radius: 50%;
             box-shadow: 0 0 30px #ff5733;
-            z-index: 1;
         }
 
         .shooting-star {
@@ -103,24 +121,18 @@
 </head>
 <body>
     <div class="space">
-        <div class="stars"></div>
         <div class="planet"></div>
         <div class="shooting-star"></div>
 
         <div class="alien-container">
             <div class="neon-border">
                 <div class="alien">
-                    <span>⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿</span><br>
-                    <span>⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿</span><br>
-                    <span>⣿⣿⣿⣿⠟⠋⠉⠉⠙⠻⣿⣿</span><br>
-                    <span>⣿⣿⣿⠋⠀⣠⣤⣤⡀⠀⢹⣿</span><br>
-                    <span>⣿⣿⡇⠀⢰⣿⣿⣿⣿⡄⢸⣿</span><br>
-                    <span>⣿⣿⡇⠀⢸⣿⣿⣿⣿⡇⢸⣿</span><br>
-                    <span>⣿⣿⡇⠀⠘⣿⣿⣿⡿⠃⢸⣿</span><br>
-                    <span>⣿⣿⡇⠀⠀⠈⠉⠉⠀⠀⢸⣿</span><br>
-                    <span>⣿⣿⣿⡀⠀⠀⠀⠀⠀⢀⣿⣿</span><br>
-                    <span>⣿⣿⣿⣿⣆⠀⠀⠀⣰⣿⣿⣿</span><br>
-                    <span>⣿⣿⣿⣿⣿⣷⣤⣾⣿⣿⣿⣿</span><br>
+                    <!-- Pixel art for Alien -->
+                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
+                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
+                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
+                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
+                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
                 </div>
             </div>
             <div class="quote" id="quote">"Kripto evreni, kaosun sanatı!"</div>
