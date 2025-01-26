@@ -8,13 +8,14 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0f0c29;
+            background-color: #0f0c29; /* Koyu uzay rengi */
             color: white;
             font-family: 'Courier New', Courier, monospace;
             height: 100vh;
             overflow: hidden;
         }
 
+        /* Genel uzay alanı */
         .space {
             position: relative;
             width: 100%;
@@ -23,72 +24,25 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background: #0f0c29; /* Uzay teması */
+            background-color: #0f0c29;
         }
 
-        /* Pixel art tarzında uzay arka planı */
+        /* Pixel art uzay arka planı */
         .space::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-            box-shadow:
-                100px 100px 0 2px rgba(0, 255, 255, 0.7), 
-                200px 200px 0 3px rgba(255, 0, 255, 0.6),
-                300px 300px 0 4px rgba(255, 255, 0, 0.5),
-                400px 400px 0 5px rgba(0, 255, 0, 0.4),
-                500px 500px 0 6px rgba(255, 165, 0, 0.3);
+            box-shadow: 
+                100px 100px 0 5px rgba(0, 255, 255, 0.6),
+                200px 300px 0 6px rgba(255, 165, 0, 0.5),
+                300px 400px 0 4px rgba(255, 255, 0, 0.3),
+                400px 500px 0 6px rgba(0, 255, 0, 0.4),
+                500px 600px 0 8px rgba(255, 0, 255, 0.7);
         }
 
-        /* Neon Pixel Art Uzaylı */
-        .alien-container {
-            z-index: 2;
-            text-align: center;
-        }
-
-        .alien {
-            font-size: 30px;
-            line-height: 30px;
-            text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime;
-            color: lime;
-        }
-
-        .alien span {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Pixel art uzaylı */
-        .alien span.pixel {
-            background-color: lime;
-            margin: 2px;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            box-shadow: 0 0 5px lime, 0 0 10px lime;
-        }
-
-        /* Neon border for Alien */
-        .neon-border {
-            border: 5px solid #39ff14;
-            padding: 20px;
-            display: inline-block;
-            box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
-        }
-
-        /* Kripto alıntıları */
-        .quote {
-            margin-top: 20px;
-            font-size: 18px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 15px #ff6f61;
-        }
-
-        /* Planet ve shooting star */
+        /* Gezegenler ve yıldızlar */
         .planet {
             position: absolute;
             bottom: 10%;
@@ -100,6 +54,66 @@
             box-shadow: 0 0 30px #ff5733;
         }
 
+        .star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #fff;
+        }
+
+        .star:nth-child(1) { top: 30%; left: 20%; }
+        .star:nth-child(2) { top: 10%; left: 70%; }
+        .star:nth-child(3) { top: 50%; left: 60%; }
+        .star:nth-child(4) { top: 70%; left: 80%; }
+        .star:nth-child(5) { top: 90%; left: 10%; }
+
+        /* Uzaylı karakter (Pixel art) */
+        .alien-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .alien {
+            display: grid;
+            grid-template-columns: repeat(5, 20px);
+            grid-template-rows: repeat(5, 20px);
+            gap: 2px;
+            margin: 0 auto;
+        }
+
+        .alien .pixel {
+            width: 20px;
+            height: 20px;
+            background-color: lime;
+            box-shadow: 0 0 5px lime, 0 0 10px lime;
+        }
+
+        .alien .pixel.off {
+            background-color: transparent;
+        }
+
+        /* Neon Border */
+        .neon-border {
+            border: 5px solid #39ff14;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
+        }
+
+        /* Alıntılar */
+        .quote {
+            margin-top: 20px;
+            font-size: 18px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px #ff6f61;
+        }
+
+        /* Shooting Star Animasyonu */
         .shooting-star {
             position: absolute;
             width: 100px;
@@ -111,29 +125,30 @@
         }
 
         @keyframes shooting {
-            from {
-                transform: translate(0, 0);
-            }
-            to {
-                transform: translate(800px, 400px);
-            }
+            from { transform: translate(0, 0); }
+            to { transform: translate(800px, 400px); }
         }
     </style>
 </head>
 <body>
     <div class="space">
         <div class="planet"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
         <div class="shooting-star"></div>
 
         <div class="alien-container">
             <div class="neon-border">
                 <div class="alien">
                     <!-- Uzaylı pixel art çizimi -->
-                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
-                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
-                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
-                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
-                    <div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><div class="pixel" style="background-color: lime;"></div><br>
+                    <div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><br>
+                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel off"></div><br>
+                    <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><br>
+                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><br>
+                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><br>
                 </div>
             </div>
             <div class="quote" id="quote">"Kripto evreni, kaosun sanatı!"</div>
