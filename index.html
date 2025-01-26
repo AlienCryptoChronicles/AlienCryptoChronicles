@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzaylı Eğlencesi</title>
+    <title>Crypto Alien - The Crypto From Space</title>
     <style>
         body {
             background-color: #1e1e2f;
             font-family: 'Arial', sans-serif;
             color: #fff;
             text-align: center;
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
         h1 {
             color: #39FF14;
@@ -64,29 +64,30 @@
 </head>
 <body>
 
-    <h1>Uzaylı Eğlencesi!</h1>
-    <img id="alienImage" src="https://media.istockphoto.com/id/1341319679/vector/cute-cartoon-alien-on-a-rocket-in-space.jpg?s=612x612&w=0&k=20&c=ngQbc6v9RaW_zOh9gHGp-T8OLrgLnR8v9dqdh09Nk4M=" alt="Uzaylı Karakteri">
+    <h1>Crypto Alien: The Crypto From Space</h1>
+    <img id="alienImage" src="https://cdn.pixabay.com/photo/2020/06/23/10/38/alien-5333815_960_720.png" alt="Crypto Alien Image">
     
-    <div class="message" id="message">Merhaba Yeryüzü sakinleri!</div>
+    <div class="message" id="message">Welcome, Earthling! I'm your Crypto Alien.</div>
     
-    <button class="button" onclick="changeMessage()">Uzaylı Eğlencesine Katıl!</button>
+    <button class="button" onclick="changeMessage()">Join The Crypto Revolution From Space!</button>
 
     <div class="animated-text" id="alienText"></div>
 
     <script>
         const alienMessages = [
-            "Beni tanımadınız mı? Ben uzaylıyım!",
-            "Wow! Çok ilginç bir gezegen burası!",
-            "Burası çok farklı... Ama sevdim!",
-            "Uzaydan selamlar, insanlar!",
-            "Hadi bakalım, eğlencenin zamanı!"
+            "Crypto is the future. Are you ready to join us?",
+            "We come from space, and we brought the best crypto technologies!",
+            "Invest in crypto, and you’ll join the intergalactic economy!",
+            "The future of money is digital, and it’s time to invest!",
+            "We’ve been mining crypto from the deepest galaxies!"
         ];
 
         const alienPhrases = [
-            "Dünya'da neler oluyor böyle?",
-            "Uzak galaksilerde bu kadar eğlenceli şeyler yok!",
-            "Benim gezegenimde, her şey çok daha renkli!",
-            "Evet, gerçekten uzaylıyım. Şaka değil!"
+            "The planets are aligned for crypto profits!",
+            "Earth’s economy is about to be disrupted!",
+            "The crypto revolution is coming from the stars!",
+            "To the moon and beyond with crypto!",
+            "Space is the limit for crypto investments!"
         ];
 
         function changeMessage() {
@@ -94,9 +95,9 @@
             document.getElementById('message').innerText = randomMessage;
 
             const randomImage = [
-                "https://media.istockphoto.com/id/1341319679/vector/cute-cartoon-alien-on-a-rocket-in-space.jpg?s=612x612&w=0&k=20&c=ngQbc6v9RaW_zOh9gHGp-T8OLrgLnR8v9dqdh09Nk4M=",
-                "https://media.istockphoto.com/id/1182481445/vector/cute-cartoon-alien-with-space-background.jpg?s=612x612&w=0&k=20&c=9Edy7fvRfExNvvK0U_6T6JcTRewsNlOZlZX9RA_A5hg=",
-                "https://media.istockphoto.com/id/1289054366/vector/cute-cartoon-alien-head.jpg?s=612x612&w=0&k=20&c=FuHtiM5lcrp-nprqEZbLhvYWxUVTe2vw6gh2gHa_eis="
+                "https://cdn.pixabay.com/photo/2020/06/23/10/38/alien-5333815_960_720.png",
+                "https://cdn.pixabay.com/photo/2018/09/14/10/53/alien-3681969_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2017/12/13/15/44/alien-3012824_960_720.jpg"
             ];
             const randomImageURL = randomImage[Math.floor(Math.random() * randomImage.length)];
             document.getElementById('alienImage').src = randomImageURL;
