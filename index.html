@@ -8,14 +8,13 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0f0c29; /* Koyu uzay rengi */
+            background-color: #0f0c29; 
             color: white;
             font-family: 'Courier New', Courier, monospace;
             height: 100vh;
             overflow: hidden;
         }
 
-        /* Genel uzay alanı */
         .space {
             position: relative;
             width: 100%;
@@ -27,22 +26,22 @@
             background-color: #0f0c29;
         }
 
-        /* Pixel art uzay arka planı */
         .space::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            background: linear-gradient(45deg, #00ff00, #ff00ff); 
             box-shadow: 
-                100px 100px 0 5px rgba(0, 255, 255, 0.6),
-                200px 300px 0 6px rgba(255, 165, 0, 0.5),
-                300px 400px 0 4px rgba(255, 255, 0, 0.3),
-                400px 500px 0 6px rgba(0, 255, 0, 0.4),
-                500px 600px 0 8px rgba(255, 0, 255, 0.7);
+                100px 100px 0 5px rgba(0, 255, 255, 0.6), 
+                200px 300px 0 6px rgba(255, 165, 0, 0.5), 
+                300px 400px 0 4px rgba(255, 255, 0, 0.3), 
+                400px 500px 0 6px rgba(0, 255, 0, 0.4), 
+                500px 600px 0 8px rgba(255, 0, 255, 0.7),
+                150px 150px 0 3px rgba(255, 0, 0, 0.2), 
+                250px 250px 0 2px rgba(0, 255, 0, 0.1); 
         }
 
-        /* Gezegenler ve yıldızlar */
         .planet {
             position: absolute;
             bottom: 10%;
@@ -69,7 +68,6 @@
         .star:nth-child(4) { top: 70%; left: 80%; }
         .star:nth-child(5) { top: 90%; left: 10%; }
 
-        /* Uzaylı karakter (Pixel art) */
         .alien-container {
             position: relative;
             z-index: 2;
@@ -78,24 +76,31 @@
 
         .alien {
             display: grid;
-            grid-template-columns: repeat(5, 20px);
-            grid-template-rows: repeat(5, 20px);
+            grid-template-columns: repeat(6, 20px);
+            grid-template-rows: repeat(6, 20px);
             gap: 2px;
             margin: 0 auto;
+            transform: scale(1.2);
         }
 
-        .alien .pixel {
+        .pixel {
             width: 20px;
             height: 20px;
-            background-color: lime;
-            box-shadow: 0 0 5px lime, 0 0 10px lime;
+            background-color: #00ffff; 
+            box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
         }
 
-        .alien .pixel.off {
+        .pixel.off {
             background-color: transparent;
         }
 
-        /* Neon Border */
+        .crypto {
+            background-color: gold;
+            border-radius: 50%;
+            grid-row: 3;
+            grid-column: 5;
+        }
+
         .neon-border {
             border: 5px solid #39ff14;
             padding: 20px;
@@ -103,7 +108,6 @@
             box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
         }
 
-        /* Alıntılar */
         .quote {
             margin-top: 20px;
             font-size: 18px;
@@ -113,7 +117,6 @@
             box-shadow: 0 0 15px #ff6f61;
         }
 
-        /* Shooting Star Animasyonu */
         .shooting-star {
             position: absolute;
             width: 100px;
@@ -125,49 +128,4 @@
         }
 
         @keyframes shooting {
-            from { transform: translate(0, 0); }
-            to { transform: translate(800px, 400px); }
-        }
-    </style>
-</head>
-<body>
-    <div class="space">
-        <div class="planet"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="shooting-star"></div>
-
-        <div class="alien-container">
-            <div class="neon-border">
-                <div class="alien">
-                    <!-- Uzaylı pixel art çizimi -->
-                    <div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><br>
-                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel off"></div><br>
-                    <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><br>
-                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><br>
-                    <div class="pixel off"></div><div class="pixel"></div><div class="pixel off"></div><div class="pixel off"></div><div class="pixel off"></div><br>
-                </div>
-            </div>
-            <div class="quote" id="quote">"Kripto evreni, kaosun sanatı!"</div>
-        </div>
-    </div>
-
-    <script>
-        const quotes = [
-            "Kripto evreni, kaosun sanatı!",
-            "Bitcoin, galaksiler arası bir altın standardıdır!",
-            "Ethereum, yıldızlar arasında akıllı bir ağdır!",
-            "Altcoinler uzayın jokerleridir!",
-            "HODL, uzay gemisinin yakıtıdır!"
-        ];
-
-        document.querySelector(".alien-container").addEventListener("click", () => {
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            document.getElementById("quote").innerText = randomQuote;
-        });
-    </script>
-</body>
-</html>
+            from {
