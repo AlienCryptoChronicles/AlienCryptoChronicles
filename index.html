@@ -14,21 +14,27 @@
             color: white;
             overflow: hidden;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
             background-color: #333;
             color: #fff;
             padding: 1rem;
+            width: 100%;
+            text-align: center;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
 
         nav ul li {
-            display: inline;
             margin-right: 1rem;
         }
 
@@ -41,6 +47,7 @@
             padding: 1rem;
             text-align: center;
             position: relative;
+            flex-grow: 1;
         }
 
         footer {
@@ -48,8 +55,6 @@
             color: #fff;
             text-align: center;
             padding: 1rem;
-            position: absolute;
-            bottom: 0;
             width: 100%;
         }
 
@@ -78,8 +83,8 @@
         /* Piksel Uzaylı Çizimi */
         .alien {
             display: grid;
-            grid-template-columns: repeat(8, 20px);
-            grid-template-rows: repeat(8, 20px);
+            grid-template-columns: repeat(17, 20px);
+            grid-template-rows: repeat(20, 20px);
             gap: 2px;
             margin: 50px auto;
         }
@@ -93,7 +98,6 @@
         .alien .empty {
             background-color: black;
         }
-
     </style>
 </head>
 <body>
@@ -110,14 +114,46 @@
         <h1>Crypto Aliens'e Hoşgeldiniz!</h1>
         <p>Kripto paralar hakkında uzaylıların mizahi yorumlarını keşfedin.</p>
         <div class="alien">
-            <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div>
-            <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div>
-            <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div>
-            <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div>
-            <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
-            <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
-            <div></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div></div>
-            <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div>
+            <!-- 1. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 2. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 3. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 4. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 5. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 6. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 7. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 8. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 9. Satır -->
+            <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div>
+            <!-- 10. Satır -->
+            <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div>
+            <!-- 11. Satır -->
+            <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div>
+            <!-- 12. Satır -->
+            <div></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div>
+            <!-- 13. Satır -->
+            <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div>
+            <!-- 14. Satır -->
+            <div></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div>
+            <!-- 15. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 16. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 17. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 18. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 19. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
+            <!-- 20. Satır -->
+            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
         </div>
     </main>
     <footer>
