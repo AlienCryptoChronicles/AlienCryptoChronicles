@@ -65,7 +65,7 @@
 <body>
 
     <h1>Uzaylı Eğlencesi!</h1>
-    <img id="alienImage" src="https://images.unsplash.com/photo-1600726173890-d7c5a07c5e2c" alt="Uzaylı Karakteri">
+    <img id="alienImage" src="https://media.istockphoto.com/id/1341319679/vector/cute-cartoon-alien-on-a-rocket-in-space.jpg?s=612x612&w=0&k=20&c=ngQbc6v9RaW_zOh9gHGp-T8OLrgLnR8v9dqdh09Nk4M=" alt="Uzaylı Karakteri">
     
     <div class="message" id="message">Merhaba Yeryüzü sakinleri!</div>
     
@@ -94,9 +94,9 @@
             document.getElementById('message').innerText = randomMessage;
 
             const randomImage = [
-                "https://images.unsplash.com/photo-1600726173890-d7c5a07c5e2c",
-                "https://images.unsplash.com/photo-1531863429231-b2e722198a8c",
-                "https://images.unsplash.com/photo-1626184582170-5997c61f362f"
+                "https://media.istockphoto.com/id/1341319679/vector/cute-cartoon-alien-on-a-rocket-in-space.jpg?s=612x612&w=0&k=20&c=ngQbc6v9RaW_zOh9gHGp-T8OLrgLnR8v9dqdh09Nk4M=",
+                "https://media.istockphoto.com/id/1182481445/vector/cute-cartoon-alien-with-space-background.jpg?s=612x612&w=0&k=20&c=9Edy7fvRfExNvvK0U_6T6JcTRewsNlOZlZX9RA_A5hg=",
+                "https://media.istockphoto.com/id/1289054366/vector/cute-cartoon-alien-head.jpg?s=612x612&w=0&k=20&c=FuHtiM5lcrp-nprqEZbLhvYWxUVTe2vw6gh2gHa_eis="
             ];
             const randomImageURL = randomImage[Math.floor(Math.random() * randomImage.length)];
             document.getElementById('alienImage').src = randomImageURL;
