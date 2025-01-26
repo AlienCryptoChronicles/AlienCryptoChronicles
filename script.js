@@ -1,26 +1,17 @@
-const aliens = ['green', 'blue', 'pink'];
-const alienMessages = [
-    "Crypto is the future. Are you ready to join us?",
-    "We come from space, and we brought the best crypto technologies!",
-    "Invest in crypto, and you’ll join the intergalactic economy!",
-    "The future of money is digital, and it’s time to invest!",
-    "We’ve been mining crypto from the deepest galaxies!"
-];
+<script>
+    const quotes = [
+        "Kripto evreni, kaosun sanatı! Ama en azından cebimizdeki sıfırlar artıyor.",
+        "Bitcoin, galaksiler arası bir altın standardıdır... veya en azından öyle olduğuna inanmak istiyoruz.",
+        "Ethereum, akıllı sözleşmelerin merkezi! Ama bazen de akıllıca davranmayan sözleşmeler de oluyor.",
+        "Altcoinler uzayın jokerleridir! Bazen büyük kazançlar, bazen de büyük kayıplar..."
+        "HODL, uzay gemisinin yakıtıdır! Ama roket yakıtı kadar pahalı olabilir."
+        "Kripto yatırımı yapmadan önce uzaylılara danışın, onlar geleceği daha iyi görür (belki de)!",
+        "Bitcoin madenciliği yaparken elektrik faturam o kadar yükseldi ki, şimdi evimde uzay gemisi inşa ediyorum!",
+        "Altcoinler, kripto dünyasının popüler çocukları gibidir, bugün var yarın yok!"
+    ];
 
-let alienIndex = 0;
-let messageIndex = 0;
-
-const button = document.getElementById('changeAlienButton');
-const alien = document.querySelector('.alien');
-const h1 = document.querySelector('h1');
-
-// Button'a tıklanınca uzaylıyı değiştir ve mesajı değiştir
-button.addEventListener('click', () => {
-    // Uzaylıyı değiştir
-    alienIndex = (alienIndex + 1) % aliens.length;
-    alien.className = `alien ${aliens[alienIndex]}`;
-
-    // Mesajı değiştir
-    messageIndex = (messageIndex + 1) % alienMessages.length;
-    h1.textContent = alienMessages[messageIndex];
-});
+    document.querySelector(".alien-container").addEventListener("click", () => {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote").innerText = randomQuote;
+    });
+</script>
