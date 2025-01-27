@@ -28,11 +28,12 @@
         }
 
         #alien-image {
-            width: 200px; /* Sabit genişlik */
+            max-width: 100%; /* Görselin maksimum genişliğini %100 olarak ayarladık */
             height: auto; /* Yükseklik oranını korur */
             margin: 20px auto;
             border: 5px solid #00ffcc;
             border-radius: 10px;
+            box-sizing: border-box; /* Çerçeve boyutunu görsele dahil eder */
             box-shadow: 0 0 15px 5px #00ffcc, 0 0 25px 5px #ff00ff;
         }
 
@@ -82,7 +83,7 @@
         ];
 
         const alienQuotes = ['"I tried mining crypto on our ship, but all I got was a bunch of space dust."',
-        '"Earthlings say 'to the moon!' but we\'re already here, and we don\'t see your coins."',
+        '"Earthlings say \'to the moon!\' but we\'re already here, and we don\'t see your coins."',
         '"HODL? I can barely hold onto my spaceship steering wheel!"',
         '"I invested in an asteroid coin. It crashed... literally."',
         '"Your blockchain is cool, but have you tried starlight chains? They’re unbreakable!"',
