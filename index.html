@@ -19,7 +19,10 @@
             font-size: 3em;
             text-transform: uppercase;
             color: #00ff00; /* Neon Green */
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* Strong green neon effect */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            padding: 10px;
+            border-radius: 10px;
         }
 
         .alien-container {
@@ -29,33 +32,36 @@
         #alien-image {
             max-width: 200px;
             margin: 20px auto;
-        
+        }
+
         #alien-quote {
             font-size: 1.8em;
             margin-top: 20px;
             padding: 20px;
             color: #00ff00; /* Neon Green */
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             border-radius: 10px;
-            box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Strong green neon effect */
+            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00; /* Green glow */
         }
-        
 
         button {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #000000; /* Black */
-            color: #00ff00; /* Neon Green */
-            border: none;
+            background-color: #000000; /* Black background for button */
+            color: #00ff00; /* Neon Green text */
+            border: 2px solid #00ff00; /* Green border for the button */
             border-radius: 10px;
             cursor: pointer;
             font-size: 1.2em;
-            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow for the button */
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #333333;
-            box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            background-color: #00ff00; /* Neon Green background on hover */
+            color: #000000; /* Black text on hover */
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow on hover */
         }
     </style>
 </head>
