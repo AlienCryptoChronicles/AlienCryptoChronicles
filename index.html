@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Alien Crypto Chronicles </title>
+    <title>Alien Crypto Chronicles</title>
     <style>
         body {
             margin: 0;
@@ -15,37 +15,19 @@
             text-align: center;
         }
 
-        h1 {
-            font-size: 3em;
-            text-transform: uppercase;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #ff00ff;
-            margin-top: 50px;
-        }
-
         .alien-container {
             margin-top: 10%;
-            display: inline-block;
-            position: relative;
         }
 
-    
-#alien-image {
-    width: 10%; /* Genişliği ekranın %60'ı kadar yap */
-    max-width: 500px; /* Maksimum genişlik 500px olacak */
-    height: auto; /* Yüksekliği orantılı olarak ayarlansın */
-    margin: 20px auto;
-    /* border: 10px solid #00ffcc; Çerçeve kaldırıldı */
-    /* border-radius: 15px; /* Çerçevenin yuvarlatılmış köşeleri */
-    /*box-shadow: 0 0 20px 5px #00ffcc, 0 0 30px 5px #ff00ff; /* Çerçevenin etrafında neon ışık etkisi */
-}
+        #alien-image {
+            max-width: 200px;
+            margin: 20px auto;
+        }
 
         #alien-quote {
             font-size: 1.5em;
             margin-top: 20px;
             padding: 10px;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
         }
 
         button {
@@ -57,13 +39,10 @@
             border-radius: 10px;
             cursor: pointer;
             font-size: 1em;
-            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
-            box-shadow: 0 0 10px 5px #ff00ff;
         }
 
         button:hover {
             background-color: #00d6a3;
-            box-shadow: 0 0 15px 5px #ff00ff;
         }
     </style>
 </head>
@@ -71,7 +50,7 @@
     <h1>Alien Crypto Chronicles</h1>
 
     <div class="alien-container">
-        <img id="alien-image" src="placeholder-alien.jpg" alt="Uzaylı" />
+        <img id="alien-image" src="placeholder-alien.jpg" alt="Alien" />
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
         <button onclick="generateAlienComment()">Cmon</button>
     </div>
@@ -85,111 +64,113 @@
             'alien5.jpg'
         ];
 
-        const alienQuotes = ['"I tried mining crypto on our ship, but all I got was a bunch of space dust."',
-        '"Earthlings say \'to the moon!\' but we\'re already here, and we don\'t see your coins."',
-        '"HODL? I can barely hold onto my spaceship steering wheel!"',
-        '"I invested in an asteroid coin. It crashed... literally."',
-        '"Your blockchain is cool, but have you tried starlight chains? They’re unbreakable!"',
-        '"Metaverse? Buddy, I’ve been stuck in the Multiverse for years!"',
-        '"I minted an NFT of my face. Now no one in the galaxy wants it."',
-        '"Crypto whales? Ha! We have real space whales, and they\'re HUGE!"',
-        '"I tried staking. Turns out, I staked my favorite moon by accident."',
-        '"Bitcoin? I prefer space credits. They\'re universal... literally!"',
-        '"I joined a DAO, but I still have no idea who’s in charge."',
-        '"Gas fees? Try refueling a spaceship in this economy!"',
-        '"Ethereum? Sounds like a bad case of cosmic indigestion."',
-        '"My galaxy uses crypto stars. They\'re shiny but totally useless."',
-        '"I bought a black hole token... it sucked up all my money!"',
-        '"Decentralized finance? We’ve been decentralizing planets for eons!"',
-        '"Our UFO runs on proof-of-laughter. It’s highly efficient!"',
-        '"I minted a picture of my spaceship as an NFT. Now it\'s worth less than space junk."',
-        '"We aliens love blockchain, but we hate when it chains us to meetings."',
-        '"I staked my favorite asteroid. Now I can’t visit it for a year."',
-        '"Earthlings say crypto is volatile. We say, \'Have you seen space storms?\'"',
-        '"I tried trading crypto, but my tentacles kept clicking the wrong buttons."',
-        '"Our galaxy’s economy runs on moon rocks. No need for blockchains!"',
-        '"Every time I HODL, my spaceship HOVERS... coincidence?"',
-        '"Your NFTs are cute. We have whole planets that are unique!"',
-        '"I started a token called \'AlienCoin.\' Everyone thought it was a joke. It was."',
-        '"The first rule of space trading: never trust a wormhole."',
-        '"I bought a meme coin called SpaceDoge. Now I can’t afford space snacks."',
-        '"We aliens mine stars. You mine... algorithms?"',
-        '"My crypto portfolio is as empty as the vacuum of space."',
-        '"Earthlings panic over market dips. Try dodging asteroid showers!"',
-        '"My spaceship is powered by staked tokens. Too bad they\'re all locked!"',
-        '"Proof-of-work? We prefer proof-of-telepathy in our galaxy."',
-        '"Every time I trade crypto, I lose more space fuel. Coincidence?"',
-        '"I sent my crypto wallet to another dimension. Now I can’t get it back!"',
-        '"We aliens don\'t use fiat. We use... meteor dust!"',
-        '"My crypto wallet has better security than your cold wallet."',
-        '"Earthlings HODL. We hold holograms instead."',
-        '"I bought an NFT of a star. Turns out it already exploded."',
-        '"Crypto wallets? We just store our funds in a cosmic rift."',
-        '"Metaverse meetings? I\'ll stick to intergalactic telepathy, thanks."',
-        '"Crypto bros call themselves \'whales.\' We laugh in space kraken."',
-        '"I lost my private key. Now my funds are orbiting a black hole."',
-        '"I traded all my crypto for a space burger. Best decision ever!"',
-        '"Decentralized systems? Try managing an entire galaxy council!"',
-        '"I started my own blockchain. Too bad no one uses it."',
-        '"Gas fees are high? Try interdimensional travel costs!"',
-        '"I minted an NFT of my face. Now no one in the galaxy wants it."',
-        '"Earth\'s crypto problems are nothing compared to asteroid tax season."',
-        '"I swapped Bitcoin for Mooncoin. Now I’m stuck in the 8th dimension."',
-        '"Our galaxy\'s biggest crypto? StarBits. It\'s mostly a scam."',
-        '"I mined a whole planet once. Still not as valuable as your Dogecoin."',
-        '"My wallet password is \'spaceship123.\' Good luck stealing that!"',
-        '"They said my NFT was rare. Turns out, so is my sanity."',
-        '"I traded my spaceship for an NFT. Now I hitchhike through the galaxy."',
-        '"Your blockchain has bugs? We’ve got intergalactic viruses!"',
-        '"Trading bots? My planet has trading AIs that laugh at your bots."',
-        '"Earthlings panic during market crashes. We just teleport away."',
-        '"We aliens invented crypto. You’re welcome, Earthlings!"',
-        '"My crypto wallet was hacked by a space pirate. Lesson learned!"',
-        '"Earth coins are so primitive. Try QuantumCoins instead!"',
-        '"NFTs on Earth? Cute. We have interstellar art that sings."',
-        '"I bought SpaceToken. Now I\'m broke... and in space!"',
-        '"Crypto mining is fun until your planet overheats."',
-        '"Proof-of-stake? Our galaxy prefers proof-of-sarcasm."',
-        '"I tried crypto farming. Now I have a farm... on Mars."',
-        '"You think crypto scams are bad? Try alien Ponzi schemes!"',
-        '"I sold all my Dogecoin to buy SpaceBucks. Worst trade ever."',
-        '"My planet banned crypto. Now we use barter... and it’s worse."',
-        '"Earth has stablecoins. We have exploding coins!"',
-        '"I sent my crypto through a wormhole. Guess what? It doubled!"',
-        '"I HODLed so long, my spaceship went into hibernation."',
-        '"Earthlings panic over price volatility. We panic over supernovas."',
-        '"Our galaxy\'s motto: never trade during a solar storm."',
-        '"I minted an NFT of my alien face. Now no one in the galaxy wants it."',
-        '"Earth\'s blockchains are cute. We use quantum-entangled ledgers."',
-        '"I bought a planet NFT. Now it’s orbiting a different star!"',
-        '"Crypto whales? We’ve got intergalactic squid!"',
-        '"I invested in SpaceCoin. Now I can’t afford rocket fuel."',
-        '"Your crypto is volatile? Try asteroid trading!"',
-        '"We aliens invented DeFi. But then we broke it... twice."',
-        '"Gas fees on Earth are high? Try paying for spaceship docking!"',
-        '"I minted an NFT of a black hole. Now my wallet is gone!"',
-        '"My crypto portfolio is like space... vast and empty."',
-        '"Trading during a meteor shower? Big mistake!"',
-        '"Earthlings say \'to the moon!\' but our moon is full already."',
-        '"I traded Bitcoin for SpaceDust. Now I can\'t breathe."',
-        '"I started my own DAO. Now no one listens to me!"',
-        '"Earth\'s blockchains are cute. Try solar flare encryption instead!"',
-        '"I tried staking tokens. Now my spaceship is parked for 6 months."',
-        '"I bought an NFT of Earth. Turns out, it’s non-refundable."',
-        '"Crypto trading is exciting until a comet wipes out your server."',
-        '"I HODLed for 10 years. Now I can’t remember my wallet password!"',
-        '"Your crypto FOMO is nothing compared to missing a galactic event!"',
-        '"Our galaxy has stablecoins. They’re stable until they explode."',
-        '"I traded SpaceDoge for an asteroid. Now the asteroid wants more!"',
-        '"I tried liquidity farming. Now I have a farm... on Mars."',
-        '"My NFT collection is so rare, even I don’t want it!"',
-        '"I joined a DAO of aliens. Now we’re arguing over galactic taxes."'
+        const alienQuotes = [
+            '"I tried mining crypto on our ship, but all I got was a bunch of space dust."',
+            '"Earthlings say \"to the moon!\" but we\'re already here, and we don\'t see your coins."',
+            '"HODL? I can barely hold onto my spaceship steering wheel!"',
+            '"I invested in an asteroid coin. It crashed... literally."',
+            '"Your blockchain is cool, but have you tried starlight chains? They’re unbreakable!"',
+            '"Metaverse? Buddy, I’ve been stuck in the Multiverse for years!"',
+            '"I minted an NFT of my face. Now no one in the galaxy wants it."',
+            '"Crypto whales? Ha! We have real space whales, and they\'re HUGE!"',
+            '"I tried staking. Turns out, I staked my favorite moon by accident."',
+            '"Bitcoin? I prefer space credits. They\'re universal... literally!"',
+            '"I joined a DAO, but I still have no idea who’s in charge."',
+            '"Gas fees? Try refueling a spaceship in this economy!"',
+            '"Ethereum? Sounds like a bad case of cosmic indigestion."',
+            '"My galaxy uses crypto stars. They\'re shiny but totally useless."',
+            '"I bought a black hole token... it sucked up all my money!"',
+            '"Decentralized finance? We’ve been decentralizing planets for eons!"',
+            '"Our UFO runs on proof-of-laughter. It’s highly efficient!"',
+            '"I minted a picture of my spaceship as an NFT. Now it\'s worth less than space junk."',
+            '"We aliens love blockchain, but we hate when it chains us to meetings."',
+            '"I staked my favorite asteroid. Now I can’t visit it for a year."',
+            '"Earthlings say crypto is volatile. We say, \"Have you seen space storms?\""',
+            '"I tried trading crypto, but my tentacles kept clicking the wrong buttons."',
+            '"Our galaxy’s economy runs on moon rocks. No need for blockchains!"',
+            '"Every time I HODL, my spaceship HOVERS... coincidence?"',
+            '"Your NFTs are cute. We have whole planets that are unique!"',
+            '"I started a token called \"AlienCoin.\" Everyone thought it was a joke. It was."',
+            '"The first rule of space trading: never trust a wormhole."',
+            '"I bought a meme coin called SpaceDoge. Now I can’t afford space snacks."',
+            '"We aliens mine stars. You mine... algorithms?"',
+            '"My crypto portfolio is as empty as the vacuum of space."',
+            '"Earthlings panic over market dips. Try dodging asteroid showers!"',
+            '"My spaceship is powered by staked tokens. Too bad they\'re all locked!"',
+            '"Proof-of-work? We prefer proof-of-telepathy in our galaxy."',
+            '"Every time I trade crypto, I lose more space fuel. Coincidence?"',
+            '"I sent my crypto wallet to another dimension. Now I can’t get it back!"',
+            '"We aliens don\'t use fiat. We use... meteor dust!"',
+            '"My spaceship has better security than your cold wallet."',
+            '"Earthlings HODL. We hold holograms instead."',
+            '"I bought an NFT of a star. Turns out it already exploded."',
+            '"Crypto wallets? We just store our funds in a cosmic rift."',
+            '"Metaverse meetings? I\'ll stick to intergalactic telepathy, thanks."',
+            '"Crypto bros call themselves \"whales.\" We laugh in space kraken."',
+            '"I lost my private key. Now my funds are orbiting a black hole."',
+            '"I traded all my crypto for a space burger. Best decision ever!"',
+            '"Decentralized systems? Try managing an entire galaxy council!"',
+            '"I started my own blockchain. Too bad no one uses it."',
+            '"Gas fees are high? Try interdimensional travel costs!"',
+            '"I invested in a wormhole coin. Now I’m stuck in the 8th dimension."',
+            '"I minted an NFT of my pet. Now the pet owns my wallet!"',
+            '"Earth\'s crypto problems are nothing compared to asteroid tax season."',
+            '"I swapped Bitcoin for Mooncoin. Guess where I’m stuck now?"',
+            '"Our galaxy\'s biggest crypto? StarBits. It\'s mostly a scam."',
+            '"I mined a whole planet once. Still not as valuable as your Dogecoin."',
+            '"My wallet password is \"spaceship123.\" Good luck stealing that!"',
+            '"They said my NFT was rare. Turns out, so is my sanity."',
+            '"I traded my spaceship for an NFT. Now I hitchhike through the galaxy."',
+            '"Your blockchain has bugs? We’ve got intergalactic viruses!"',
+            '"Trading bots? My planet has trading AIs that laugh at your bots."',
+            '"Earthlings panic during market crashes. We just teleport away."',
+            '"We aliens invented crypto. You’re welcome, Earthlings!"',
+            '"My crypto wallet was hacked by a space pirate. Lesson learned!"',
+            '"Earth coins are so primitive. Try QuantumCoins instead!"',
+            '"NFTs on Earth? Cute. We have interstellar art that sings."',
+            '"I bought SpaceToken. Now I\'m broke... and in space!"',
+            '"Crypto mining is fun until your planet overheats."',
+            '"Proof-of-stake? Our galaxy prefers proof-of-sarcasm."',
+            '"I tried crypto farming. Ended up with alien crops instead."',
+            '"You think crypto scams are bad? Try alien Ponzi schemes!"',
+            '"I sold all my Dogecoin to buy SpaceBucks. Worst trade ever."',
+            '"My planet banned crypto. Now we use barter... and it’s worse."',
+            '"Earth has stablecoins. We have exploding coins!"',
+            '"I sent my crypto through a wormhole. Guess what? It doubled!"',
+            '"I HODLed so long, my spaceship went into hibernation."',
+            '"Earthlings panic over price volatility. We panic over supernovas."',
+            '"Our galaxy\'s motto: never trade during a solar storm."',
+            '"I minted an NFT of my alien face. Now no one in the galaxy wants it."',
+            '"Earth\'s blockchains are cute. We use quantum-entangled ledgers."',
+            '"I bought a planet NFT. Now it’s orbiting a different star!"',
+            '"Crypto whales? We’ve got intergalactic squid!"',
+            '"I invested in SpaceCoin. Now I can’t afford rocket fuel."',
+            '"Your crypto is volatile? Try asteroid trading!"',
+            '"We aliens invented DeFi. But then we broke it... twice."',
+            '"Gas fees on Earth are high? Try paying for spaceship docking!"',
+            '"I minted an NFT of a black hole. Now my wallet is gone!"',
+            '"My crypto portfolio is like space... vast and empty."',
+            '"Trading during a meteor shower? Big mistake!"',
+            '"Earthlings say \"to the moon!\" but our moon is full already."',
+            '"I traded Bitcoin for SpaceDust. Now I can\'t breathe."',
+            '"I started my own DAO. Now no one listens to me!"',
+            '"Earth\'s blockchains are cute. Try solar flare encryption instead!"',
+            '"I tried staking tokens. Now my spaceship is parked for 6 months."',
+            '"I bought an NFT of Earth. Turns out, it’s non-refundable."',
+            '"Crypto trading is exciting until a comet wipes out your server."',
+            '"I HODLed for 10 years. Now I can’t remember my wallet password!"',
+            '"Your crypto FOMO is nothing compared to missing a galactic event!"',
+            '"Our galaxy has stablecoins. They’re stable until they explode."',
+            '"I traded SpaceDoge for an asteroid. Now the asteroid wants more!"',
+            '"I tried liquidity farming. Now I have a farm... on Mars."',
+            '"My NFT collection is so rare, even I don’t want it!"',
+            '"I joined a DAO of aliens. Now we’re arguing over galactic taxes."'
         ];
 
         function generateAlienComment() {
             const randomIndex = Math.floor(Math.random() * alienImages.length);
 
-            // Rastgele uzaylı görseli ve yorumu seç
+            // Randomly select alien image and quote
             document.getElementById('alien-image').src = alienImages[randomIndex];
             document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
         }
