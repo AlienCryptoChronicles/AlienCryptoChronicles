@@ -25,16 +25,17 @@
 
         .alien-container {
             margin-top: 10%;
+            display: inline-block;
+            position: relative;
         }
 
         #alien-image {
-            max-width: 100%; /* Görselin maksimum genişliğini %100 olarak ayarladık */
+            width: 200px; /* Görselin genişliğini küçültüyoruz */
             height: auto; /* Yükseklik oranını korur */
             margin: 20px auto;
-            border: 5px solid #00ffcc;
-            border-radius: 10px;
-            box-sizing: border-box; /* Çerçeve boyutunu görsele dahil eder */
-            box-shadow: 0 0 15px 5px #00ffcc, 0 0 25px 5px #ff00ff;
+            border: 10px solid #00ffcc; /* Çerçevenin kalınlığı */
+            border-radius: 15px; /* Çerçevenin yuvarlatılmış köşeleri */
+            box-shadow: 0 0 20px 5px #00ffcc, 0 0 30px 5px #ff00ff; /* Çerçevenin etrafında neon ışık etkisi */
         }
 
         #alien-quote {
