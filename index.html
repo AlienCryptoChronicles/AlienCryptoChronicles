@@ -3,141 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alien Crypto Chronicles</title>
+    <title>Earthlings' Forum</title>
     <style>
-        /* Yeni buton stilini oluşturuyoruz */
-        .button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #00ff00; /* Neon Green */
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-            border: 2px solid #00ff00; /* Green border */
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
-            transition: all 0.3s ease;
-        }
-
-        /* Buton hover efekti */
-        .button:hover {
-            background-color: #00ff00; /* Neon Green background on hover */
-            color: #000000; /* Black text on hover */
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
-        }
-
-        /* Butonları yan yana yerleştirmek için */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px; /* Butonlar arasındaki mesafe */
-        }
-
         body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('your-background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            height: 100vh;
-            overflow: hidden;
         }
 
         h1 {
-            font-size: 3em;
-            text-transform: uppercase;
-            color: #00ff00; /* Neon Green */
-            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* Strong green neon effect */
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .alien-container {
-            margin-top: 5%;
-        }
-
-        #alien-image {
-            width: 150px; /* Make all images same size */
-            height: 150px; /* Ensure uniform size */
-            margin: 20px auto;
-        }
-
-        #alien-quote {
-            font-size: 1.8em;
-            margin-top: 20px;
+            color: #00ff00;
+            text-align: center;
             padding: 20px;
-            color: #00ff00; /* Neon Green */
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            border-radius: 10px;
-            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Strong green neon effect */
-            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00; /* Green glow */
+            text-transform: uppercase;
+        }
+
+        .comment-section {
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .comment {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .comment strong {
+            color: #00ff00;
         }
 
         button {
-            position: fixed; /* Ensure the button stays in the same position */
-            bottom: 20px; /* Position at the bottom */
+            position: fixed;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
-            background-color: #000000; /* Black background for button */
-            color: #00ff00; /* Neon Green text */
-            border: 2px solid #00ff00; /* Green border for the button */
+            background-color: #000;
+            color: #00ff00;
+            border: 2px solid #00ff00;
             border-radius: 10px;
             cursor: pointer;
             font-size: 1.2em;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow for the button */
-            transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #00ff00; /* Neon Green background on hover */
-            color: #000000; /* Black text on hover */
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow on hover */
-        }
-
-        /* About Link Styles */
-        .About-link {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #00ff00; /* Neon Green */
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-            border: 2px solid #00ff00; /* Green border */
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
-            transition: all 0.3s ease;
-        }
-
-        .About-link:hover {
-            background-color: #00ff00; /* Neon Green background on hover */
-            color: #000000; /* Black text on hover */
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
+            background-color: #00ff00;
+            color: #000;
+            box-shadow: 0 0 20px #00ff00;
         }
     </style>
 </head>
 <body>
-    <!-- About Link -->
-    <a href="About.html" class="About-link">About</a>
-<nav>
-    <ul>
-        <li><a href="earthlings-forum.html">Earthlings' Forum</a></li>
-    </ul>
-</nav>
-
-    <h1>Alien Crypto Chronicles</h1>
-
-    <div class="alien-container">
-        <img id="alien-image" src="placeholder-alien.jpg" alt="Alien" />
-        <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
-    </div>
-
-    <div id="comments">
+    <h1>Earthlings' Forum</h1>
+    <div class="comment-section">
         <div class="comment">
             <strong>B. T.</strong>: "My Bitcoin wallet is empty now, I think an alien came and took all my coins. Oh well, maybe they'll be worth more on Mars."
         </div>
@@ -178,13 +101,13 @@
             <strong>C. M.</strong>: "An alien spaceship took off with my Bitcoin, looks like space mining is more popular than I thought."
         </div>
         <div class="comment">
-            <strong>T. B.</strong>: "Everyone says 'to the moon!', but I'm thinking of setting up a crypto exchange on Mars."
+            <strong>T. B.</strong>: "Do you think aliens discovered blockchain before us? As someone who's looking to invest, I'm not sure."
         </div>
         <div class="comment">
-            <strong>M. D.</strong>: "Do you think aliens discovered blockchain before us? As someone who's looking to invest, I'm not sure."
+            <strong>M. D.</strong>: "If I was on a UFO, I'd rather launch all my coins into space instead of mining them."
         </div>
         <div class="comment">
-            <strong>V. K.</strong>: "If I was on a UFO, I'd rather launch all my coins into space instead of mining them."
+            <strong>V. K.</strong>: "Learning about crypto feels like discovering a new planet in the galaxy."
         </div>
         <div class="comment">
             <strong>A. N.</strong>: "Crypto mining is intense, maybe an alien could do it for us instead."
@@ -193,7 +116,7 @@
             <strong>S. T.</strong>: "Bought a token, but it seems like the aliens are still ignoring us."
         </div>
         <div class="comment">
-            <strong>K. R.</strong>: "Learning about crypto feels like discovering a new planet in the galaxy."
+            <strong>K. R.</strong>: "Learning crypto is tough, but I think one day there will be a crypto exchange on Mars."
         </div>
         <div class="comment">
             <strong>P. D.</strong>: "I’ve always been known as 'the crypto investor from Mars.' Now I tell them, 'Crypto is bigger in space.'"
@@ -231,40 +154,5 @@
     </div>
 
     <button onclick="generateAlienComment()">Lets Click... </button>
-
-    <script>
-        const alienImages = [
-            'alien1.jpg',
-            'alien2.jpg',
-            'alien3.jpg',
-            'alien4.jpg',
-            'alien5.jpg',
-            'alien6.jpg',
-            'alien7.jpg',
-            'alien8.jpg',
-            'alien9.jpg',
-            'alien10.jpg'
-        ];
-
-        const alienQuotes = [
-            '"I tried mining crypto on our ship, but all I got was a bunch of space dust."',
-            '"Earthlings say \"to the moon!\" but we\'re already here, and we don\'t see your coins."',
-            '"HODL? I can barely hold onto my spaceship steering wheel!"',
-            '"I invested in an asteroid coin. It crashed... literally."',
-            '"Your blockchain is cool, but have you tried starlight mining?"',
-            '"We aliens don\'t need crypto, we just beam it back from Mars."',
-            '"Your coinbase is cute, but wait until you see the ones we have on Saturn!"',
-            '"Asteroids are way better than crypto. They don\'t crash, they just fly by."',
-            '"Crypto? Oh, I thought that was just a human space experiment."',
-            '"Mars called, they said they\'ve been holding a few trillion tokens for me."'
-        ];
-
-        function generateAlienComment() {
-            const randomImage = alienImages[Math.floor(Math.random() * alienImages.length)];
-            const randomQuote = alienQuotes[Math.floor(Math.random() * alienQuotes.length)];
-            document.getElementById("alien-image").src = randomImage;
-            document.getElementById("alien-quote").innerText = randomQuote;
-        }
-    </script>
 </body>
 </html>
