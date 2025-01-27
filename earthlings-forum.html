@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthlings' Forum</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .comment-box {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+        }
+        .alien {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Earthlings' Forum</h1>
+        <p>Share your fun and wild crypto stories with other Earthlings!</p>
+        
+        <div class="comment-box">
+            <textarea id="commentInput" rows="4" placeholder="Write your comment here..."></textarea>
+            <button onclick="addComment()">Submit</button>
+        </div>
+
+        <div class="comments" id="comments">
+            <!-- Comments will appear here -->
+        </div>
+
+        <div style="margin-top: 40px;">
+            <h3>Add an ALIEN Comment</h3>
+            <textarea id="alienCommentInput" rows="3" placeholder="Write an ALIEN comment..."></textarea>
+            <button onclick="addAlienComment()">Submit as ALIEN</button>
+        </div>
+    </div>
+
+    <script>
+        const comments = [];
+
+        function addComment() {
+            const commentInput = document.getElementById('commentInput');
+            const commentText = commentInput.value.trim();
+
+            if (commentText) {
+                comments.push({ author: 'Earthling', text: commentText });
+                commentInput.value = '';
+                renderComments();
+            }
+        }
+
+        function addAlienComment() {
+            const alienCommentInput = document.getElementById('alienCommentInput');
+            const commentText = alienCommentInput.value.trim();
+
+            if (commentText) {
+                comments.push({ author: 'ALIEN', text: commentText });
+                alienCommentInput.value = '';
+                renderComments();
+            }
+        }
+
+        function renderComments() {
+            const commentsDiv = document.getElementById('comments');
+            commentsDiv.innerHTML = '';
+
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                commentElement.innerHTML = `<strong class="${comment.author === 'ALIEN' ? 'alien' : ''}">${comment.author}:</strong> ${comment.text}`;
+                commentsDiv.appendChild(commentElement);
+            });
+        }
+    </script>
+</body>
+</html>
