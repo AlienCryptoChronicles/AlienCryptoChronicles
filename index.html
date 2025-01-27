@@ -6,32 +6,32 @@
     <title>Alien Crypto Chronicles</title>
     <style>
         /* Yeni buton stilini oluşturuyoruz */
-.button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: #00ff00; /* Neon Green */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-    border: 2px solid #00ff00; /* Green border */
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
-    transition: all 0.3s ease;
-}
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #00ff00; /* Neon Green */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            border: 2px solid #00ff00; /* Green border */
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
+            transition: all 0.3s ease;
+        }
 
-/* Buton hover efekti */
-.button:hover {
-    background-color: #00ff00; /* Neon Green background on hover */
-    color: #000000; /* Black text on hover */
-    box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
-}
+        /* Buton hover efekti */
+        .button:hover {
+            background-color: #00ff00; /* Neon Green background on hover */
+            color: #000000; /* Black text on hover */
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
+        }
 
-/* Butonları yan yana yerleştirmek için */
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Butonlar arasındaki mesafe */
-}
+        /* Butonları yan yana yerleştirmek için */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Butonlar arasındaki mesafe */
+        }
 
         body {
             margin: 0;
@@ -122,13 +122,13 @@
     </style>
 </head>
 <body>
-    <!-- About Link -->
-    <a href="About.html" class="About-link">About</a>
-<nav>
-    <ul>
-        <li><a href="earthlings-forum.html">Earthlings' Forum</a></li>
-    </ul>
-</nav>
+    <!-- Butonlar için yeni container -->
+    <div class="button-container">
+        <!-- About butonu -->
+        <a href="About.html" class="About-link">About</a>
+        <!-- Earthlings' Forum butonu -->
+        <a href="earthlings-forum.html" class="button">Earthlings' Forum</a>
+    </div>
 
     <h1>Alien Crypto Chronicles</h1>
 
@@ -137,7 +137,7 @@
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
     </div>
 
-    <button onclick="generateAlienComment()">Lets Click... </button>
+    <button onclick="generateAlienComment()">Lets Click...</button>
 
     <script>
         const alienImages = [
