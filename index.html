@@ -1,147 +1,84 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Aliens - Ana Sayfa</title>
+    <title>Uzaylıların Kripto Yorumları</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background: black;
+            font-family: Arial, sans-serif;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            width: 100%;
             text-align: center;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+        .alien-container {
+            margin-top: 10%;
         }
 
-        nav ul li {
-            margin-right: 1rem;
+        #alien-image {
+            max-width: 200px;
+            margin: 20px auto;
         }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
+        #alien-quote {
+            font-size: 1.5em;
+            margin-top: 20px;
+            padding: 10px;
         }
 
-        main {
-            padding: 1rem;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00ffcc;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-        }
-
-        /* Retro Uzay Arka Planı */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            background-image: radial-gradient(circle, white 2px, transparent 2px);
-            background-size: 20px 20px;
-            z-index: -1;
-        }
-
-        /* Piksel Uzaylı Çizimi */
-        .alien {
-            display: grid;
-            grid-template-columns: repeat(11, 20px);
-            grid-template-rows: repeat(11, 20px);
-            gap: 2px;
-        }
-
-        .alien div {
-            width: 20px;
-            height: 20px;
-            background-color: #39FF14; /* Neon Yeşil */
-        }
-
-        .alien .empty {
-            background-color: black;
+        button:hover {
+            background-color: #00d6a3;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="about.html">Hakkında</a></li>
-                <li><a href="contact.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Crypto Aliens'e Hoşgeldiniz!</h1>
-        <p>Kripto paralar hakkında uzaylıların mizahi yorumlarını keşfedin.</p>
-        <div class="alien">
-            <!-- 1. Satır -->
-            <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div>
-            <!-- 2. Satır -->
-            <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div></div>
-            <!-- 3. Satır -->
-            <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
-            <!-- 4. Satır -->
-            <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div>
-            <!-- 5. Satır -->
-            <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div>
-            <!-- 6. Satır -->
-            <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div></div> <div class="empty"></div>
-            <!-- 7. Satır -->
-            <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div></div> <div></div> <div></div>
-            <!-- 8. Satır -->
-            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
-            <!-- 9. Satır -->
-            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
-            <!-- 10. Satır -->
-            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div>
-            <!-- 11. Satır -->
-            <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div> <div></div> <div class="empty"></div> <div class="empty"></div> <div class="empty"></div>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 Crypto Aliens</p>
-    </footer>
+    <h1>Uzaylıların Kripto Yorumları</h1>
+
+    <div class="alien-container">
+        <img id="alien-image" src="placeholder-alien.jpg" alt="Uzaylı" />
+        <p id="alien-quote">"Bitcoin? Bizim gezegende para birimi yıldız tozudur!"</p>
+        <button onclick="generateAlienComment()">Yeni Yorum Al</button>
+    </div>
+
+    <script>
+        const alienImages = [
+            'alien1.jpg',
+            'alien2.jpg',
+            'alien3.jpg',
+            'alien4.jpg',
+            'alien5.jpg'
+        ];
+
+        const alienQuotes = [
+            '"Bitcoin mi? Biz yıldız tozuyla ticaret yapıyoruz!"',
+            '"Ethereum? Bizim gezegende bu bir çocuk oyuncağı!"',
+            '"Kripto çılgınlığı galaksimizde de başladı!"',
+            '"Dünya ekonomisi çok garip... Stellar? Gerçek yıldızlar daha değerli!"',
+            '"NFT mi dedin? Biz o kavramı ışık yılları önce terk ettik."'
+        ];
+
+        function generateAlienComment() {
+            const randomIndex = Math.floor(Math.random() * alienImages.length);
+
+            // Rastgele uzaylı görseli ve yorumu seç
+            document.getElementById('alien-image').src = alienImages[randomIndex];
+            document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
+        }
+    </script>
 </body>
 </html>
