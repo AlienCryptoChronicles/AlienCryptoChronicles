@@ -3,148 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earthlings' Forum</title>
+    <title>Alien Crypto Chronicles</title>
     <style>
+        /* Yeni buton stilini oluşturuyoruz */
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #00ff00; /* Neon Green */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            border: 2px solid #00ff00; /* Green border */
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
+            transition: all 0.3s ease;
+        }
+
+        /* Buton hover efekti */
+        .button:hover {
+            background-color: #00ff00; /* Neon Green background on hover */
+            color: #000000; /* Black text on hover */
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
+        }
+
+        /* Butonları yan yana yerleştirmek için */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Butonlar arasındaki mesafe */
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: white;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         h1 {
-            color: #00ff00;
-            text-align: center;
-            padding: 20px;
+            font-size: 3em;
             text-transform: uppercase;
+            color: #00ff00; /* Neon Green */
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* Strong green neon effect */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            padding: 10px;
+            border-radius: 10px;
         }
 
-        .comment-section {
-            margin-top: 30px;
+        .alien-container {
+            margin-top: 5%;
+        }
+
+        #alien-image {
+            width: 150px; /* Make all images same size */
+            height: 150px; /* Ensure uniform size */
+            margin: 20px auto;
+        }
+
+        #alien-quote {
+            font-size: 1.8em;
+            margin-top: 20px;
             padding: 20px;
-        }
-
-        .comment {
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid #00ff00;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        .comment strong {
-            color: #00ff00;
+            color: #00ff00; /* Neon Green */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            border-radius: 10px;
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Strong green neon effect */
+            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00; /* Green glow */
         }
 
         button {
-            position: fixed;
-            bottom: 20px;
+            position: fixed; /* Ensure the button stays in the same position */
+            bottom: 20px; /* Position at the bottom */
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
-            background-color: #000;
-            color: #00ff00;
-            border: 2px solid #00ff00;
+            background-color: #000000; /* Black background for button */
+            color: #00ff00; /* Neon Green text */
+            border: 2px solid #00ff00; /* Green border for the button */
             border-radius: 10px;
             cursor: pointer;
             font-size: 1.2em;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow for the button */
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #00ff00;
-            color: #000;
-            box-shadow: 0 0 20px #00ff00;
+            background-color: #00ff00; /* Neon Green background on hover */
+            color: #000000; /* Black text on hover */
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow on hover */
+        }
+
+        /* About Link Styles */
+        .About-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #00ff00; /* Neon Green */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            border: 2px solid #00ff00; /* Green border */
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
+            transition: all 0.3s ease;
+        }
+
+        .About-link:hover {
+            background-color: #00ff00; /* Neon Green background on hover */
+            color: #000000; /* Black text on hover */
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
         }
     </style>
 </head>
 <body>
-    <h1>Earthlings' Forum</h1>
-    <div class="comment-section">
-        <!-- Yorumlar burada olacak -->
-        <div class="comment">
-            <strong>B. T.</strong>: "My Bitcoin wallet is empty now, I think an alien came and took all my coins. Oh well, maybe they'll be worth more on Mars."
-        </div>
-        <div class="comment">
-            <strong>M. K.</strong>: "I saw the future of the Metaverse, but an alien told me, 'You don't even have a chance in the real world.'"
-        </div>
-        <div class="comment">
-            <strong>A. E.</strong>: "I invested in an asteroid token. Looks like an intergalactic economic crisis has started."
-        </div>
-        <div class="comment">
-            <strong>H. L.</strong>: "Everyone says 'to the moon!' but I bought a UFO and shout 'to the stars!' instead."
-        </div>
-        <div class="comment">
-            <strong>C. S.</strong>: "I didn't understand crypto at first, but now I can talk about intergalactic tokens."
-        </div>
-        <div class="comment">
-            <strong>D. P.</strong>: "A friend of mine had Ethereum. Now I tell him, 'Even if it's in the farthest corner of the galaxy, there's still something valuable.'"
-        </div>
-        <div class="comment">
-            <strong>B. N.</strong>: "Do you think aliens would buy Bitcoin? I bet they must have much more complex digital currencies in space."
-        </div>
-        <div class="comment">
-            <strong>S. V.</strong>: "The crypto market is so turbulent, I feel like I'm inside a spaceship flying through an asteroid field."
-        </div>
-        <div class="comment">
-            <strong>K. Y.</strong>: "I saw a UFO yesterday. Maybe aliens are using crypto like we do."
-        </div>
-        <div class="comment">
-            <strong>E. T.</strong>: "Mining crypto is so hard, I think it would be easier to mine for resources on another planet."
-        </div>
-        <div class="comment">
-            <strong>L. G.</strong>: "If an alien told me to 'HODL,' I should probably start understanding what they mean."
-        </div>
-        <div class="comment">
-            <strong>A. R.</strong>: "Last time I heard about crypto, a friend told me 'Aliens have already discovered blockchain technology.'"
-        </div>
-        <div class="comment">
-            <strong>C. M.</strong>: "An alien spaceship took off with my Bitcoin, looks like space mining is more popular than I thought."
-        </div>
-        <div class="comment">
-            <strong>T. B.</strong>: "Do you think aliens discovered blockchain before us? As someone who's looking to invest, I'm not sure."
-        </div>
-        <div class="comment">
-            <strong>M. D.</strong>: "If I was on a UFO, I'd rather launch all my coins into space instead of mining them."
-        </div>
-        <div class="comment">
-            <strong>V. K.</strong>: "Learning about crypto feels like discovering a new planet in the galaxy."
-        </div>
-        <div class="comment">
-            <strong>A. N.</strong>: "Crypto mining is intense, maybe an alien could do it for us instead."
-        </div>
-        <div class="comment">
-            <strong>S. T.</strong>: "Bought a token, but it seems like the aliens are still ignoring us."
-        </div>
-        <div class="comment">
-            <strong>K. R.</strong>: "Learning crypto is tough, but I think one day there will be a crypto exchange on Mars."
-        </div>
-        <div class="comment">
-            <strong>P. D.</strong>: "I’ve always been known as 'the crypto investor from Mars.' Now I tell them, 'Crypto is bigger in space.'"
-        </div>
-        <div class="comment">
-            <strong>R. A.</strong>: "Crypto mining is intense, maybe an alien could do it for us instead."
-        </div>
-        <div class="comment">
-            <strong>M. Z.</strong>: "A friend told me they lost their crypto wallet. I joked, 'Did you lose it on Mars?'"
-        </div>
-        <div class="comment">
-            <strong>T. N.</strong>: "Aliens might not understand crypto, but maybe the ones from Mars have already adopted all this technology."
-        </div>
-        <div class="comment">
-            <strong>D. G.</strong>: "Being an intergalactic investor is tough. Learning crypto is like traveling to space – it's hard work!"
-        </div>
-        <div class="comment">
-            <strong>L. C.</strong>: "I bought an NFT today and jokingly said, 'I bought the most valuable piece in the galaxy,' but I still can’t understand its worth."
-        </div>
-        <div class="comment">
-            <strong>S. P.</strong>: "When making crypto investments, I always dream of a system where aliens respond seriously."
-        </div>
-        <div class="comment">
-            <strong>M. T.</strong>: "A friend of mine has Bitcoin. I asked, 'Would you be able to find any investment opportunities on Mars?'"
-        </div>
+    <!-- Butonlar için yeni container -->
+    <div class="button-container">
+        <!-- About butonu -->
+        <a href="About.html" class="About-link">About</a>
+        <!-- Earthlings' Forum butonu -->
+        <a href="earthlings-forum.html" class="button">Earthlings' Forum</a>
     </div>
 
-    <button onclick="generateAlienComment()">Lets Click... </button>
+    <h1>Alien Crypto Chronicles</h1>
+
+    <div class="alien-container">
+        <img id="alien-image" src="placeholder-alien.jpg" alt="Alien" />
+        <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
+    </div>
+
+    <button onclick="generateAlienComment()">Lets Click...</button>
+
+    <script>
+        const alienImages = [
+            'alien1.jpg',
+            'alien2.jpg',
+            'alien3.jpg',
+            'alien4.jpg',
+            'alien5.jpg',
+            'alien6.jpg',
+            'alien7.jpg',
+            'alien8.jpg',
+            'alien9.jpg',
+            'alien10.jpg'
+        ];
+
+        const alienQuotes = [
+            '"I tried mining crypto on our ship, but all I got was a bunch of space dust."',
+            '"Earthlings say \"to the moon!\" but we\'re already here, and we don\'t see your coins."',
+            '"HODL? I can barely hold onto my spaceship steering wheel!"',
+            '"I invested in an asteroid coin. It crashed... literally."',
+            '"Your blockchain is cool, but have you tried starlight chains? They’re unbreakable!"',
+            '"Metaverse? Buddy, I’ve been stuck in the Multiverse for years!"',
+            '"I minted an NFT of my face. Now no one in the galaxy wants it."',
+            '"Crypto whales? Ha! We have real space whales, and they\'re HUGE!"',
+            '"I tried staking. Turns out, I staked my favorite moon by accident."',
+            '"Bitcoin? I prefer space credits. They\'re universal... literally!"',
+            '"I joined a DAO, but I still have no idea who’s in charge."',
+            '"Gas fees? Try refueling a spaceship in this economy!"',
+            '"Ethereum? Sounds like a bad case of cosmic indigestion."',
+            '"My galaxy uses crypto stars. They\'re shiny but totally useless."',
+            '"I bought a black hole token... it sucked up all my money!"',
+            '"Decentralized finance? We’ve been decentralizing planets for eons!"',
+            '"Our UFO runs on proof-of-laughter. It’s highly efficient!"',
+            '"I minted a picture of my spaceship as an NFT. Now it\'s worth less than space junk."',
+            '"We aliens love blockchain, but we hate when it chains us to meetings."',
+            '"I staked my favorite asteroid. Now I can’t visit it for a year."',
+            '"Earthlings say crypto is volatile. We say, \"Have you seen space storms?\""',
+            '"I tried trading crypto, but my tentacles kept clicking the wrong buttons."',
+            '"Our galaxy’s economy runs on moon rocks. No need for blockchains!"',
+            '"Every time I HODL, my spaceship HOVERS... coincidence?"',
+            '"Your NFTs are cute. We have whole planets that are unique!"',
+            '"I started a token called \"AlienCoin.\" Everyone thought it was a joke. It was."',
+            '"The first rule of space trading: never trust a wormhole."',
+            '"I bought a meme coin called SpaceDoge. Now I can’t afford space snacks."',
+            '"We aliens mine stars. You mine... algorithms?"',
+            '"My crypto portfolio is as empty as the vacuum of space."',
+            '"Trading during a meteor shower? Big mistake!"',
+            '"Earthlings say \"to the moon!\" but our moon is full already."',
+            '"I traded Bitcoin for Mooncoin. Now I can\'t afford rocket fuel."',
+            '"I started my own DAO. Now no one listens to me!"',
+            '"Earth\'s blockchains are cute. Try solar flare encryption instead!"',
+            '"I tried staking tokens. Now my spaceship is parked for 6 months."',
+            '"I bought an NFT of Earth. Turns out, it’s non-refundable."',
+            '"Crypto mining is fun until your planet overheats."',
+            '"Proof-of-stake? Our galaxy prefers proof-of-sarcasm."',
+            '"I tried crypto farming. Now I have a farm... on Mars."',
+            '"You think crypto scams are bad? Try alien Ponzi schemes!"',
+            '"I sold all my Dogecoin to buy SpaceBucks. Worst trade ever."',
+            '"My planet banned crypto. Now we use barter... and it’s worse."',
+            '"Earth coins are so primitive. Try QuantumCoins instead!"',
+            '"NFTs on Earth? Cute. We have interstellar art that sings."',
+            '"I bought SpaceToken. Now I\'m broke... and in space!"',
+            '"Crypto mining is fun until your planet overheats."',
+            '"Proof-of-stake? Our galaxy prefers proof-of-sarcasm."',
+            '"I minted an NFT of a black hole. Now my wallet is gone!"',
+            '"My crypto portfolio is like space... vast and empty."',
+            '"Trading during a meteor shower? Big mistake!"',
+            '"Earthlings say \"to the moon!\" but our moon is full already."',
+            '"I traded Bitcoin for Mooncoin. Now I can\'t afford rocket fuel."',
+            '"I started a DAO of aliens. Now we’re arguing over galactic taxes."'
+        ];
+
+        function generateAlienComment() {
+            const randomIndex = Math.floor(Math.random() * alienImages.length);
+
+            // Randomly select alien image and quote
+            document.getElementById('alien-image').src = alienImages[randomIndex];
+            document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
+        }
+    </script>
 </body>
 </html>
