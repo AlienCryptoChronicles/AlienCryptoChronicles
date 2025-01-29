@@ -19,7 +19,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-y: scroll; /* Allow scrolling */
         }
 
         /* Navigation bar for all pages */
@@ -210,6 +210,20 @@
             { id: 'and', price: 10 }
         ];
 
+        const messages = [
+            "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
+            "Congrats! You've got a ticket to the Moon... but we don't know how you'll get there.",
+            "Who knew! Buying crypto gets you a trip to space! Check your email... or maybe don’t.",
+            "You have a ticket to Mars! Don't forget your sunscreen, it's a bit hot there.",
+            "You've started your space journey! Where’s your spaceship? Who knows, maybe one day it’ll arrive.",
+            "Congrats! You've got a ticket to Jupiter! Packing suggestion: Don’t pack light.",
+            "Your space trip is just a click away! We’ll send your ticket... or maybe not.",
+            "Wow! You're going to space! But first, we need to figure out how to start the spaceship.",
+            "You’ve won a free space trip! Who knew crypto offers intergalactic rewards!",
+            "Welcome to space travel! It’s very special... or maybe it never arrives.",
+            "Congrats! Your space journey ticket arrived! First stop: Asteroid belt. Next stop: Probably not Earth."
+        ];
+
         // Function to update prices and simulate a fake purchase
         function updatePrices() {
             coins.forEach(coin => {
@@ -225,12 +239,13 @@
             });
         }
 
-        // Function to simulate a fake purchase
+        // Function to simulate a fake purchase with a random message
         function fakePurchase(coinId) {
             const coin = coins.find(c => c.id === coinId);
             coin.price += 20; // Increase the price when "purchased"
             document.getElementById(`${coinId}-price`).textContent = `$${coin.price}`;
-            alert(`You've successfully purchased ${coinId.toUpperCase()}! (Fake purchase, of course)`);
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            alert(`You've successfully purchased ${coinId.toUpperCase()}! (Fake purchase, of course)\n\n${randomMessage}`);
         }
 
         // Update prices every 3 seconds
