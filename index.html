@@ -5,85 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien Crypto Chronicles</title>
     <style>
-        /* Yeni buton stilini oluşturuyoruz */
-        .button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #00ff00; /* Neon Green */
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-            border: 2px solid #00ff00; /* Green border */
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
-            transition: all 0.3s ease;
-        }
-
-        /* Buton hover efekti */
-        .button:hover {
-            background-color: #00ff00; /* Neon Green background on hover */
-            color: #000000; /* Black text on hover */
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
-        }
-
-        /* Butonları yan yana yerleştirmek için */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px; /* Butonlar arasındaki mesafe */
-            margin-top: 20px; /* Butonları sayfada daha aşağıya yerleştirir */
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('your-background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Sayfanın üst kısmında içerik yer alacak */
-        }
-
-        h1 {
-            font-size: 3em;
-            text-transform: uppercase;
-            color: #00ff00; /* Neon Green */
-            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* Strong green neon effect */
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .alien-container {
-            margin-top: 5%;
-        }
-
-        #alien-image {
-            width: 150px; /* Make all images same size */
-            height: 150px; /* Ensure uniform size */
-            margin: 20px auto;
-        }
-
-        /* Alien quote stilini değiştiriyoruz */
-        #alien-quote {
-            font-size: 1.8em;
-            margin-top: 20px;
-            padding: 40px 20px 20px 20px; /* Padding-top'u artırarak yazıyı yukarı kaydırıyoruz */
-            color: #00ff00; /* Neon Green */
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            border-radius: 10px;
-            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Strong green neon effect */
-            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00; /* Green glow */
-            margin-bottom: 100px; /* Butonun alanla çakışmaması için yer açar */
-        }
-
-        /* BUY butonu */
-        .buy-button {
-             background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+        /* Yeni BUY butonunun stili */
+        .buy-now-btn {
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
             color: black;
             padding: 20px 40px;
             border-radius: 10px;
@@ -99,29 +23,114 @@
             transition: all 0.3s ease;
         }
 
-        /* BUY butonu hover efekti */
-        .buy-button:hover {
-             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+        .buy-now-btn:hover {
+            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
             color: black;
             box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            color: #00ff00;
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
+        
+        .alien-container {
+            margin-top: 5%;
+        }
+
+        #alien-image {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+        }
+
+        #alien-quote {
+            font-size: 1.8em;
+            margin-top: 20px;
+            padding: 40px 20px 20px 20px;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
+            margin-bottom: 100px;
+        }
+
+        button {
+            font-size: 1.5em;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
     </style>
 </head>
 <body>
-    <!-- BUY butonu ekledik -->
+
+    <!-- BUY button with new style -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
-    BUY
+        BUY
     </button>
 
-    <!-- Butonlar için yeni container -->
+    <!-- Navigation and other elements as before -->
     <div class="button-container">
-        <!-- Home butonu -->
         <a href="index.html" class="button">Home</a>
-        <!-- About butonu -->
         <a href="About.html" class="button">About</a>
-        <!-- Space Market butonu -->
         <a href="market.html" class="button">Space Market</a>
-        <!-- Eartling's Forum -->
         <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
     </div>
 
@@ -133,6 +142,7 @@
     </div>
 
     <button onclick="generateAlienComment()">Lets Click...</button>
+>
     <script>
         const alienImages = [
             'alien1.jpg',
