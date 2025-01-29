@@ -217,6 +217,15 @@
             document.getElementById('alien-image').src = alienImages[randomIndex];
             document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
         }
+          // Rastgele uzaylı görselini ve quote'u değiştir
+        document.getElementById('alien-image').src = alienImages[randomIndex];
+        document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
+    }
+
+    // Sayfa açıldığında otomatik çalıştır
+    window.onload = function() {
+        generateAlienComment();
+    };
     </script>
 </body>
 </html>
