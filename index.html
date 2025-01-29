@@ -102,12 +102,12 @@
         }
 
         button {
-            font-size: 1.5em;
+            font-size: 1.2em; /* Buton font boyutunu küçültme */
+            padding: 8px 15px; /* Butonun iç boşluklarını küçültme */
             color: #00ff00;
             background-color: rgba(0, 0, 0, 0.8);
             border: 2px solid #00ff00;
             border-radius: 10px;
-            padding: 10px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -116,6 +116,46 @@
             background-color: #00ff00;
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
+
+        /* Mobil uyumluluk için medya sorguları */
+        @media (max-width: 768px) {
+            /* Sayfanın tüm öğeleri için genel düzenlemeler */
+            body {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em; /* Başlık boyutunu küçültme */
+            }
+
+            .button-container {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            .button {
+                padding: 8px 16px; /* Buton boyutunu küçültme */
+                font-size: 1em; /* Buton metin boyutunu küçültme */
+            }
+
+            .buy-now-btn {
+                font-size: 1.2em; /* BUY butonunun font boyutunu küçültme */
+                padding: 15px 30px; /* Butonun boyutlarını küçültme */
+                top: 15px; /* Butonun üstten olan mesafesini düzenleme */
+                left: 15px; /* Butonun soldan olan mesafesini düzenleme */
+            }
+
+            #alien-image {
+                width: 120px; /* Uzaylı görselinin boyutunu küçültme */
+                height: 120px; /* Uzaylı görselinin boyutunu küçültme */
+            }
+
+            #alien-quote {
+                font-size: 1.4em; /* Alıntının font boyutunu küçültme */
+                padding: 20px; /* Alıntı kutusunun iç boşluklarını küçültme */
+            }
         }
     </style>
 </head>
@@ -142,7 +182,7 @@
     </div>
 
     <button onclick="generateAlienComment()">Lets Click...</button>
->
+
     <script>
         const alienImages = [
             'alien1.jpg',
@@ -214,19 +254,18 @@
             '"I started a DAO of aliens. Now we’re arguing over galactic taxes."'
         ];
 
-       function generateAlienComment() {
-        const randomIndex = Math.floor(Math.random() * alienImages.length);
-        
-        // Rastgele uzaylı görselini ve quote'u değiştir
-        document.getElementById('alien-image').src = alienImages[randomIndex];
-        document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
-    }
+        function generateAlienComment() {
+            const randomIndex = Math.floor(Math.random() * alienImages.length);
+            
+            // Rastgele uzaylı görselini ve quote'u değiştir
+            document.getElementById('alien-image').src = alienImages[randomIndex];
+            document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
+        }
 
-    // Sayfa açıldığında otomatik çalıştır
-    window.onload = function() {
-        generateAlienComment();
-    };
-          
+        // Sayfa açıldığında otomatik çalıştır
+        window.onload = function() {
+            generateAlienComment();
+        };
     </script>
 </body>
 </html>
