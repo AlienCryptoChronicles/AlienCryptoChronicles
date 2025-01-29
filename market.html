@@ -239,14 +239,29 @@
             });
         }
 
-        // Function to simulate a fake purchase with a random message
-        function fakePurchase(coinId) {
-            const coin = coins.find(c => c.id === coinId);
-            coin.price += 20; // Increase the price when "purchased"
-            document.getElementById(`${coinId}-price`).textContent = `$${coin.price}`;
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            alert(`You've successfully purchased ${coinId.toUpperCase()}! (Fake purchase, of course)\n\n${randomMessage}`);
-        }
+// Function to simulate a fake purchase with a random message displayed on the page
+function fakePurchase(coinId) {
+    const coin = coins.find(c => c.id === coinId);
+    coin.price += 20; // Increase the price when "purchased"
+    document.getElementById(`${coinId}-price`).textContent = `$${coin.price}`;
+
+    // Random message from the list
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+    // Show the random message on the page
+    const messageContainer = document.createElement('div');
+    messageContainer.style.backgroundColor = '#000';
+    messageContainer.style.color = '#fff';
+    messageContainer.style.padding = '10px';
+    messageContainer.style.marginTop = '10px';
+    messageContainer.style.borderRadius = '5px';
+    messageContainer.style.textAlign = 'center';
+    messageContainer.style.fontSize = '1.2em';
+    messageContainer.textContent = randomMessage;
+
+    document.body.appendChild(messageContainer); // Add message to the page
+}
+
 
         // Update prices every 3 seconds
         setInterval(updatePrices, 3000);
