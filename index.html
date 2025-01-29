@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien Crypto Chronicles</title>
     <style>
-        /* General styles for the page */
+        /* Genel stil */
         body {
             margin: 0;
             padding: 0;
@@ -14,14 +14,15 @@
             background-size: cover;
             color: white;
             text-align: center;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            height: 100vh;
         }
 
+        /* Başlık stili */
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             text-transform: uppercase;
             color: #00ff00;
             text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
@@ -31,14 +32,15 @@
             margin-top: 20px;
         }
 
-        /* Button styles */
+        /* Mobil uyumlu butonlar için stil */
         .button-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 10px;
             margin-top: 20px;
-            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+            padding: 0 10px;
         }
 
         .button {
@@ -51,6 +53,9 @@
             border-radius: 10px;
             box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 200px;
+            text-align: center;
         }
 
         .button:hover {
@@ -59,7 +64,7 @@
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        /* Buy button style */
+        /* BUY button için stil */
         .buy-now-btn {
             background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
             color: black;
@@ -68,6 +73,7 @@
             font-size: 1.5em;
             border: none;
             cursor: pointer;
+            margin-top: 20px;
             position: fixed;
             top: 10px;
             left: 10px;
@@ -82,9 +88,9 @@
             box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
 
-        /* Alien container and quote styles */
+        /* Uzaylı imajı ve alıntı alanı için stil */
         .alien-container {
-            margin-top: 5%;
+            margin-top: 20px;
         }
 
         #alien-image {
@@ -94,9 +100,9 @@
         }
 
         #alien-quote {
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin-top: 20px;
-            padding: 40px 20px 20px 20px;
+            padding: 20px;
             color: #00ff00;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
@@ -105,7 +111,7 @@
             margin-bottom: 100px;
         }
 
-        /* Button for interaction */
+        /* Buton için stil */
         button {
             font-size: 1.5em;
             color: #00ff00;
@@ -115,6 +121,8 @@
             padding: 10px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 250px;
         }
 
         button:hover {
@@ -123,68 +131,68 @@
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        /* Mobile Responsiveness */
+        /* Responsive stil */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
-            }
-
-            .button-container {
-                flex-direction: column; /* Stack buttons vertically on smaller screens */
-                gap: 15px;
+                font-size: 2em;
             }
 
             .button {
                 font-size: 1.1em;
-                padding: 12px 25px;
-            }
-
-            #alien-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            #alien-quote {
-                font-size: 1.5em;
-                padding: 20px;
+                max-width: 160px;
             }
 
             .buy-now-btn {
-                font-size: 1.2em;
+                font-size: 1.3em;
                 padding: 15px 30px;
+            }
+
+            #alien-quote {
+                font-size: 1.4em;
+            }
+
+            button {
+                font-size: 1.2em;
+                max-width: 200px;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 2em;
+                font-size: 1.5em;
+            }
+
+            .button {
+                font-size: 1em;
+                max-width: 120px;
             }
 
             .buy-now-btn {
-                font-size: 1em;
+                font-size: 1.1em;
                 padding: 12px 25px;
             }
 
             #alien-quote {
-                font-size: 1.3em;
-                padding: 15px;
+                font-size: 1.2em;
+                padding: 10px;
             }
 
             button {
-                font-size: 1.2em;
-                padding: 8px 15px;
+                font-size: 1.1em;
+                max-width: 180px;
             }
         }
+
     </style>
 </head>
 <body>
 
-    <!-- BUY button with new style -->
+    <!-- BUY button -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
         BUY
     </button>
 
-    <!-- Navigation and other elements as before -->
+    <!-- Navigation butonları -->
     <div class="button-container">
         <a href="index.html" class="button">Home</a>
         <a href="About.html" class="button">About</a>
@@ -192,14 +200,16 @@
         <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
     </div>
 
+    <!-- Başlık -->
     <h1>Alien Crypto Chronicles</h1>
 
+    <!-- Uzaylı Görseli ve Alıntısı -->
     <div class="alien-container">
         <img id="alien-image" src="placeholder-alien.jpg" alt="Alien" />
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
     </div>
 
-    <button onclick="generateAlienComment()">Let's Click...</button>
+    <button onclick="generateAlienComment()">Lets Click...</button>
 
     <script>
         const alienImages = [
@@ -275,12 +285,12 @@
        function generateAlienComment() {
         const randomIndex = Math.floor(Math.random() * alienImages.length);
         
-        // Change the alien image and quote randomly
+        // Rastgele uzaylı görselini ve quote'u değiştir
         document.getElementById('alien-image').src = alienImages[randomIndex];
         document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
     }
 
-    // Run automatically when the page loads
+    // Sayfa açıldığında otomatik çalıştır
     window.onload = function() {
         generateAlienComment();
     };
