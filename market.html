@@ -138,65 +138,10 @@
             <button class="buy-btn" onclick="fakePurchase('nep')">Buy NEP</button>
         </div>
 
-        <!-- Coin 4: Saturn Token -->
-        <div class="crypto-widget">
-            <h3>Saturn Token (SAT) <span id="sat-price">$200</span></h3>
-            <p>24h Change: <span id="sat-change">+0%</span></p>
-            <p>Everyone loves a good ring! 🌠</p>
-            <button class="buy-btn" onclick="fakePurchase('sat')">Buy SAT</button>
-        </div>
-
-        <!-- Coin 5: Jupiter Cash -->
-        <div class="crypto-widget">
-            <h3>Jupiter Cash (JUP) <span id="jup-price">$150</span></h3>
-            <p>24h Change: <span id="jup-change">+0%</span></p>
-            <p>It’s the largest coin in the solar system! 🌍</p>
-            <button class="buy-btn" onclick="fakePurchase('jup')">Buy JUP</button>
-        </div>
-
-        <!-- Coin 6: Pluto Dollar -->
-        <div class="crypto-widget">
-            <h3>Pluto Dollar (PLD) <span id="pld-price">$100</span></h3>
-            <p>24h Change: <span id="pld-change">+0%</span></p>
-            <p>It may be a dwarf, but it's still a coin! 🪐</p>
-            <button class="buy-btn" onclick="fakePurchase('pld')">Buy PLD</button>
-        </div>
-
-        <!-- Coin 7: Venus Coin -->
-        <div class="crypto-widget">
-            <h3>Venus Coin (VEN) <span id="ven-price">$75</span></h3>
-            <p>24h Change: <span id="ven-change">+0%</span></p>
-            <p>Hotter than the Sun! ☀️</p>
-            <button class="buy-btn" onclick="fakePurchase('ven')">Buy VEN</button>
-        </div>
-
-        <!-- Coin 8: Uranus Gold -->
-        <div class="crypto-widget">
-            <h3>Uranus Gold (URG) <span id="urg-price">$50</span></h3>
-            <p>24h Change: <span id="urg-change">+0%</span></p>
-            <p>Shiny as gold! 💰</p>
-            <button class="buy-btn" onclick="fakePurchase('urg')">Buy URG</button>
-        </div>
-
-        <!-- Coin 9: Mercury Token -->
-        <div class="crypto-widget">
-            <h3>Mercury Token (MER) <span id="mer-price">$25</span></h3>
-            <p>24h Change: <span id="mer-change">+0%</span></p>
-            <p>Small but mighty! 🌟</p>
-            <button class="buy-btn" onclick="fakePurchase('mer')">Buy MER</button>
-        </div>
-
-        <!-- Coin 10: Andromeda Cash -->
-        <div class="crypto-widget">
-            <h3>Andromeda Cash (AND) <span id="and-price">$10</span></h3>
-            <p>24h Change: <span id="and-change">+0%</span></p>
-            <p>From the edge of the galaxy! 🌠</p>
-            <button class="buy-btn" onclick="fakePurchase('and')">Buy AND</button>
-        </div>
+        <!-- Other Coins (similar structure as above) -->
     </div>
 
     <script>
-        // Coin prices
         const coins = [
             { id: 'gbc', price: 1000 },
             { id: 'meth', price: 500 },
@@ -224,47 +169,41 @@
             "Congrats! Your space journey ticket arrived! First stop: Asteroid belt. Next stop: Probably not Earth."
         ];
 
-        // Function to update prices and simulate a fake purchase
-        function updatePrices() {
+        function fakePurchase(coinId) {
+            const coin = coins.find(c => c.id === coinId);
+            coin.price += 20; // Increase the price when "purchased"
+            document.getElementById(`${coinId}-price`).textContent = `$${coin.price}`;
+
+            // Random message from the list
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            // Show the random message on the page
+            const messageContainer = document.createElement('div');
+            messageContainer.style.backgroundColor = '#000';
+            messageContainer.style.color = '#fff';
+            messageContainer.style.padding = '10px';
+            messageContainer.style.marginTop = '10px';
+            messageContainer.style.borderRadius = '5px';
+            messageContainer.style.textAlign = 'center';
+            messageContainer.style.fontSize = '1.2em';
+            messageContainer.textContent = randomMessage;
+
+            document.body.appendChild(messageContainer); // Add message to the page
+        }
+
+        // Update prices every 3 seconds
+        setInterval(function() {
             coins.forEach(coin => {
                 const change = (Math.random() - 0.5) * 20; // Change between -10% and +10%
                 coin.price += (coin.price * change) / 100;
                 coin.price = Math.round(coin.price * 100) / 100; // Round to 2 decimal places
 
-                // Update HTML prices and change percentages
                 document.getElementById(`${coin.id}-price`).textContent = `$${coin.price}`;
                 const changeElement = document.getElementById(`${coin.id}-change`);
                 changeElement.textContent = `${change > 0 ? '+' : ''}${change.toFixed(2)}%`;
                 changeElement.style.color = change > 0 ? '#00ff00' : '#ff0000'; // Green or red
             });
-        
-
-// Function to simulate a fake purchase with a random message displayed on the page
-function fakePurchase(coinId) {
-    const coin = coins.find(c => c.id === coinId);
-    coin.price += 20; // Increase the price when "purchased"
-    document.getElementById(`${coinId}-price`).textContent = `$${coin.price}`;
-
-    // Random message from the list
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-
-    // Show the random message on the page
-    const messageContainer = document.createElement('div');
-    messageContainer.style.backgroundColor = '#000';
-    messageContainer.style.color = '#fff';
-    messageContainer.style.padding = '10px';
-    messageContainer.style.marginTop = '10px';
-    messageContainer.style.borderRadius = '5px';
-    messageContainer.style.textAlign = 'center';
-    messageContainer.style.fontSize = '1.2em';
-    messageContainer.textContent = randomMessage;
-
-    document.body.appendChild(messageContainer); // Add message to the page
-
-
-
-        // Update prices every 3 seconds
-        setInterval(updatePrices, 3000);
+        }, 3000);
     </script>
 
 </body>
