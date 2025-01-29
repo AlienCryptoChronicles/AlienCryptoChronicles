@@ -33,6 +33,7 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
+            flex-wrap: wrap;
         }
 
         .navbar a {
@@ -89,6 +90,7 @@
             width: 250px; /* Coin widget size */
             display: inline-block;
             text-align: center;
+            box-sizing: border-box;
         }
 
         .crypto-widget h3 {
@@ -106,6 +108,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
         }
 
         .buy-btn {
@@ -124,6 +127,56 @@
             background-color: #000;
             color: #00ff00;
             box-shadow: 0 0 20px #00ff00;
+        }
+
+        /* Mobile-friendly Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buy-now-btn {
+                font-size: 1.2em;
+                padding: 15px 30px;
+                top: 20px;
+                left: 20px;
+            }
+
+            .crypto-widget {
+                width: 100%; /* Full width for mobile screens */
+                margin: 10px 0;
+                box-sizing: border-box;
+            }
+
+            .coin-container {
+                margin-top: 120px; /* Adjusting for mobile view */
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .navbar a {
+                font-size: 1em; /* Adjust font size for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .buy-now-btn {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+
+            .navbar a {
+                font-size: 0.9em; /* Smaller font size for very small screens */
+            }
+
+            .crypto-widget h3 {
+                font-size: 1.2em;
+            }
+
+            .crypto-widget p {
+                font-size: 0.8em;
+            }
         }
 
     </style>
@@ -242,8 +295,40 @@
         ];
 
         const messages = [
-            "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
-            // Other messages...
+           "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
+            "Congrats! You've got a ticket to the Moon... but we don't know how you'll get there.",
+            "Who knew! Buying crypto gets you a trip to space! Check your email... or maybe don’t.",
+            "You have a ticket to Mars! Don't forget your sunscreen, it's a bit hot there.",
+            "You've started your space journey! Where’s your spaceship? Who knows, maybe one day it’ll arrive.",
+            "Congrats! You've got a ticket to Jupiter! Packing suggestion: Don’t pack light.",
+            "Your space trip is just a click away! We’ll send your ticket... or maybe not.",
+            "Wow! You're going to space! But first, we need to figure out how to start the spaceship.",
+            "You’ve won a free space trip! Who knew crypto offers intergalactic rewards!",
+            "Welcome to space travel! It’s very special... or maybe it never arrives.",
+            "Congrats! Your space journey ticket arrived! First stop: Asteroid belt. Next stop: Probably not Earth.",
+            "You’re going on a galactic tour! When’s the flight? We don’t know either.",
+            "Space travel has never been this easy! Or safe... or realistic. But you got it!",
+            "You won! A space trip! Now pack a bag... but you might wait a lifetime.",
+            "Awesome! You’re a space tourist! Watch out for gravity, it might mess with your stomach.",
+            "Congrats! You’ve got a Saturn ticket! Get ready, but don’t get too excited.",
+            "Warning! Your free space trip might require some waiting. But hey, it’s space!",
+            "Congrats! Your space trip is ready! We’re just figuring out when to launch it.",
+            "You’ve got a ticket to Mars! Be patient... we’ll get there eventually.",
+            "Your space journey is starting! Just... not anytime soon, but someday.",
+            "You’ve won a ticket to the Moon! Pack your bags, but don’t get too excited.",
+            "Congrats! You’re going to space! But first, we need to finish your training.",
+            "You won a free space trip! We’ll send your ticket... but we’re still figuring out when.",
+            "Congrats! You’re now part of the space elite! But we can’t guarantee your flight time.",
+            "Your space trip has started! Just not yet, but someday soon.",
+            "Good news! You’ve won a free space trip! Bad news: It might still be under development.",
+            "Welcome! Your spaceship’s departure date is a mystery for now.",
+            "You’ve got your ticket! To infinity and beyond! Now just sit back and wait.",
+            "Congrats! You're going to space! Maybe, someday.",
+            "You’ve got a ticket to Pluto! Prepare your bags, but don’t get your hopes up.",
+            "Congrats! You’re heading to space! Maybe... maybe not.",
+            "Great choice! You’ve won a ticket to space... maybe.",
+            "Your space journey is confirmed! Now, you might need to wait a couple of centuries.",
+            "You’ve unlocked the secret of space travel! But we still haven’t figured out where to go."
         ];
 
         // Function to show random alert message for fake coins
