@@ -210,13 +210,18 @@
             '"I started a DAO of aliens. Now we’re arguing over galactic taxes."'
         ];
 
-        function generateAlienComment() {
-            const randomIndex = Math.floor(Math.random() * alienImages.length);
+       function generateAlienComment() {
+        const randomIndex = Math.floor(Math.random() * alienImages.length);
+        
+        // Rastgele uzaylı görselini ve quote'u değiştir
+        document.getElementById('alien-image').src = alienImages[randomIndex];
+        document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
+    }
 
-            // Randomly select alien image and quote
-            document.getElementById('alien-image').src = alienImages[randomIndex];
-            document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
-        }
+    // Sayfa açıldığında otomatik çalıştır
+    window.onload = function() {
+        generateAlienComment();
+    };
           
     </script>
 </body>
