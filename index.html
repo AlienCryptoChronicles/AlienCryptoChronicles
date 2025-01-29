@@ -122,6 +122,8 @@
 <body>
     <!-- Butonlar için yeni container -->
     <div class="button-container">
+        <!-- Home butonu -->
+        <a href="index.html" class="button">Home</a>
         <!-- About butonu -->
         <a href="About.html" class="About-link">About</a>
         <!-- Space Market butonu -->
@@ -208,19 +210,18 @@
             '"I started a DAO of aliens. Now we’re arguing over galactic taxes."'
         ];
 
-       function generateAlienComment() {
-        const randomIndex = Math.floor(Math.random() * alienImages.length);
+        function generateAlienComment() {
+            const randomIndex = Math.floor(Math.random() * alienImages.length);
         
-        // Rastgele uzaylı görselini ve quote'u değiştir
-        document.getElementById('alien-image').src = alienImages[randomIndex];
-        document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
-    }
+            // Rastgele uzaylı görselini ve quote'u değiştir
+            document.getElementById('alien-image').src = alienImages[randomIndex];
+            document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
+        }
 
-    // Sayfa açıldığında otomatik çalıştır
-    window.onload = function() {
-        generateAlienComment();
-    };
-          
+        // Sayfa açıldığında otomatik çalıştır
+        window.onload = function() {
+            generateAlienComment();
+        };
     </script>
 </body>
 </html>
