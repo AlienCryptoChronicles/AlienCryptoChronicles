@@ -83,25 +83,27 @@
 
         /* BUY butonu */
         .buy-button {
-            position: absolute;
+             background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            position: fixed;
             top: 10px;
             left: 10px;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            text-decoration: none;
-            color: #ffffff; /* Neon white text */
-            background-color: #ff00ff; /* Neon pink */
-            border: 2px solid #ff00ff; /* Pink border */
-            border-radius: 12px;
-            box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Neon pink glow */
+            z-index: 1000;
+            box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
             transition: all 0.3s ease;
         }
 
         /* BUY butonu hover efekti */
         .buy-button:hover {
-            background-color: #ffffff; /* White background on hover */
-            color: #ff00ff; /* Pink text on hover */
-            box-shadow: 0 0 40px #ff00ff, 0 0 50px #ff00ff; /* Strong pink glow on hover */
+             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
     </style>
 </head>
