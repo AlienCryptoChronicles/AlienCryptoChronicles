@@ -53,9 +53,9 @@
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        /* New 'Buy Now' button at the top */
+        /* Real Coin 'BUY' button with neon colors and positioned in the top left */
         .buy-now-btn {
-            background-color: #ff6347;
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
             color: black;
             padding: 20px 40px;
             border-radius: 10px;
@@ -63,18 +63,18 @@
             border: none;
             cursor: pointer;
             margin-top: 20px;
-            box-shadow: 0 0 20px #ff6347;
-            transition: all 0.3s ease;
-            position: absolute;
+            position: fixed;
             top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 10px;
+            z-index: 1000;
+            box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
+            transition: all 0.3s ease;
         }
 
         .buy-now-btn:hover {
-            background-color: #fff;
-            color: #ff6347;
-            box-shadow: 0 0 40px #ff6347;
+            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
 
         /* Coin widgets */
@@ -126,16 +126,6 @@
             box-shadow: 0 0 20px #00ff00;
         }
 
-        /* Random message box */
-        .message-box {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 1.2em;
-        }
     </style>
 </head>
 <body>
@@ -150,7 +140,7 @@
 
     <!-- 'Buy Now' button -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
-        Buy My Coin
+        BUY
     </button>
 
     <!-- Coin Widgets Container -->
@@ -160,7 +150,7 @@
             <h3>Galaxy Bitcoin (GBC) <span id="gbc-price">$1000</span></h3>
             <p>24h Change: <span id="gbc-change">+0%</span></p>
             <p>Warning: This coin may cause you to become a galactic millionaire! 🚀</p>
-            <button class="buy-btn" onclick="fakePurchase('gbc')">Buy GBC</button>
+            <button class="buy-btn" onclick="showMessage('gbc')">Buy GBC</button>
         </div>
 
         <!-- Coin 2: Mars Etherium -->
@@ -168,7 +158,7 @@
             <h3>Mars Ethereum (METH) <span id="meth-price">$500</span></h3>
             <p>24h Change: <span id="meth-change">+0%</span></p>
             <p>Not from Mars, but still worth a shot! 🛸</p>
-            <button class="buy-btn" onclick="fakePurchase('meth')">Buy METH</button>
+            <button class="buy-btn" onclick="showMessage('meth')">Buy METH</button>
         </div>
 
         <!-- Coin 3: Neptune Coin -->
@@ -176,7 +166,7 @@
             <h3>Neptune Coin (NEP) <span id="nep-price">$300</span></h3>
             <p>24h Change: <span id="nep-change">+0%</span></p>
             <p>From the deep space of Neptune. Maybe it'll rise 1000% in value! 🌌</p>
-            <button class="buy-btn" onclick="fakePurchase('nep')">Buy NEP</button>
+            <button class="buy-btn" onclick="showMessage('nep')">Buy NEP</button>
         </div>
 
         <!-- Coin 4: Saturn Token -->
@@ -184,7 +174,7 @@
             <h3>Saturn Token (SAT) <span id="sat-price">$200</span></h3>
             <p>24h Change: <span id="sat-change">+0%</span></p>
             <p>Everyone loves a good ring! 🌠</p>
-            <button class="buy-btn" onclick="fakePurchase('sat')">Buy SAT</button>
+            <button class="buy-btn" onclick="showMessage('sat')">Buy SAT</button>
         </div>
 
         <!-- Coin 5: Jupiter Cash -->
@@ -192,7 +182,7 @@
             <h3>Jupiter Cash (JUP) <span id="jup-price">$150</span></h3>
             <p>24h Change: <span id="jup-change">+0%</span></p>
             <p>It’s the largest coin in the solar system! 🌍</p>
-            <button class="buy-btn" onclick="fakePurchase('jup')">Buy JUP</button>
+            <button class="buy-btn" onclick="showMessage('jup')">Buy JUP</button>
         </div>
 
         <!-- Coin 6: Pluto Dollar -->
@@ -200,7 +190,7 @@
             <h3>Pluto Dollar (PLD) <span id="pld-price">$100</span></h3>
             <p>24h Change: <span id="pld-change">+0%</span></p>
             <p>It may be a dwarf, but it's still a coin! 🪐</p>
-            <button class="buy-btn" onclick="fakePurchase('pld')">Buy PLD</button>
+            <button class="buy-btn" onclick="showMessage('pld')">Buy PLD</button>
         </div>
 
         <!-- Coin 7: Venus Coin -->
@@ -208,7 +198,7 @@
             <h3>Venus Coin (VEN) <span id="ven-price">$75</span></h3>
             <p>24h Change: <span id="ven-change">+0%</span></p>
             <p>Hotter than the Sun! ☀️</p>
-            <button class="buy-btn" onclick="fakePurchase('ven')">Buy VEN</button>
+            <button class="buy-btn" onclick="showMessage('ven')">Buy VEN</button>
         </div>
 
         <!-- Coin 8: Uranus Gold -->
@@ -216,7 +206,7 @@
             <h3>Uranus Gold (URG) <span id="urg-price">$50</span></h3>
             <p>24h Change: <span id="urg-change">+0%</span></p>
             <p>Shiny as gold! 💰</p>
-            <button class="buy-btn" onclick="fakePurchase('urg')">Buy URG</button>
+            <button class="buy-btn" onclick="showMessage('urg')">Buy URG</button>
         </div>
 
         <!-- Coin 9: Mercury Token -->
@@ -224,7 +214,7 @@
             <h3>Mercury Token (MER) <span id="mer-price">$25</span></h3>
             <p>24h Change: <span id="mer-change">+0%</span></p>
             <p>Small but mighty! 🌟</p>
-            <button class="buy-btn" onclick="fakePurchase('mer')">Buy MER</button>
+            <button class="buy-btn" onclick="showMessage('mer')">Buy MER</button>
         </div>
 
         <!-- Coin 10: Andromeda Cash -->
@@ -232,7 +222,7 @@
             <h3>Andromeda Cash (AND) <span id="and-price">$10</span></h3>
             <p>24h Change: <span id="and-change">+0%</span></p>
             <p>From the edge of the galaxy! 🌠</p>
-            <button class="buy-btn" onclick="fakePurchase('and')">Buy AND</button>
+            <button class="buy-btn" onclick="showMessage('and')">Buy AND</button>
         </div>
     </div>
 
@@ -252,7 +242,7 @@
         ];
 
         const messages = [
- "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
+"Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
             "Congrats! You've got a ticket to the Moon... but we don't know how you'll get there.",
             "Who knew! Buying crypto gets you a trip to space! Check your email... or maybe don’t.",
             "You have a ticket to Mars! Don't forget your sunscreen, it's a bit hot there.",
@@ -286,23 +276,13 @@
             "Great choice! You’ve won a ticket to space... maybe.",
             "Your space journey is confirmed! Now, you might need to wait a couple of centuries.",
             "You’ve unlocked the secret of space travel! But we still haven’t figured out where to go."
-    
+        
         ];
 
-        // Function to simulate a fake purchase with a random message displayed on the page
-        function fakePurchase(coinId) {
-            const coin = coins.find(c => c.id === coinId);
-            coin.price += 20; // Increase the price when "purchased"
-            document.getElementById(`${coinId}-price`).textContent = `$${coin.price}`;
-
-            // Random message from the list
+        // Function to show random alert message for fake coins
+        function showMessage(coinId) {
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-
-            // Show the random message on the page
-            const messageContainer = document.createElement('div');
-            messageContainer.classList.add('message-box');
-            messageContainer.textContent = randomMessage;
-            document.body.appendChild(messageContainer); // Add message to the page
+            alert(randomMessage);
         }
     </script>
 
