@@ -83,9 +83,6 @@
 
         /* BUY butonu */
         .buy-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
             padding: 15px 30px;
             font-size: 1.5em;
             text-decoration: none;
@@ -95,6 +92,10 @@
             border-radius: 12px;
             box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Neon pink glow */
             transition: all 0.3s ease;
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%); /* Ortalanmış */
         }
 
         /* BUY butonu hover efekti */
@@ -102,6 +103,26 @@
             background-color: #ffffff; /* White background on hover */
             color: #ff00ff; /* Pink text on hover */
             box-shadow: 0 0 40px #ff00ff, 0 0 50px #ff00ff; /* Strong pink glow on hover */
+        }
+
+        /* Lets Click butonu */
+        .lets-click-button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #00ff00;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #00ff00;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .lets-click-button:hover {
+            background-color: #ffffff;
+            color: #00ff00;
+            box-shadow: 0 0 40px #00ff00;
         }
     </style>
 </head>
@@ -128,7 +149,9 @@
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
     </div>
 
-    <button onclick="generateAlienComment()">Lets Click...</button>
+    <!-- Lets Click butonu -->
+    <button class="lets-click-button" onclick="generateAlienComment()">Lets Click...</button>
+
     <script>
         const alienImages = [
             'alien1.jpg',
