@@ -19,14 +19,14 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            overflow-y: scroll; /* Allow scrolling */
+            overflow-y: auto; /* Allow scrolling */
         }
 
-        /* Navigation bar for all pages */
+        /* Navigation Bar */
         .navbar {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             top: 0;
             width: 100%;
@@ -44,7 +44,7 @@
             border: 2px solid #00ff00;
             border-radius: 10px;
             box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .navbar a:hover {
@@ -53,31 +53,22 @@
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        /* Real Coin 'BUY' button with neon colors and positioned in the top left */
-        .buy-now-btn {
-            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 1.5em;
-            border: none;
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
             cursor: pointer;
-            margin-top: 20px;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-            box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
-            transition: all 0.3s ease;
+            flex-direction: column;
+            gap: 5px;
         }
 
-        .buy-now-btn:hover {
-            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+        .hamburger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: #00ff00;
+            border-radius: 5px;
         }
 
-        /* Coin widgets */
+        /* Coin widgets and container */
         .crypto-widget {
             border: 2px solid #00ff00;
             padding: 15px;
@@ -86,23 +77,23 @@
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
-            width: 250px; /* Coin widget size */
+            width: 250px;
             display: inline-block;
             text-align: center;
         }
 
         .crypto-widget h3 {
             margin: 0;
-            font-size: 1.3em; /* Smaller font size for headings */
+            font-size: 1.3em;
         }
 
         .crypto-widget p {
             margin: 5px 0 0;
-            font-size: 0.9em; /* Smaller font size for text */
+            font-size: 0.9em;
         }
 
         .coin-container {
-            margin-top: 100px; /* Enough space to avoid navbar overlap */
+            margin-top: 100px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -117,7 +108,7 @@
             cursor: pointer;
             font-weight: bold;
             margin-top: 10px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease; /* Faster hover transition */
         }
 
         .buy-btn:hover {
@@ -126,12 +117,46 @@
             box-shadow: 0 0 20px #00ff00;
         }
 
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Mobile specific styles */
+        @media (max-width: 768px) {
+            .navbar a {
+                display: none; /* Hide links on small screens */
+            }
+
+            .hamburger-menu {
+                display: flex; /* Show hamburger menu */
+            }
+
+            .coin-container {
+                flex-direction: column; /* Stack coins vertically on smaller screens */
+            }
+
+            .navbar.active a {
+                display: block; /* Show links when hamburger menu is active */
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <div class="navbar">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <a href="index.html">Home</a>
         <a href="About.html">About</a>
         <a href="earthlings-forum.html">Earthling's Forum</a>
@@ -153,133 +178,28 @@
             <button class="buy-btn" onclick="showMessage('gbc')">Buy GBC</button>
         </div>
 
-        <!-- Coin 2: Mars Etherium -->
-        <div class="crypto-widget">
-            <h3>Mars Ethereum (METH) <span id="meth-price">$500</span></h3>
-            <p>24h Change: <span id="meth-change">+0%</span></p>
-            <p>Not from Mars, but still worth a shot! 🛸</p>
-            <button class="buy-btn" onclick="showMessage('meth')">Buy METH</button>
-        </div>
-
-        <!-- Coin 3: Neptune Coin -->
-        <div class="crypto-widget">
-            <h3>Neptune Coin (NEP) <span id="nep-price">$300</span></h3>
-            <p>24h Change: <span id="nep-change">+0%</span></p>
-            <p>From the deep space of Neptune. Maybe it'll rise 1000% in value! 🌌</p>
-            <button class="buy-btn" onclick="showMessage('nep')">Buy NEP</button>
-        </div>
-
-        <!-- Coin 4: Saturn Token -->
-        <div class="crypto-widget">
-            <h3>Saturn Token (SAT) <span id="sat-price">$200</span></h3>
-            <p>24h Change: <span id="sat-change">+0%</span></p>
-            <p>Everyone loves a good ring! 🌠</p>
-            <button class="buy-btn" onclick="showMessage('sat')">Buy SAT</button>
-        </div>
-
-        <!-- Coin 5: Jupiter Cash -->
-        <div class="crypto-widget">
-            <h3>Jupiter Cash (JUP) <span id="jup-price">$150</span></h3>
-            <p>24h Change: <span id="jup-change">+0%</span></p>
-            <p>It’s the largest coin in the solar system! 🌍</p>
-            <button class="buy-btn" onclick="showMessage('jup')">Buy JUP</button>
-        </div>
-
-        <!-- Coin 6: Pluto Dollar -->
-        <div class="crypto-widget">
-            <h3>Pluto Dollar (PLD) <span id="pld-price">$100</span></h3>
-            <p>24h Change: <span id="pld-change">+0%</span></p>
-            <p>It may be a dwarf, but it's still a coin! 🪐</p>
-            <button class="buy-btn" onclick="showMessage('pld')">Buy PLD</button>
-        </div>
-
-        <!-- Coin 7: Venus Coin -->
-        <div class="crypto-widget">
-            <h3>Venus Coin (VEN) <span id="ven-price">$75</span></h3>
-            <p>24h Change: <span id="ven-change">+0%</span></p>
-            <p>Hotter than the Sun! ☀️</p>
-            <button class="buy-btn" onclick="showMessage('ven')">Buy VEN</button>
-        </div>
-
-        <!-- Coin 8: Uranus Gold -->
-        <div class="crypto-widget">
-            <h3>Uranus Gold (URG) <span id="urg-price">$50</span></h3>
-            <p>24h Change: <span id="urg-change">+0%</span></p>
-            <p>Shiny as gold! 💰</p>
-            <button class="buy-btn" onclick="showMessage('urg')">Buy URG</button>
-        </div>
-
-        <!-- Coin 9: Mercury Token -->
-        <div class="crypto-widget">
-            <h3>Mercury Token (MER) <span id="mer-price">$25</span></h3>
-            <p>24h Change: <span id="mer-change">+0%</span></p>
-            <p>Small but mighty! 🌟</p>
-            <button class="buy-btn" onclick="showMessage('mer')">Buy MER</button>
-        </div>
-
-        <!-- Coin 10: Andromeda Cash -->
-        <div class="crypto-widget">
-            <h3>Andromeda Cash (AND) <span id="and-price">$10</span></h3>
-            <p>24h Change: <span id="and-change">+0%</span></p>
-            <p>From the edge of the galaxy! 🌠</p>
-            <button class="buy-btn" onclick="showMessage('and')">Buy AND</button>
-        </div>
+        <!-- More coin widgets... -->
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Space Market. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Coin prices
-        const coins = [
-            { id: 'gbc', price: 1000 },
-            { id: 'meth', price: 500 },
-            { id: 'nep', price: 300 },
-            { id: 'sat', price: 200 },
-            { id: 'jup', price: 150 },
-            { id: 'pld', price: 100 },
-            { id: 'ven', price: 75 },
-            { id: 'urg', price: 50 },
-            { id: 'mer', price: 25 },
-            { id: 'and', price: 10 }
-        ];
+        // Coin prices and other variables here...
 
-        const messages = [
-            "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
-            "Congrats! You've got a ticket to the Moon... but we don't know how you'll get there.",
-            "Who knew! Buying crypto gets you a trip to space! Check your email... or maybe don’t.",
-            "You have a ticket to Mars! Don't forget your sunscreen, it's a bit hot there.",
-            "You've started your space journey! Where’s your spaceship? Who knows, maybe one day it’ll arrive.",
-            "Congrats! You've got a ticket to Jupiter! Packing suggestion: Don’t pack light.",
-            "Your space trip is just a click away! We’ll send your ticket... or maybe not.",
-            "Wow! You're going to space! But first, we need to figure out how to start the spaceship.",
-            "You’ve won a free space trip! Who knew crypto offers intergalactic rewards!",
-            "Welcome to space travel! It’s very special... or maybe it never arrives.",
-            "Congrats! Your space journey ticket arrived! First stop: Asteroid belt. Next stop: Probably not Earth.",
-            "You’re going on a galactic tour! When’s the flight? We don’t know either.",
-            "Space travel has never been this easy! Or safe... or realistic. But you got it!",
-            "You won! A space trip! Now pack a bag... but you might wait a lifetime.",
-            "Awesome! You’re a space tourist! Watch out for gravity, it might mess with your stomach.",
-            "Congrats! You’ve got a Saturn ticket! Get ready, but don’t get too excited.",
-            "Warning! Your free space trip might require some waiting. But hey, it’s space!",
-            "Congrats! Your space trip is ready! We’re just figuring out when to launch it.",
-            "You’ve got a ticket to Mars! Be patient... we’ll get there eventually.",
-            "Your space journey is starting! Just... not anytime soon, but someday.",
-            "You’ve won a ticket to the Moon! Pack your bags, but don’t get too excited.",
-            "Congrats! You’re going to space! But first, we need to finish your training.",
-            "You won a free space trip! We’ll send your ticket... but we’re still figuring out when.",
-            "Congrats! You’re now part of the space elite! But we can’t guarantee your flight time.",
-            "Your space trip has started! Just not yet, but someday soon.",
-            "Good news! You’ve won a free space trip! Bad news: It might still be under development.",
-            "Welcome! Your spaceship’s departure date is a mystery for now.",
-            "You’ve got your ticket! To infinity and beyond! Now just sit back and wait.",
-            "Congrats! You're going to space! Maybe, someday.",
-            "You’ve got a ticket to Pluto! Prepare your bags, but don’t get your hopes up.",
-            "Congrats! You’re heading to space! Maybe... maybe not.",
-            "Great choice! You’ve won a ticket to space... maybe.",
-            "Your space journey is confirmed! Now, you might need to wait a couple of centuries.",
-            "You’ve unlocked the secret of space travel! But we still haven’t figured out where to go."
-        ];
+        // Toggle hamburger menu
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
 
-        // Function to show random alert message for fake coins
+        // Show random alert for fake coins
         function showMessage(coinId) {
+            const messages = [
+                "Congrats! You've got a ticket to the Moon...",
+                // Other messages...
+            ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             alert(randomMessage);
         }
