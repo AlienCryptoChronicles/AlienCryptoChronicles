@@ -81,55 +81,40 @@
             margin-bottom: 100px; /* Butonun alanla çakışmaması için yer açar */
         }
 
-        button {
-            position: fixed; /* Butonu sabit yapıyoruz */
-            bottom: 20px; /* Sayfanın en altına yerleştiriyoruz */
-            left: 50%;
-            transform: translateX(-50%); /* Tam ortalamak için */
-            padding: 10px 20px;
-            background-color: #000000; /* Black background for button */
-            color: #00ff00; /* Neon Green text */
-            border: 2px solid #00ff00; /* Green border for the button */
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1.2em;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow for the button */
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #00ff00; /* Neon Green background on hover */
-            color: #000000; /* Black text on hover */
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow on hover */
-        }
-
-        /* About Link Styles */
-        .About-link {
-            padding: 10px 20px;
-            font-size: 1.2em;
+        /* BUY butonu */
+        .buy-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 15px 30px;
+            font-size: 1.5em;
             text-decoration: none;
-            color: #00ff00; /* Neon Green */
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-            border: 2px solid #00ff00; /* Green border */
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Neon glow */
+            color: #ffffff; /* Neon white text */
+            background-color: #ff00ff; /* Neon pink */
+            border: 2px solid #ff00ff; /* Pink border */
+            border-radius: 12px;
+            box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Neon pink glow */
             transition: all 0.3s ease;
         }
 
-        .About-link:hover {
-            background-color: #00ff00; /* Neon Green background on hover */
-            color: #000000; /* Black text on hover */
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00; /* Strong green glow */
+        /* BUY butonu hover efekti */
+        .buy-button:hover {
+            background-color: #ffffff; /* White background on hover */
+            color: #ff00ff; /* Pink text on hover */
+            box-shadow: 0 0 40px #ff00ff, 0 0 50px #ff00ff; /* Strong pink glow on hover */
         }
     </style>
 </head>
 <body>
+    <!-- BUY butonu ekledik -->
+    <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-button" target="_blank">BUY</a>
+
     <!-- Butonlar için yeni container -->
     <div class="button-container">
         <!-- Home butonu -->
         <a href="index.html" class="button">Home</a>
         <!-- About butonu -->
-        <a href="About.html" class="About-link">About</a>
+        <a href="About.html" class="button">About</a>
         <!-- Space Market butonu -->
         <a href="market.html" class="button">Space Market</a>
         <!-- Eartling's Forum -->
@@ -144,7 +129,6 @@
     </div>
 
     <button onclick="generateAlienComment()">Lets Click...</button>
-
     <script>
         const alienImages = [
             'alien1.jpg',
