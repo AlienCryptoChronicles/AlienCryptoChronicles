@@ -26,6 +26,7 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
         }
 
         .navbar a {
@@ -101,6 +102,61 @@
             background-color: #00ff00;
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .about-container {
+                margin-top: 90px; /* Adjusting for navbar */
+                padding: 15px;
+            }
+
+            .about-text {
+                font-size: 1.2em;
+                margin: 15px;
+            }
+
+            .navbar a {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+
+            .buy-button {
+                font-size: 1.2em;
+                padding: 8px 15px;
+                left: 5px;
+                top: 5px;
+            }
+
+            footer {
+                font-size: 1em;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .buy-button {
+                font-size: 1.1em;
+                padding: 6px 12px;
+            }
+
+            footer {
+                font-size: 0.9em;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
