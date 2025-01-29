@@ -5,30 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien Crypto Chronicles</title>
     <style>
-        /* Yeni BUY butonunun stili */
-        .buy-now-btn {
-            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 1.5em;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-            box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
-            transition: all 0.3s ease;
-        }
-
-        .buy-now-btn:hover {
-            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
-        }
-
+        /* General styles for the page */
         body {
             margin: 0;
             padding: 0;
@@ -37,10 +14,10 @@
             background-size: cover;
             color: white;
             text-align: center;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            height: 100vh;
         }
 
         h1 {
@@ -51,14 +28,17 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
             border-radius: 10px;
+            margin-top: 20px;
         }
 
+        /* Button styles */
         .button-container {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
         }
 
         .button {
@@ -78,7 +58,31 @@
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
-        
+
+        /* Buy button style */
+        .buy-now-btn {
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
+            transition: all 0.3s ease;
+        }
+
+        .buy-now-btn:hover {
+            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+        }
+
+        /* Alien container and quote styles */
         .alien-container {
             margin-top: 5%;
         }
@@ -101,6 +105,7 @@
             margin-bottom: 100px;
         }
 
+        /* Button for interaction */
         button {
             font-size: 1.5em;
             color: #00ff00;
@@ -116,6 +121,59 @@
             background-color: #00ff00;
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .button-container {
+                flex-direction: column; /* Stack buttons vertically on smaller screens */
+                gap: 15px;
+            }
+
+            .button {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+
+            #alien-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            #alien-quote {
+                font-size: 1.5em;
+                padding: 20px;
+            }
+
+            .buy-now-btn {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .buy-now-btn {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+
+            #alien-quote {
+                font-size: 1.3em;
+                padding: 15px;
+            }
+
+            button {
+                font-size: 1.2em;
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
@@ -141,8 +199,8 @@
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
     </div>
 
-    <button onclick="generateAlienComment()">Lets Click...</button>
->
+    <button onclick="generateAlienComment()">Let's Click...</button>
+
     <script>
         const alienImages = [
             'alien1.jpg',
@@ -217,16 +275,15 @@
        function generateAlienComment() {
         const randomIndex = Math.floor(Math.random() * alienImages.length);
         
-        // Rastgele uzaylı görselini ve quote'u değiştir
+        // Change the alien image and quote randomly
         document.getElementById('alien-image').src = alienImages[randomIndex];
         document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
     }
 
-    // Sayfa açıldığında otomatik çalıştır
+    // Run automatically when the page loads
     window.onload = function() {
         generateAlienComment();
     };
-          
     </script>
 </body>
 </html>
