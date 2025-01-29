@@ -80,6 +80,28 @@
             color: #ff00ff;
             text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
         }
+
+        /* Yeni BUY butonunun stilini ekliyoruz */
+        .buy-button {
+            position: fixed;
+            top: 10px; /* Sol üst köşeye yerleştirecek şekilde konumlandırma */
+            left: 10px;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .buy-button:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
     </style>
 </head>
 <body>
@@ -119,6 +141,9 @@
             <p>Everything we've shared is a humorous take on the world of cryptocurrencies. We aren't here to give investment advice (we don't even use crypto in our galaxy!), but we do want you to feel part of the digital revolution. So, enjoy the ride, but be careful with your coins—especially when trading with aliens! 🎉🚀</p>
         </div>
     </div>
+
+    <!-- BUY Button -->
+    <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-button" target="_blank">BUY</a>
 
     <footer>
         <p>Made with intergalactic love by Alien Crypto Chronicles 🚀✨</p>
