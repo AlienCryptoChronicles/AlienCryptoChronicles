@@ -15,10 +15,42 @@
             text-align: center;
         }
 
+        /* Navigation bar for all pages */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
+
         h1 {
             font-size: 3em;
             color: #00ffcc;
             text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            margin-top: 80px; /* To make room for the navbar */
         }
 
         .about-container {
@@ -27,6 +59,7 @@
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+            margin-top: 120px; /* So it doesn’t overlap with the header */
         }
 
         .about-text {
@@ -50,6 +83,15 @@
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="earthlings-forum.html">Eartling's Forum</a>
+        <a href="market.html">Space Market</a>
+    </div>
+
     <h1>About Alien Crypto Chronicles</h1>
 
     <div class="about-container">
@@ -81,5 +123,6 @@
     <footer>
         <p>Made with intergalactic love by Alien Crypto Chronicles 🚀✨</p>
     </footer>
+
 </body>
 </html>
