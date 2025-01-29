@@ -102,14 +102,18 @@
         }
 
         button {
-            font-size: 1.2em; /* Buton font boyutunu küçültme */
-            padding: 8px 15px; /* Butonun iç boşluklarını küçültme */
+            font-size: 1em; /* Buton font boyutunu %80 küçültme */
+            padding: 6px 12px; /* Butonun iç boşluklarını %80 küçültme */
             color: #00ff00;
             background-color: rgba(0, 0, 0, 0.8);
             border: 2px solid #00ff00;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: absolute; /* Butonu sayfada belirli bir konuma yerleştirme */
+            bottom: 10%; /* Sayfanın alt kısmına daha yakın olacak şekilde yukarı taşıma */
+            left: 50%;
+            transform: translateX(-50%); /* Butonu tam ortalamak için */
         }
 
         button:hover {
