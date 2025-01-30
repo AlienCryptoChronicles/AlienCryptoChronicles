@@ -74,20 +74,41 @@
             font-size: 1.5em;
             border: none;
             cursor: pointer;
-            position: fixed;
-            bottom: 10px; /* BUY butonunu altta tutar */
-            left: 50%;
-            transform: translateX(-50%); /* Ortalamayı sağlar */
+            position: relative; /* Eski haline getirildi */
+            margin-top: 20px;
             z-index: 1000;
-            box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
-            transition: all 0.3s ease;
             max-width: 250px; /* Buy butonunun genişliğini kısıtla */
+            margin-bottom: 20px;
         }
 
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
             color: black;
             box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+        }
+
+        /* "Let's Click" butonunun eski konumunda olması için stil */
+        .lets-click-btn {
+            font-size: 1.2em;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: fixed; /* BUY butonunun bulunduğu konuma getirilmiştir */
+            bottom: 10px; /* Sayfa alt kısmına sabitleme */
+            left: 50%;
+            transform: translateX(-50%); /* Ortalamayı sağlar */
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .lets-click-btn:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
         /* Uzaylı imajı ve alıntısı alanı için stil */
@@ -111,48 +132,6 @@
             text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
             margin-bottom: 100px;
-        }
-
-        /* Buton için stil */
-        button {
-            font-size: 1.5em;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1 1 100%;
-            max-width: 200px;
-            text-align: center;
-        }
-
-        button:hover {
-            background-color: #00ff00;
-            color: #000000;
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-        }
-
-        /* "Let's Click" butonunun stilini küçültme ve alt kısmı ortalama */
-        .lets-click-btn {
-            font-size: 1.2em;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            padding: 12px 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            bottom: 0; /* Yüksekliği düzgün ayarlamak için */
-            margin-top: 10px;
-        }
-
-        .lets-click-btn:hover {
-            background-color: #00ff00;
-            color: #000000;
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
         /* Responsive stil */
