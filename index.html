@@ -17,7 +17,7 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
         }
 
         /* Başlık stili */
@@ -41,7 +41,7 @@
             gap: 10px;
             margin-top: 20px;
             padding: 0 10px;
-            margin-bottom: 60px; /* Alt kısmı daha fazla boşluk bırakmak için */
+            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
         }
 
         .button {
@@ -75,8 +75,9 @@
             border: none;
             cursor: pointer;
             position: fixed;
-            top: 10px;
-            left: 10px;
+            bottom: 10px; /* BUY butonunu altta tutar */
+            left: 50%;
+            transform: translateX(-50%); /* Ortalamayı sağlar */
             z-index: 1000;
             box-shadow: 0 0 20px #ff007f, 0 0 30px #fffc00, 0 0 40px #00ff95;
             transition: all 0.3s ease;
@@ -143,10 +144,9 @@
             padding: 12px 24px;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            bottom: 0; /* Yüksekliği düzgün ayarlamak için */
+            margin-top: 10px;
         }
 
         .lets-click-btn:hover {
@@ -169,6 +169,7 @@
             .buy-now-btn {
                 font-size: 1.3em;
                 padding: 15px 30px;
+                bottom: 10px;
             }
 
             #alien-quote {
