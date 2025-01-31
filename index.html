@@ -67,19 +67,22 @@
 
         /* BUY butonu sabitleme */
         .buy-now-btn {
-            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 1.5em;
-            border: none;
-            cursor: pointer;
-            position: fixed;
-            top: 20px; /* Üst kısmı sabitle */
-            left: 20px; /* Sol kısıma sabitle */
-            z-index: 1000;
-            max-width: 250px;
-        }
+    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+    color: black;
+    padding: 12px 24px; /* Boyutu küçülttük */
+    border-radius: 10px;
+    font-size: 1.2em; /* Mobil için font küçültme */
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    max-width: 200px;
+    width: auto; /* Tam genişliği kaplamaması için */
+    text-align: center;
+    white-space: nowrap; /* Yazının taşmasını önler */
+}
 
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
@@ -159,12 +162,16 @@
                 max-width: 160px;
             }
 
-            .buy-now-btn {
-                font-size: 1.3em;
-                padding: 3px 5px;  /* Buton boyutunu küçültüyoruz */
-                max-width: 20px;     /* Butonun max genişliğini sınırlandırıyoruz */
-                bottom: 10px;
-            }
+            @media (max-width: 768px) {
+    .buy-now-btn {
+        font-size: 1em;
+        padding: 10px 20px;
+        max-width: 160px; /* Mobilde fazla geniş olmaması için */
+        left: 10px; /* Kenara daha yakın */
+        top: 10px;
+    }
+}
+
 
             #alien-quote {
                 font-size: 1.4em;
@@ -191,11 +198,15 @@
                 max-width: 120px;
             }
 
-            .buy-now-btn {
-                font-size: 1.1em;
-                padding: 1px 2px; /* Mobilde biraz daha küçük yapıyoruz */
-                max-width: 18px;    /* Daha dar bir max-width */
-            }
+           @media (max-width: 480px) {
+    .buy-now-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+        max-width: 140px; /* Küçük ekranlarda daha dar */
+        left: 5px;
+        top: 5px;
+    }
+}
 
             #alien-quote {
                 font-size: 1.2em;
