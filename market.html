@@ -136,6 +136,7 @@ body {
     box-shadow: 0 0 20px #00ff00;
 }
         /* Mobil Uyumlu Düzenlemeler */
+/* Mobil Uyumlu Düzenlemeler */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column; /* Navbar öğeleri alt alta sıralanacak */
@@ -146,10 +147,14 @@ body {
         width: 90%; /* Coin widget'ları ekran genişliğine göre genişleyecek */
         max-width: 250px; /* Maksimum genişlik */
         margin: 10px 0; /* Aralarındaki mesafe artırılacak */
+        display: flex;
+        flex-direction: column; /* Butonların alt kısımda olması için dikey hizalama */
+        justify-content: space-between; /* Butonların üst ve alt arasında uygun mesafe */
     }
 
     .buy-btn {
         width: 100%; /* Butonlar ekran genişliğine göre büyüyecek */
+        margin-top: 10px; /* Butonun üst kısmında boşluk bırak */
     }
 }
 
@@ -161,12 +166,14 @@ body {
     .crypto-widget {
         width: 100%; /* Coin widget'ları tam genişlikte olacak */
         margin: 10px 0; /* Aralarındaki mesafeyi kısıtlayacak */
+        padding: 10px; /* İçerideki öğeler için boşluk */
     }
 
     .buy-btn {
         padding: 8px 0; /* Buton boyutunu daha da küçült */
     }
 }
+
 
     </style>
 </head>
