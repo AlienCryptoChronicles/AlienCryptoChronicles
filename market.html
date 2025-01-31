@@ -188,7 +188,35 @@ body {
         padding: 8px 0; /* Buton boyutunu küçülttük */
     }
 }
+        /* Buy Now Butonu Stil */
+.buy-now-btn {
+    background-color: #00ff00;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
 
+.buy-now-btn:hover {
+    background-color: #000;
+    color: #00ff00;
+    box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+}
+/* Mobilde Butonun Uyumu */
+@media (max-width: 768px) {
+    .buy-now-btn {
+        padding: 12px 25px; /* Mobilde biraz daha küçük boyut */
+        font-size: 1em; /* Yazı boyutunu küçült */
+        width: 100%; /* Ekran genişliğine göre butonun tam genişlikte olmasını sağla */
+    }
+}
 
     </style>
 </head>
@@ -200,7 +228,12 @@ body {
         <a href="earthlings-forum.html">Earthling's Forum</a>
         <a href="market.html">Space Market</a>
     </div>
+    
+<div class="buy-now-container">
+    <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-now-btn">Buy Now</a>
+</div>
 
+    
     <!-- Coin Widgets Container -->
     <div class="coin-container">
         <!-- Coin Widgets Here -->
