@@ -141,10 +141,16 @@ body {
 /* Mobil Uyumlu Düzenlemeler */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Navbar öğeleri alt alta sıralanacak */
-        align-items: center; /* Ortalanacak */
-        padding: 10px 0; /* Navbar içindeki öğelerin altına boşluk bırak */
+        flex-direction: row; /* Mobilde de yatay hizalamayı garanti et */
+        padding: 10px; /* Boşlukları ayarlayabiliriz */
+        gap: 15px; /* Öğeler arası mesafeyi ayarlayabiliriz */
     }
+
+    .navbar a {
+        padding: 10px 15px; /* Butonların boyutlarını mobilde optimize et */
+        font-size: 1em; /* Yazı boyutunu mobilde biraz küçült */
+    }
+}
 
     .crypto-widget {
         width: 90%; /* Coin widget'ları ekran genişliğine göre genişleyecek */
