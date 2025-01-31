@@ -5,77 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Market</title>
     <style>
-        body {
-            background-image: url('marketbck.jpg'); /* Background image */
-            background-size: cover; /* Cover the whole screen */
-            background-position: center center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent repeating the image */
-            color: #fff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Coins aligned at the top */
-            flex-wrap: wrap;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            overflow-y: scroll; /* Allow scrolling */
-        }
+       /* Genel stil */
+body {
+    background-image: url('marketbck.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
 
-        /* Navigation bar for all pages */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-        }
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    flex-wrap: wrap; /* Navbar öğelerinin sığmadığı durumlar için */
+}
 
-        .navbar a {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            transition: all 0.3s ease;
-        }
+.navbar a {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #00ff00;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+    transition: all 0.3s ease;
+}
 
-        .navbar a:hover {
-            background-color: #00ff00;
-            color: #000000;
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-        }
+.navbar a:hover {
+    background-color: #00ff00;
+    color: #000000;
+    box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+}
 
-        /* Coin widgets */
-        .crypto-widget {
-            border: 2px solid #00ff00;
-            padding: 15px;
-            margin: 15px;
-            border-radius: 10px;
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            width: 250px; /* Coin widget size */
-            display: inline-block;
-            text-align: center;
-        }
+/* Coin Widget'ları */
+.crypto-widget {
+    border: 2px solid #00ff00;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    width: 250px;
+    display: inline-block;
+    text-align: center;
+    flex: 1 1 200px; /* Mobilde daha esnek olmasını sağlar */
+}
 
-        .crypto-widget h3 {
-            margin: 0;
-            font-size: 1.3em;
-        }
+.crypto-widget h3 {
+    margin: 0;
+    font-size: 1.3em;
+}
 
-        .crypto-widget p {
-            margin: 5px 0 0;
-            font-size: 0.9em;
-        }
+.crypto-widget p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+}
+
 
         .coin-container {
             margin-top: 100px; /* Enough space to avoid navbar overlap */
@@ -113,27 +117,59 @@
             100% { transform: translateX(0); }
         }
 
-        .buy-btn {
-            background-color: #00ff00;
-            color: black;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-        }
+        /* Butonlar */
+.buy-btn {
+    background-color: #00ff00;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
 
-        .buy-btn:hover {
-            background-color: #000;
-            color: #00ff00;
-            box-shadow: 0 0 20px #00ff00;
-        }
+.buy-btn:hover {
+    background-color: #000;
+    color: #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+}
     </style>
 </head>
 <body>
+/* Mobil Uyumlu Düzenlemeler */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Navbar öğeleri alt alta sıralanacak */
+        align-items: center; /* Ortalanacak */
+    }
 
+    .crypto-widget {
+        width: 90%; /* Coin widget'ları ekran genişliğine göre genişleyecek */
+        max-width: 250px; /* Maksimum genişlik */
+        margin: 10px 0; /* Aralarındaki mesafe artırılacak */
+    }
+
+    .buy-btn {
+        width: 100%; /* Butonlar ekran genişliğine göre büyüyecek */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 1em; /* Navbar'daki yazı boyutunu küçült */
+    }
+
+    .crypto-widget {
+        width: 100%; /* Coin widget'ları tam genişlikte olacak */
+        margin: 10px 0; /* Aralarındaki mesafeyi kısıtlayacak */
+    }
+
+    .buy-btn {
+        padding: 8px 0; /* Buton boyutunu daha da küçült */
+    }
+}
     <!-- Navigation Bar -->
     <div class="navbar">
         <a href="index.html">Home</a>
