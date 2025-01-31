@@ -137,40 +137,48 @@ body {
 }
         /* Mobil Uyumlu Düzenlemeler */
 /* Mobil Uyumlu Düzenlemeler */
+/* Mobil Uyumlu Düzenlemeler */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column; /* Navbar öğeleri alt alta sıralanacak */
         align-items: center; /* Ortalanacak */
+        padding: 10px 0; /* Navbar içindeki öğelerin altına boşluk bırak */
     }
 
     .crypto-widget {
         width: 90%; /* Coin widget'ları ekran genişliğine göre genişleyecek */
         max-width: 250px; /* Maksimum genişlik */
-        margin: 10px 0; /* Aralarındaki mesafe artırılacak */
+        margin: 10px auto; /* Widget'lar arasındaki mesafeyi artırdık */
         display: flex;
         flex-direction: column; /* Butonların alt kısımda olması için dikey hizalama */
         justify-content: space-between; /* Butonların üst ve alt arasında uygun mesafe */
+        padding: 15px; /* Widget içindeki padding'i artırarak öğelerin daha rahat görünmesini sağladık */
+        box-sizing: border-box; /* Padding'in genişlik hesaplamasına dahil olmasını sağladık */
+        background-color: rgba(0, 0, 0, 0.7); /* Arka planı biraz daha belirginleştirdik */
     }
 
     .buy-btn {
         width: 100%; /* Butonlar ekran genişliğine göre büyüyecek */
-        margin-top: 10px; /* Butonun üst kısmında boşluk bırak */
+        margin-top: 15px; /* Buton ile diğer öğeler arasına daha fazla boşluk ekledik */
+        padding: 12px; /* Butonun yüksekliğini artırdık */
     }
 }
 
 @media (max-width: 480px) {
     .navbar a {
         font-size: 1em; /* Navbar'daki yazı boyutunu küçült */
+        padding: 10px; /* Butonlara daha fazla boşluk ekledik */
     }
 
     .crypto-widget {
         width: 100%; /* Coin widget'ları tam genişlikte olacak */
         margin: 10px 0; /* Aralarındaki mesafeyi kısıtlayacak */
         padding: 10px; /* İçerideki öğeler için boşluk */
+        background-color: rgba(0, 0, 0, 0.8); /* Mobilde arka plan rengini değiştirebiliriz */
     }
 
     .buy-btn {
-        padding: 8px 0; /* Buton boyutunu daha da küçült */
+        padding: 8px 0; /* Buton boyutunu küçülttük */
     }
 }
 
