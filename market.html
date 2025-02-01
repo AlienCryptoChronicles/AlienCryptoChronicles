@@ -23,61 +23,62 @@
             overflow-y: scroll;
         }
 
-        /* Navbar */
-        .navbar {
+          /* Mobil uyumlu butonlar için stil */
+        .button-container {
             display: flex;
-            justify-content: flex-start;
-            gap: 15px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 0 10px;
+            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
         }
 
-        .navbar a {
-            padding: 10px 15px;
+        .button {
+            padding: 10px 20px;
             font-size: 1.2em;
             text-decoration: none;
             color: #00ff00;
             background-color: rgba(0, 0, 0, 0.8);
             border: 2px solid #00ff00;
             border-radius: 10px;
-            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 200px;
+            text-align: center;
         }
 
-        .navbar a:hover {
+        .button:hover {
             background-color: #00ff00;
             color: #000000;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        /* Buy Now Butonu */
+        /* BUY butonu sabitleme */
         .buy-now-btn {
-            background-color: #00ff00;
-            color: black;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            border: none;
-            display: inline-block;
-            box-shadow: 0 0 15px #00ff00, 0 0 20px #00ff00;
-            transition: all 0.3s ease;
-            margin-top: 10px; /* Margin top */
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
+    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+    color: black;
+    padding: 12px 24px; /* Boyutu küçülttük */
+    border-radius: 10px;
+    font-size: 1.2em; /* Mobil için font küçültme */
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    max-width: 200px;
+    width: auto; /* Tam genişliği kaplamaması için */
+    text-align: center;
+    white-space: nowrap; /* Yazının taşmasını önler */
+}
 
         .buy-now-btn:hover {
-            background-color: #000;
-            color: #00ff00;
-            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
+            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
 
         /* Coin Widget'ları */
@@ -141,38 +142,22 @@
             100% { transform: translateX(0); }
         }
 
-        /* Butonlar */
-        .buy-btn {
-            background-color: #00ff00;
-            color: black;
-            padding: 8px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 8px;
-            transition: all 0.3s ease;
-        }
 
-        .buy-btn:hover {
-            background-color: #000;
-            color: #00ff00;
-            box-shadow: 0 0 15px #00ff00;
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="earthlings-forum.html">Earthling's Forum</a>
-        <a href="market.html">Space Market</a>
+  <!-- BUY button -->
+    <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
+        BUY
+    </button>
+
+    <!-- Navigation butonları -->
+    <div class="button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="About.html" class="button">About</a>
+        <a href="market.html" class="button">Space Market</a>
+        <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
     </div>
-
-    <!-- Buy Now Butonu -->
-    <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-now-btn">BUY NOW</a>
-
     
     <!-- Coin Widgets Container -->
     <div class="coin-container">
