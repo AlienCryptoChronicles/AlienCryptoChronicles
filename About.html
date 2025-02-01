@@ -29,7 +29,19 @@
             flex-wrap: wrap; /* Allow wrapping for smaller screens */
         }
 
-        .navbar a {
+       /* Mobil uyumlu butonlar için stil */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 0 10px;
+            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
+        }
+
+        .button {
             padding: 10px 20px;
             font-size: 1.2em;
             text-decoration: none;
@@ -39,14 +51,41 @@
             border-radius: 10px;
             box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 200px;
+            text-align: center;
         }
 
-        .navbar a:hover {
+        .button:hover {
             background-color: #00ff00;
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
+        /* BUY butonu sabitleme */
+        .buy-now-btn {
+    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+    color: black;
+    padding: 12px 24px; /* Boyutu küçülttük */
+    border-radius: 10px;
+    font-size: 1.2em; /* Mobil için font küçültme */
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    max-width: 200px;
+    width: auto; /* Tam genişliği kaplamaması için */
+    text-align: center;
+    white-space: nowrap; /* Yazının taşmasını önler */
+}
+
+        .buy-now-btn:hover {
+            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+        }
         h1 {
             font-size: 3em;
             color: #00ffcc;
@@ -82,93 +121,58 @@
             text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
         }
 
-        /* Yeni BUY butonunun stilini ekliyoruz */
-        .buy-button {
-            position: fixed;
-            top: 10px; /* Sol üst köşeye yerleştirecek şekilde konumlandırma */
-            left: 10px;
-            padding: 10px 20px;
-            font-size: 1.5em;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .buy-button:hover {
-            background-color: #00ff00;
-            color: #000000;
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-        }
-
-        /* Mobile responsive styles */
-        @media (max-width: 768px) {
+                @media (max-width: 480px) {
             h1 {
-                font-size: 2em;
+                font-size: 1.5em;
             }
 
-            .about-container {
-                margin-top: 90px; /* Adjusting for navbar */
-                padding: 15px;
-            }
-
-            .about-text {
-                font-size: 1.2em;
-                margin: 15px;
-            }
-
-            .navbar a {
+            .button {
                 font-size: 1em;
+                max-width: 120px;
+            }
+
+           @media (max-width: 480px) {
+    .buy-now-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+        max-width: 140px; /* Küçük ekranlarda daha dar */
+        left: 5px;
+        top: 5px;
+    }
+}
+
+            #alien-quote {
+                font-size: 1.2em;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1.1em;
+                max-width: 180px;
+            }
+
+            .lets-click-btn {
+                font-size: 1.1em;
                 padding: 8px 16px;
             }
-
-            .buy-button {
-                font-size: 1.2em;
-                padding: 8px 15px;
-                left: 5px;
-                top: 5px;
-            }
-
-            footer {
-                font-size: 1em;
-                margin-top: 30px;
-            }
         }
 
-        @media (max-width: 480px) {
-            .navbar a {
-                padding: 6px 12px;
-                font-size: 0.9em;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .buy-button {
-                font-size: 1.1em;
-                padding: 6px 12px;
-            }
-
-            footer {
-                font-size: 0.9em;
-                margin-top: 20px;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="earthlings-forum.html">Eartling's Forum</a>
-        <a href="market.html">Space Market</a>
-    </div>
+    <!-- BUY button -->
+    <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
+        BUY
+    </button>
+
+    <!-- Navigation butonları -->
+    <div class="button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="About.html" class="button">About</a>
+        <a href="market.html" class="button">Space Market</a>
+        <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
+    </div>    </style>
 
     <h1>About Alien Crypto Chronicles</h1>
 
