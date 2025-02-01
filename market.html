@@ -212,7 +212,19 @@
             <p>The hottest token in the market! 🔥</p>
             <button class="buy-btn" onclick="showMessage('mer')">Buy MER</button>
         </div>
+<div class="crypto-widget" id="gbc">
+    <h3>Galaxy Bitcoin (GBC) <span id="gbc-price">₴1000</span></h3>
+    <p class="price-change" id="gbc-change">24h Change: +0%</p>
+    <p>Warning: This coin may cause you to become a galactic millionaire! 🚀</p>
+    <button class="buy-btn" onclick="showMessage('gbc')">Buy GBC</button>
+</div>
 
+<div class="crypto-widget" id="meth">
+    <h3>Mars Ethereum (METH) <span id="meth-price">₴500</span></h3>
+    <p class="price-change" id="meth-change">24h Change: +0%</p>
+    <p>Not from Mars, but still worth a shot! 🛸</p>
+    <button class="buy-btn" onclick="showMessage('meth')">Buy METH</button>
+</div>
     </div>
 
     <script>
@@ -236,7 +248,7 @@
         let changeElement = document.getElementById(coin + '-change');
         
         // Fiyatı rastgele olarak değiştir
-        let priceChange = (Math.random() - 99) *99; // -1 ile +1 arasında değişim
+        let priceChange = (Math.random() - 0.5) *2; // -1 ile +1 arasında değişim
         let newPrice = prices[coin] + priceChange;
 
         // Fiyat 1'in altına düşemez, 9999999'a kadar çıkabilir
