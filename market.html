@@ -1,88 +1,129 @@
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Market</title>
     <style>
-       /* Genel stil */
-body {
-    background-image: url('marketbck.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-y: scroll;
-}
+        /* Genel stil */
+        body {
+            background-image: url('marketbck.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+        }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: center; /* Öğeleri yatayda ortala */
-    gap: 20px; /* Navbar öğeleri arasındaki mesafeyi artır */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    flex-wrap: wrap; /* Sığmadığı durumlar için */
-}
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Daha küçük bir gap */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px; /* Daha küçük padding */
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
 
-.navbar a {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: #00ff00;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-    transition: all 0.3s ease;
-}
+        .navbar a {
+            padding: 10px 15px; /* Küçültülmüş padding */
+            font-size: 1.2em; /* Daha küçük yazı boyutu */
+            text-decoration: none;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            transition: all 0.3s ease;
+        }
 
-.navbar a:hover {
-    background-color: #00ff00;
-    color: #000000;
-    box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-}
+        .navbar a:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+        }
 
+        /* Buy Now Butonu */
+        .buy-now-btn {
+            background-color: #00ff00;
+            color: black;
+            padding: 10px 20px; /* Küçültülmüş padding */
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px; /* Küçük border-radius */
+            border: none;
+            display: inline-block;
+            box-shadow: 0 0 15px #00ff00, 0 0 20px #00ff00;
+            transition: all 0.3s ease;
+            margin-top: 15px; /* Daha küçük margin */
+        }
 
-/* Coin Widget'ları */
-.crypto-widget {
-    border: 2px solid #00ff00;
-    padding: 15px;
-    margin: 25px;
-    border-radius: 10px;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    width: 250px;
-    display: inline-block;
-    text-align: center;
-    flex: 1 1 200px; /* Mobilde daha esnek olmasını sağlar */
-}
+        .buy-now-btn:hover {
+            background-color: #000;
+            color: #00ff00;
+            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
+        }
 
-.crypto-widget h3 {
-    margin: 0;
-    font-size: 1.3em;
-}
+        /* Mobil Uyumlu Düzenlemeler */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                padding: 8px; /* Küçültülmüş padding */
+                gap: 10px; /* Küçültülmüş gap */
+            }
 
-.crypto-widget p {
-    margin: 5px 0 0;
-    font-size: 0.9em;
-}
+            .navbar a {
+                padding: 8px 12px; /* Küçük padding */
+                font-size: 1em; /* Küçük yazı boyutu */
+            }
 
+            .buy-now-btn {
+                padding: 8px 18px; /* Küçük padding */
+                font-size: 1em;
+                width: 100%;
+            }
+        }
+
+        /* Coin Widget'ları */
+        .crypto-widget {
+            border: 2px solid #00ff00;
+            padding: 10px;
+            margin: 15px;
+            border-radius: 8px; /* Küçük border-radius */
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            width: 200px; /* Daha küçük genişlik */
+            display: inline-block;
+            text-align: center;
+            flex: 1 1 180px;
+        }
+
+        .crypto-widget h3 {
+            margin: 0;
+            font-size: 1.1em; /* Küçük yazı boyutu */
+        }
+
+        .crypto-widget p {
+            margin: 5px 0 0;
+            font-size: 0.8em; /* Küçük yazı boyutu */
+        }
 
         .coin-container {
-            margin-top: 200px; /* Enough space to avoid navbar overlap */
+            margin-top: 150px; /* Daha küçük margin-top */
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -90,7 +131,7 @@ body {
 
         /* Price Change Class for Animations */
         .price-change {
-            font-size: 1.2em;
+            font-size: 1em;
         }
 
         .up {
@@ -118,108 +159,23 @@ body {
         }
 
         /* Butonlar */
-.buy-btn {
-    background-color: #00ff00;
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-}
+        .buy-btn {
+            background-color: #00ff00;
+            color: black;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+        }
 
-.buy-btn:hover {
-    background-color: #000;
-    color: #00ff00;
-    box-shadow: 0 0 20px #00ff00;
-}
-        /* Mobil Uyumlu Düzenlemeler */
-/* Mobil Uyumlu Düzenlemeler */
-/* Mobil Uyumlu Düzenlemeler */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row; /* Mobilde de yatay hizalamayı garanti et */
-        padding: 10px; /* Boşlukları ayarlayabiliriz */
-        gap: 15px; /* Öğeler arası mesafeyi ayarlayabiliriz */
-    }
-
-    .navbar a {
-        padding: 10px 15px; /* Butonların boyutlarını mobilde optimize et */
-        font-size: 1em; /* Yazı boyutunu mobilde biraz küçült */
-    }
-}
-
-    .crypto-widget {
-        width: 90%; /* Coin widget'ları ekran genişliğine göre genişleyecek */
-        max-width: 250px; /* Maksimum genişlik */
-        margin: 10px auto; /* Widget'lar arasındaki mesafeyi artırdık */
-        display: flex;
-        flex-direction: column; /* Butonların alt kısımda olması için dikey hizalama */
-        justify-content: space-between; /* Butonların üst ve alt arasında uygun mesafe */
-        padding: 15px; /* Widget içindeki padding'i artırarak öğelerin daha rahat görünmesini sağladık */
-        box-sizing: border-box; /* Padding'in genişlik hesaplamasına dahil olmasını sağladık */
-        background-color: rgba(0, 0, 0, 0.7); /* Arka planı biraz daha belirginleştirdik */
-    }
-
-    .buy-btn {
-        width: 100%; /* Butonlar ekran genişliğine göre büyüyecek */
-        margin-top: 15px; /* Buton ile diğer öğeler arasına daha fazla boşluk ekledik */
-        padding: 12px; /* Butonun yüksekliğini artırdık */
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar a {
-        font-size: 1em; /* Navbar'daki yazı boyutunu küçült */
-        padding: 10px; /* Butonlara daha fazla boşluk ekledik */
-    }
-
-    .crypto-widget {
-        width: 100%; /* Coin widget'ları tam genişlikte olacak */
-        margin: 10px 0; /* Aralarındaki mesafeyi kısıtlayacak */
-        padding: 10px; /* İçerideki öğeler için boşluk */
-        background-color: rgba(0, 0, 0, 0.8); /* Mobilde arka plan rengini değiştirebiliriz */
-    }
-
-    .buy-btn {
-        padding: 8px 0; /* Buton boyutunu küçülttük */
-    }
-}
-        /* Buy Now Butonu Stil */
-.buy-now-btn {
-    background-color: #00ff00;
-    color: black;
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
-    display: inline-block;
-    box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
-    transition: all 0.3s ease;
-    margin-top: 150px;
-    left: 50
-}
-
-.buy-now-btn:hover {
-    background-color: #000;
-    color: #00ff00;
-    box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-}
-/* Mobilde Butonun Uyumu */
-@media (max-width: 768px) {
-    .buy-now-btn {
-        padding: 12px 25px; /* Mobilde biraz daha küçük boyut */
-        font-size: 1em; /* Yazı boyutunu küçült */
-        width: 100%; /* Ekran genişliğine göre butonun tam genişlikte olmasını sağla */
-        
-    
-    }
-}
-
+        .buy-btn:hover {
+            background-color: #000;
+            color: #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+        }
     </style>
 </head>
 <body>
@@ -229,9 +185,12 @@ body {
         <a href="About.html">About</a>
         <a href="earthlings-forum.html">Earthling's Forum</a>
         <a href="market.html">Space Market</a>
-        <!-- Buy Now Button Added to Navbar -->
-        <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-now-btn">BUY NOW</a>
     </div>
+
+    <!-- Buy Now Butonu -->
+    <div class="buy-now-container">
+        <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-now-btn">BUY NOW</a>
+      </div>
     
     <!-- Coin Widgets Container -->
     <div class="coin-container">
