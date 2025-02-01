@@ -5,169 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earthlings' Forum</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        * Mobil uyumlu butonlar için stil */
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 0 10px;
-            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding: 0 10px;
+        margin-bottom: 80px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #00ff00;
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 2px solid #00ff00;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+        transition: all 0.3s ease;
+        flex: 1 1 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .button:hover {
+        background-color: #00ff00;
+        color: #000000;
+        box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+    }
+
+    .buy-now-btn {
+        background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+        color: black;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 1.2em;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        max-width: 200px;
+        width: auto;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .buy-now-btn:hover {
+        background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+        color: black;
+        box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 800px;
+        margin-top: 20px;
+    }
+
+    .comment-box {
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #2563eb;
+    }
+
+    .comments {
+        margin-top: 20px;
+    }
+
+    .comment {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #1e1e1e;
+        border-radius: 5px;
+    }
+
+    .alien {
+        color: #3b82f6;
+        font-weight: bold;
+    }
+
+    /* Responsive stil */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2em;
         }
 
         .button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            transition: all 0.3s ease;
-            flex: 1 1 100%;
-            max-width: 200px;
-            text-align: center;
+            font-size: 1.1em;
+            max-width: 160px;
         }
 
-        .button:hover {
-            background-color: #00ff00;
-            color: #000000;
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-        }
-
-        /* BUY butonu sabitleme */
         .buy-now-btn {
-    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-    color: black;
-    padding: 12px 24px; /* Boyutu küçülttük */
-    border-radius: 10px;
-    font-size: 1.2em; /* Mobil için font küçültme */
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    max-width: 200px;
-    width: auto; /* Tam genişliği kaplamaması için */
-    text-align: center;
-    white-space: nowrap; /* Yazının taşmasını önler */
-}
-
-        .buy-now-btn:hover {
-            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+            font-size: 1em;
+            padding: 10px 20px;
+            max-width: 160px;
+            left: 10px;
+            top: 10px;
         }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin-top: 20px;
+        #alien-quote {
+            font-size: 1.4em;
         }
-        .comment-box {
-            margin-bottom: 20px;
-        }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-        }
+
         button {
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
+            font-size: 1.2em;
+            max-width: 200px;
         }
-        button:hover {
-            background-color: #2563eb;
-        }
-        .comments {
-            margin-top: 20px;
-        }
-        .comment {
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
-        }
-        .alien {
-            color: #3b82f6;
-            font-weight: bold;
-        }
-            /* Responsive stil */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
 
-            .button {
-                font-size: 1.1em;
-                max-width: 160px;
-            }
-
-            @media (max-width: 768px) {
-    .buy-now-btn {
-        font-size: 1em;
-        padding: 10px 20px;
-        max-width: 160px; /* Mobilde fazla geniş olmaması için */
-        left: 10px; /* Kenara daha yakın */
-        top: 10px;
+        .lets-click-btn {
+            font-size: 1em;
+            padding: 10px 20px;
+        }
     }
-}
 
-
-            #alien-quote {
-                font-size: 1.4em;
-            }
-
-            button {
-                font-size: 1.2em;
-                max-width: 200px;
-            }
-
-            .lets-click-btn {
-                font-size: 1em;
-                padding: 10px 20px;
-            }
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.5em;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
-            }
+        .button {
+            font-size: 1em;
+            max-width: 120px;
+        }
 
-            .button {
-                font-size: 1em;
-                max-width: 120px;
-            }
-
-           @media (max-width: 480px) {
-    .buy-now-btn {
-        font-size: 0.9em;
-        padding: 8px 16px;
-        max-width: 140px; /* Küçük ekranlarda daha dar */
-        left: 5px;
-        top: 5px;
+        .buy-now-btn {
+            font-size: 0.9em;
+            padding: 8px 16px;
+            max-width: 140px;
+            left: 5px;
+            top: 5px;
+        }
     }
-}
+
     </style>
 </head>
 <body>
