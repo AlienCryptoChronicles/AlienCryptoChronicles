@@ -216,6 +216,66 @@
     </div>
 
     <script>
+    
+    // Başlangıçta coinlerin fiyatlarını tanımlayalım
+    let prices = {
+        'gbc': 1000,
+        'meth': 500,
+        'nep': 300,
+        'sat': 200,
+        'jup': 150,
+        'pld': 100,
+        'ven': 75,
+        'urg': 50,
+        'mer': 25
+    };
+
+    // Fiyatların değişmesini sağlayan fonksiyon
+    function changePrice(coin) {
+        let priceElement = document.getElementById(coin + '-price');
+        let changeElement = document.getElementById(coin + '-change');
+        
+        // Fiyatı rastgele olarak değiştir
+        let priceChange = (Math.random() - 99) *99; // -1 ile +1 arasında değişim
+        let newPrice = prices[coin] + priceChange;
+
+        // Fiyat 1'in altına düşemez, 9999999'a kadar çıkabilir
+        if (newPrice < 1) newPrice = 1;
+        if (newPrice > 9999999) newPrice = 9999999;
+
+        prices[coin] = newPrice;
+
+        // Fiyatı güncelle
+        priceElement.textContent = '₴' + newPrice.toFixed(2);
+        
+        // Değişim yönünü belirle (yukarı mı, aşağı mı?)
+        let changeDirection = priceChange > 0 ? 'up' : 'down';
+        changeElement.textContent = '24h Change: ' + (priceChange > 0 ? '+' : '') + priceChange.toFixed(2) + '%';
+        changeElement.className = 'price-change ' + changeDirection;
+
+        // Animasyonları başlat (şok etkisi gibi)
+        if (changeDirection === 'up') {
+            changeElement.classList.add('up');
+        } else {
+            changeElement.classList.add('down');
+        }
+
+        // 1 saniye sonra animasyonu durdur
+        setTimeout(function() {
+            changeElement.classList.remove('up', 'down');
+        }, 1000);
+    }
+
+    // Fiyatların her 10 saniyede bir değişmesini sağla
+    setInterval(function() {
+        // Her coin için fiyat değişimini yap
+        for (let coin in prices) {
+            changePrice(coin);
+        }
+    }, 10000);
+
+
+
         const messages = [
             "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
             "Congrats! You've got a ticket to the Moon... but we don't know how you'll get there.",
