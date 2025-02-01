@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,20 +26,20 @@
         /* Navbar */
         .navbar {
             display: flex;
-            justify-content: center;
-            gap: 15px; /* Daha küçük bir gap */
+            justify-content: flex-start;
+            gap: 15px;
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 10px; /* Daha küçük padding */
+            padding: 10px;
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             flex-wrap: wrap;
         }
 
         .navbar a {
-            padding: 10px 15px; /* Küçültülmüş padding */
-            font-size: 1.2em; /* Daha küçük yazı boyutu */
+            padding: 10px 15px;
+            font-size: 1.2em;
             text-decoration: none;
             color: #00ff00;
             background-color: rgba(0, 0, 0, 0.8);
@@ -59,16 +59,19 @@
         .buy-now-btn {
             background-color: #00ff00;
             color: black;
-            padding: 10px 20px; /* Küçültülmüş padding */
+            padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 8px; /* Küçük border-radius */
+            border-radius: 8px;
             border: none;
             display: inline-block;
             box-shadow: 0 0 15px #00ff00, 0 0 20px #00ff00;
             transition: all 0.3s ease;
-            margin-top: 15px; /* Daha küçük margin */
+            margin-top: 10px; /* Margin top */
+            position: absolute;
+            top: 10px;
+            right: 20px;
         }
 
         .buy-now-btn:hover {
@@ -77,36 +80,16 @@
             box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
         }
 
-        /* Mobil Uyumlu Düzenlemeler */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: row;
-                padding: 8px; /* Küçültülmüş padding */
-                gap: 10px; /* Küçültülmüş gap */
-            }
-
-            .navbar a {
-                padding: 8px 12px; /* Küçük padding */
-                font-size: 1em; /* Küçük yazı boyutu */
-            }
-
-            .buy-now-btn {
-                padding: 8px 18px; /* Küçük padding */
-                font-size: 1em;
-                width: 100%;
-            }
-        }
-
         /* Coin Widget'ları */
         .crypto-widget {
             border: 2px solid #00ff00;
             padding: 10px;
             margin: 15px;
-            border-radius: 8px; /* Küçük border-radius */
+            border-radius: 8px;
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
-            width: 200px; /* Daha küçük genişlik */
+            width: 200px;
             display: inline-block;
             text-align: center;
             flex: 1 1 180px;
@@ -114,16 +97,16 @@
 
         .crypto-widget h3 {
             margin: 0;
-            font-size: 1.1em; /* Küçük yazı boyutu */
+            font-size: 1.1em;
         }
 
         .crypto-widget p {
             margin: 5px 0 0;
-            font-size: 0.8em; /* Küçük yazı boyutu */
+            font-size: 0.8em;
         }
 
         .coin-container {
-            margin-top: 150px; /* Daha küçük margin-top */
+            margin-top: 150px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -188,9 +171,8 @@
     </div>
 
     <!-- Buy Now Butonu -->
-    <div class="buy-now-container">
-        <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-now-btn">BUY NOW</a>
-      </div>
+    <a href="https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump" class="buy-now-btn">BUY NOW</a>
+
     
     <!-- Coin Widgets Container -->
     <div class="coin-container">
