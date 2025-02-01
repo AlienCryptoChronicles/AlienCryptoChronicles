@@ -16,7 +16,6 @@
             text-align: center;
         }
 
-          /* Mobil uyumlu butonlar için stil */
         .button-container {
             display: flex;
             flex-wrap: wrap;
@@ -25,7 +24,7 @@
             gap: 10px;
             margin-top: 20px;
             padding: 0 10px;
-            margin-bottom: -20px; /* Alt kısmı daha fazla boşluk bırakmak için */
+            margin-bottom: -20px;
         }
 
         .button {
@@ -49,24 +48,23 @@
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        /* BUY butonu sabitleme */
         .buy-now-btn {
-    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-    color: black;
-    padding: 12px 24px; /* Boyutu küçülttük */
-    border-radius: 10px;
-    font-size: 1.2em; /* Mobil için font küçültme */
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    max-width: 200px;
-    width: auto; /* Tam genişliği kaplamaması için */
-    text-align: center;
-    white-space: nowrap; /* Yazının taşmasını önler */
-}
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            max-width: 200px;
+            width: auto;
+            text-align: center;
+            white-space: nowrap;
+        }
 
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
@@ -74,7 +72,6 @@
             box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
 
-        /* Coin Widget'ları */
         .crypto-widget {
             border: 2px solid #00ff00;
             padding: 10px;
@@ -106,7 +103,6 @@
             justify-content: center;
         }
 
-        /* Price Change Class for Animations */
         .price-change {
             font-size: 1em;
         }
@@ -135,84 +131,83 @@
             100% { transform: translateX(0); }
         }
 
-
     </style>
 </head>
 <body>
-  <!-- BUY button -->
+    <!-- BUY button -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
         BUY
     </button>
 
-    <!-- Navigation butonları -->
+    <!-- Navigation buttons -->
     <div class="button-container">
         <a href="index.html" class="button">Home</a>
         <a href="About.html" class="button">About</a>
         <a href="market.html" class="button">Space Market</a>
-        <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
+        <a href="earthlings-forum.html" class="button">Earthling's Forum</a>
     </div>
-    
+
     <!-- Coin Widgets Container -->
     <div class="coin-container">
         <!-- Coin Widgets Here -->
         <div class="crypto-widget" id="gbc">
-            <h3>Galaxy Bitcoin (GBC) <span id="gbc-price">$1000</span></h3>
+            <h3>Galaxy Bitcoin (GBC) <span id="gbc-price">₴1000</span></h3>
             <p class="price-change" id="gbc-change">24h Change: +0%</p>
             <p>Warning: This coin may cause you to become a galactic millionaire! 🚀</p>
             <button class="buy-btn" onclick="showMessage('gbc')">Buy GBC</button>
         </div>
 
         <div class="crypto-widget" id="meth">
-            <h3>Mars Ethereum (METH) <span id="meth-price">$500</span></h3>
+            <h3>Mars Ethereum (METH) <span id="meth-price">₴500</span></h3>
             <p class="price-change" id="meth-change">24h Change: +0%</p>
             <p>Not from Mars, but still worth a shot! 🛸</p>
             <button class="buy-btn" onclick="showMessage('meth')">Buy METH</button>
         </div>
 
         <div class="crypto-widget" id="nep">
-            <h3>Neptune Coin (NEP) <span id="nep-price">$300</span></h3>
+            <h3>Neptune Coin (NEP) <span id="nep-price">₴300</span></h3>
             <p class="price-change" id="nep-change">24h Change: +0%</p>
             <p>From the deep space of Neptune. Maybe it'll rise 1000% in value! 🌌</p>
             <button class="buy-btn" onclick="showMessage('nep')">Buy NEP</button>
         </div>
 
         <div class="crypto-widget" id="sat">
-            <h3>Saturn Token (SAT) <span id="sat-price">$200</span></h3>
+            <h3>Saturn Token (SAT) <span id="sat-price">₴200</span></h3>
             <p class="price-change" id="sat-change">24h Change: +0%</p>
             <p>Everyone loves a good ring! 🌠</p>
             <button class="buy-btn" onclick="showMessage('sat')">Buy SAT</button>
         </div>
 
         <div class="crypto-widget" id="jup">
-            <h3>Jupiter Cash (JUP) <span id="jup-price">$150</span></h3>
+            <h3>Jupiter Cash (JUP) <span id="jup-price">₴150</span></h3>
             <p class="price-change" id="jup-change">24h Change: +0%</p>
             <p>It’s the largest coin in the solar system! 🌍</p>
             <button class="buy-btn" onclick="showMessage('jup')">Buy JUP</button>
         </div>
 
         <div class="crypto-widget" id="pld">
-            <h3>Pluto Dollar (PLD) <span id="pld-price">$100</span></h3>
+            <h3>Pluto Dollar (PLD) <span id="pld-price">₴100</span></h3>
             <p class="price-change" id="pld-change">24h Change: +0%</p>
             <p>It may be a dwarf, but it's still a coin! 🪐</p>
             <button class="buy-btn" onclick="showMessage('pld')">Buy PLD</button>
         </div>
 
         <div class="crypto-widget" id="ven">
-            <h3>Venus Coin (VEN) <span id="ven-price">$75</span></h3>
+            <h3>Venus Coin (VEN) <span id="ven-price">₴75</span></h3>
             <p class="price-change" id="ven-change">24h Change: +0%</p>
             <p>Hotter than the Sun! ☀️</p>
             <button class="buy-btn" onclick="showMessage('ven')">Buy VEN</button>
         </div>
 
         <div class="crypto-widget" id="urg">
-            <h3>Uranus Gold (URG) <span id="urg-price">$50</span></h3>
+            <h3>Uranus Gold (URG) <span id="urg-price">₴50</span></h3>
             <p class="price-change" id="urg-change">24h Change: +0%</p>
             <p>Shiny as gold! 💰</p>
             <button class="buy-btn" onclick="showMessage('urg')">Buy URG</button>
         </div>
 
         <div class="crypto-widget" id="mer">
-            <h3>Mercury Token (MER) <span id="mer-price">$25</span></h3>
+            <h3>Mercury Token (MER) <span id="mer-price">₴25</span></h3>
             <p class="price-change" id="mer-change">24h Change: +0%</p>
             <p>The hottest token in the market! 🔥</p>
             <button class="buy-btn" onclick="showMessage('mer')">Buy MER</button>
@@ -221,7 +216,6 @@
     </div>
 
     <script>
-        // Your existing message array
         const messages = [
             "Congratulations! You've won a free space trip! Your spaceship will arrive in... 3-5 light years.",
             "Congrats! You've got a ticket to the Moon... but we don't know how you'll get there.",
@@ -235,7 +229,6 @@
             "Congrats, you're now a part of the Space Billionaires Club. Check your wallet... wait, it’s empty!"
         ];
 
-        // Function to show a random message
         function showMessage(coin) {
             const message = messages[Math.floor(Math.random() * messages.length)];
             alert(message);
