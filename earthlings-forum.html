@@ -16,6 +16,64 @@
             flex-direction: column;
             align-items: center;
         }
+        * Mobil uyumlu butonlar için stil */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 0 10px;
+            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
+        }
+
+        /* BUY butonu sabitleme */
+        .buy-now-btn {
+    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+    color: black;
+    padding: 12px 24px; /* Boyutu küçülttük */
+    border-radius: 10px;
+    font-size: 1.2em; /* Mobil için font küçültme */
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    max-width: 200px;
+    width: auto; /* Tam genişliği kaplamaması için */
+    text-align: center;
+    white-space: nowrap; /* Yazının taşmasını önler */
+}
+
+        .buy-now-btn:hover {
+            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
+        }
+
         .container {
             width: 90%;
             max-width: 800px;
@@ -57,6 +115,18 @@
     </style>
 </head>
 <body>
+      <!-- BUY button -->
+    <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
+        BUY
+    </button>
+
+    <!-- Navigation butonları -->
+    <div class="button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="About.html" class="button">About</a>
+        <a href="market.html" class="button">Space Market</a>
+        <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
+    </div>
     <div class="container">
         <h1>Earthlings' Forum</h1>
         <p>Share your fun and wild crypto stories with other Earthlings!</p>
