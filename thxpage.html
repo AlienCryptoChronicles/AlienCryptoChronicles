@@ -14,6 +14,7 @@
             text-align: center;
             padding: 50px;
             overflow: hidden;
+            position: relative;
         }
         h1 {
             color: #0f0;
@@ -27,81 +28,63 @@
         .user-list-container {
             margin-top: 30px;
             padding: 10px;
-            background-color: rgba(0, 255, 0, 0.3); /* Görselin üstünde görünürlük sağlamak için transparan arka plan */
+            background-color: rgba(0, 255, 0, 0.3);
             border-radius: 10px;
             display: inline-block;
             position: relative;
             width: 100%;
             max-width: 600px;
-            height: 300px; /* Listeyi sığdırmak için sabit yükseklik */
-            overflow: hidden; /* Taşan kısmı gizle */
-            z-index: 1; /* Butonların altında olmasını engellemek için */
+            height: 300px;
+            overflow: hidden;
         }
         .user-list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             list-style-type: none;
             padding: 0;
             margin: 0;
-            animation: scrollUp 15s linear infinite; /* Listeyi yukarıya doğru kaydıran animasyon */
+            animation: slideUp 10s linear infinite;
         }
         .user-list li {
-            margin: 10px 0;
+            margin: 5px;
             font-size: 1.2em;
-            color: #9b4d96; /* Fosforlu mor rengi */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            color: #9b4d96;
+            white-space: nowrap;
         }
 
         /* Kaydırma animasyonu */
-        @keyframes scrollUp {
+        @keyframes slideUp {
             0% {
                 transform: translateY(100%);
-            }
-            40% {
-                transform: translateY(0);
             }
             100% {
                 transform: translateY(-100%);
             }
         }
 
-        /* Sabit başlık */
-        .user-list-container h2 {
-            color: #fff;
-            position: absolute;
-            top: 20px;
+        .social-links {
+            position: fixed; /* Sayfa kaydırıldığında sabit kalacak */
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 10;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 10px;
-        }
-
-        .social-links {
             margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            z-index: 10; /* Butonların üstte olmasını sağlamak için */
         }
-
         .social-links a {
             margin: 0 15px;
-            padding: 10px 20px;
             text-decoration: none;
-            color: #fff;
+            color: #0f0;
             font-size: 1.5em;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            background-color: #0077b5; /* Telegram için mavi */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+            padding: 10px 20px;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-
-        /* Hover Efekti */
         .social-links a:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
-            background-color: #005582; /* Daha koyu bir renk */
+            background-color: #0f0;
+            color: black;
         }
-
     </style>
 </head>
 <body>
@@ -126,16 +109,18 @@
 
     <script>
         // Örnek takipçi listesi
-        const followers = ["@CryptoGemsBulls",
-"@BankmanCrypto",
-"@MrBitcoinSir",
-"@eth_spilj",
-"@CharlotteHype",
-"@raynft_",
-"@katalina_Crypto",
-"@TheAltcoinZeus",
-"@ShibaKingCalls",
-"@Sabahat_99"];
+        const followers = [
+            "@CryptoGemsBulls",
+            "@BankmanCrypto",
+            "@MrBitcoinSir",
+            "@eth_spilj",
+            "@CharlotteHype",
+            "@raynft_",
+            "@katalina_Crypto",
+            "@TheAltcoinZeus",
+            "@ShibaKingCalls",
+            "@Sabahat_99"
+        ];
 
         // Takipçileri listeye ekleme
         const followerList = document.getElementById("follower-list");
