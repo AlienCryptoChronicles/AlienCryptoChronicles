@@ -6,7 +6,7 @@
     <title>Thank You for Following!</title>
     <style>
         body {
-            background-image: url('thxmeet.jpeg'); /* Buraya görsel URL'sini ekleyin */
+            background-image: url('thxmeet.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -15,6 +15,7 @@
             padding: 50px;
             overflow: hidden;
             position: relative;
+            margin-top: 80px; /* Navbarın altına kaymasını sağlar */
         }
         h1 {
             color: #0f0;
@@ -53,8 +54,6 @@
             color: #9b4d96;
             white-space: nowrap;
         }
-
-        /* Kaydırma animasyonu */
         @keyframes slideUp {
             0% {
                 transform: translateY(100%);
@@ -64,42 +63,16 @@
             }
         }
 
-        .social-links {
-            position: fixed; /* Sayfa kaydırıldığında sabit kalacak */
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 40px;
-        }
-        .social-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.5em;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            background-color: #ff0080; /* İlk başta pembe arka plan */
-            color: white; /* Yazı rengi beyaz */
-            border: 2px solid #ff0080; /* Butonun kenarlığı */
-        }
-        .social-links a:hover {
-            background-color: #fff; /* Hoverda beyaz arka plan */
-            color: #ff0080; /* Yazı rengi pembe */
-            border-color: #ff0080; /* Hoverda kenarlık rengi */
-        }
-              /* Mobil uyumlu butonlar için stil */
         .button-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 0 10px;
-            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
+            gap: 15px;
+            position: absolute;
+            top: 20px; /* Sayfanın üst kısmına yakın */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
         }
-
         .button {
             padding: 10px 20px;
             font-size: 1.2em;
@@ -110,73 +83,69 @@
             border-radius: 10px;
             box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             transition: all 0.3s ease;
-            flex: 1 1 100%;
-            max-width: 200px;
-            text-align: center;
         }
-
         .button:hover {
             background-color: #00ff00;
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
-        
-        /* BUY butonu sabitleme */
-        .buy-now-btn {
-    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-    color: black;
-    padding: 12px 24px; /* Boyutu küçülttük */
-    border-radius: 10px;
-    font-size: 1.2em; /* Mobil için font küçültme */
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    max-width: 200px;
-    width: auto; /* Tam genişliği kaplamaması için */
-    text-align: center;
-    white-space: nowrap; /* Yazının taşmasını önler */
-}
 
+        .buy-now-btn {
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            max-width: 200px;
+        }
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
             color: black;
             box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
-   @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
 
-            .button {
-                font-size: 1.1em;
-                max-width: 160px;
-            }
+        .social-links {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 40px;
+        }
 
-            @media (max-width: 768px) {
-    .buy-now-btn {
-        font-size: 1em;
-        padding: 10px 20px;
-        max-width: 160px; /* Mobilde fazla geniş olmaması için */
-        left: 10px; /* Kenara daha yakın */
-        top: 10px;
-    }
-}
-
-
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #ff0080;
+            color: white;
+            border: 2px solid #ff0080;
+        }
+        .social-links a:hover {
+            background-color: #fff;
+            color: #ff0080;
+            border-color: #ff0080;
+        }
 
     </style>
 </head>
 <body>
 
-      <!-- BUY button -->
+    <!-- BUY button -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
         BUY
     </button>
 
-    <!-- Navigation butonları -->
+    <!-- Navbar -->
     <div class="button-container">
         <a href="index.html" class="button">Home</a>
         <a href="About.html" class="button">About</a>
