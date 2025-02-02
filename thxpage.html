@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Following!</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #0f0;
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .user-list {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: rgba(0, 255, 0, 0.2);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .user-list h2 {
+            color: #fff;
+        }
+        .user-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .user-list ul li {
+            margin: 5px;
+            font-size: 1.2em;
+        }
+        .social-links {
+            margin-top: 40px;
+        }
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0f0;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Thank You for Following! 🌌</h1>
+    <div class="message">
+        We appreciate your support and are excited to have you with us on this intergalactic journey! Stay tuned for more updates. 🌠
+    </div>
+    
+    <!-- Takipçi Listesi (Dinamik olarak doldurulacak) -->
+    <div class="user-list">
+        <h2>Special Thanks to Our Followers:</h2>
+        <ul id="follower-list">
+            <!-- Kullanıcı isimleri buraya dinamik olarak eklenecek -->
+        </ul>
+    </div>
+
+    <!-- Sosyal Medya Bağlantıları -->
+    <div class="social-links">
+        <a href="https://twitter.com/yourprofile" target="_blank">Telegram</a>
+        <a href="https://facebook.com/yourprofile" target="_blank">Twitter</a>
+    </div>
+
+    <script>
+        // Örnek takipçi listesi
+        const followers = ["@SpaceExplorer1", "@GalacticFan", "@AlienAdventurer"];
+
+        // Takipçileri listeye ekleme
+        const followerList = document.getElementById("follower-list");
+        followers.forEach(follower => {
+            const listItem = document.createElement("li");
+            listItem.textContent = follower;
+            followerList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
