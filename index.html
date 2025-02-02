@@ -20,54 +20,6 @@
             justify-content: space-between;
         }
 
-        /* Eski Navbar Stili */
-        .old-navbar {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .old-navbar a {
-            color: #00ff00;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            transition: background 0.3s;
-        }
-
-        .old-navbar a:hover {
-            background-color: rgba(0, 255, 0, 0.5);
-            border-radius: 5px;
-        }
-
-        /* Yeni Navbar Stili */
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 50px; /* Eski navbarın altında yer alması için */
-            left: 0;
-            z-index: 999;
-        }
-
-        .navbar a {
-            color: #00ff00;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            transition: background 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: rgba(0, 255, 0, 0.5);
-            border-radius: 5px;
-        }
-
         /* Başlık stili */
         h1 {
             font-size: 2.5em;
@@ -77,45 +29,39 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
             border-radius: 10px;
-            margin-top: 100px; /* İki navbar yüksekliği kadar boşluk bırakıldı */
+            margin-top: 20px;
         }
 
-        /* Kayıt Paneli Stili */
-        .login-container {
+        /* Kullanıcı Paneli Stili */
+        .user-panel {
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
             max-width: 400px;
             box-shadow: 0 0 20px #00ff00;
-            display: none; /* Başlangıçta gizli */
         }
 
-        .input-field {
-            margin: 10px 0;
+        .user-panel input {
             padding: 10px;
+            margin: 10px 0;
             border: 2px solid #00ff00;
             border-radius: 5px;
             width: 100%;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        .button {
+        .user-panel button {
             padding: 10px;
-            font-size: 1.2em;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            background-color: #00ff00;
+            color: black;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            width: 100%;
+            transition: background 0.3s;
         }
 
-        .button:hover {
-            background-color: #00ff00;
-            color: #000000;
+        .user-panel button:hover {
+            background-color: #00cc00;
         }
 
         /* Mobil uyumlu butonlar için stil */
@@ -130,104 +76,53 @@
             margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
         }
 
-        /* BUY butonu sabitleme */
-        .buy-now-btn {
-            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            padding: 12px 24px; /* Boyutu küçülttük */
-            border-radius: 10px;
-            font-size: 1.2em; /* Mobil için font küçültme */
-            border: none;
-            cursor: pointer;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            max-width: 200px;
-            width: auto; /* Tam genişliği kaplamaması için */
-            text-align: center;
-            white-space: nowrap; /* Yazının taşmasını önler */
-        }
-
-        .buy-now-btn:hover {
-            background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
-            color: black;
-            box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
-        }
-
-        /* Uzaylı imajı ve alıntısı alanı için stil */
-        .alien-container {
-            margin-top: 20px;
-        }
-
-        #alien-image {
-            width: 150px;
-            height: 150px;
-            margin: 20px auto;
-        }
-
-        #alien-quote {
-            font-size: 1.5em;
-            margin-top: 20px;
-            padding: 20px;
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
             color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
             border-radius: 10px;
-            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            box-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
-            margin-bottom: 100px;
+            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+            transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 200px;
+            text-align: center;
         }
 
-        /* Responsive stil */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            #alien-quote {
-                font-size: 1.4em;
-            }
-
-            .buy-now-btn {
-                font-size: 1em;
-                padding: 10px 20px;
-            }
+        .button:hover {
+            background-color: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
-            }
+        /* Diğer stiller... (eski kodunuzdan kopyalanacak) */
 
-            #alien-quote {
-                font-size: 1.2em;
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <!-- Eski Navbar -->
-    <div class="old-navbar">
-        <a href="#home">Ana Sayfa</a>
-        <a href="#about">Hakkında</a>
-        <a href="#contact">İletişim</a>
-        <a href="#faq">SSS</a>
-    </div>
-
-    <!-- Yeni Navbar -->
-    <div class="navbar">
-        <a href="#features">Özellikler</a>
-        <a href="#roadmap">Yol Haritası</a>
-        <a href="#team">Ekip</a>
-        <a href="#community">Topluluk</a>
-    </div>
 
     <!-- BUY button -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
         BUY
     </button>
+
+    <!-- Kullanıcı Paneli -->
+    <div class="user-panel">
+        <h2>Kullanıcı Girişi</h2>
+        <input type="text" placeholder="Kullanıcı Adı" />
+        <input type="password" placeholder="Şifre" />
+        <button>Giriş Yap</button>
+    </div>
+
+    <!-- Navigation butonları -->
+    <div class="button-container">
+        <a href="index.html" class="button">Home</a>
+        <a href="About.html" class="button">About</a>
+        <a href="market.html" class="button">Space Market</a>
+        <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
+    </div>
 
     <!-- Başlık -->
     <h1>Alien Crypto Chronicles</h1>
@@ -236,17 +131,6 @@
     <div class="alien-container">
         <img id="alien-image" src="placeholder-alien.jpg" alt="Alien" />
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
-    </div>
-
-    <!-- Kullanıcı Giriş Paneli -->
-    <div class="login-container" id="loginContainer">
-        <h2>Kayıt Ol / Giriş Yap</h2>
-        <input type="text" id="username" class="input-field" placeholder="Kullanıcı Adı" required>
-        <input type="password" id="password" class="input-field" placeholder="Şifre" required>
-        <button class="button" onclick="registerUser()">Kayıt Ol</button>
-        <button class="button" onclick="loginUser()">Giriş Yap</button>
-        <div id="user-message"></div>
-        <button id="logoutButton" style="display: none;" onclick="logoutUser()">Çıkış Yap</button>
     </div>
 
     <!-- Let's Click butonu -->
@@ -329,58 +213,9 @@
             document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
         }
 
-        function registerUser() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username && password) {
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password); // Şifreyi saklamak için
-                document.getElementById('user-message').innerText = `Kayıt başarılı! Hoş geldiniz, ${username}!`;
-                document.getElementById('logoutButton').style.display = 'inline';
-                document.getElementById('loginContainer').style.display = 'none';
-            } else {
-                alert("Lütfen tüm alanları doldurun!");
-            }
-        }
-
-        function loginUser() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            const storedUsername = localStorage.getItem('username');
-            const storedPassword = localStorage.getItem('password');
-
-            if (username === storedUsername && password === storedPassword) {
-                document.getElementById('user-message').innerText = `Giriş başarılı! Hoş geldiniz, ${username}!`;
-                document.getElementById('logoutButton').style.display = 'inline';
-                document.getElementById('loginContainer').style.display = 'none';
-            } else {
-                alert("Kullanıcı adı veya şifre hatalı!");
-            }
-        }
-
-        function logoutUser() {
-            localStorage.removeItem('username');
-            localStorage.removeItem('password');
-            document.getElementById('user-message').innerText = "Çıkış yaptınız!";
-            document.getElementById('logoutButton').style.display = 'none';
-            document.getElementById('loginContainer').style.display = 'block'; // Paneli tekrar göster
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-        }
-
         // Sayfa açıldığında otomatik çalıştır
         window.onload = function() {
             generateAlienComment();
-            const storedUsername = localStorage.getItem('username');
-            if (storedUsername) {
-                document.getElementById('user-message').innerText = `Hoş geldiniz, ${storedUsername}!`;
-                document.getElementById('logoutButton').style.display = 'inline';
-                document.getElementById('loginContainer').style.display = 'none'; // Giriş panelini gizle
-            } else {
-                document.getElementById('loginContainer').style.display = 'block'; // Giriş panelini göster
-            }
         };
     </script>
 
