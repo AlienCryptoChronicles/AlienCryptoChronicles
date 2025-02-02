@@ -40,6 +40,7 @@
             margin: 20px auto;
             max-width: 400px;
             box-shadow: 0 0 20px #00ff00;
+            display: none; /* Başlangıçta gizli */
         }
 
         .input-field {
@@ -300,7 +301,7 @@
             localStorage.removeItem('password');
             document.getElementById('user-message').innerText = "Çıkış yaptınız!";
             document.getElementById('logoutButton').style.display = 'none';
-            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('loginContainer').style.display = 'block'; // Paneli tekrar göster
             document.getElementById('username').value = '';
             document.getElementById('password').value = '';
         }
@@ -312,7 +313,9 @@
             if (storedUsername) {
                 document.getElementById('user-message').innerText = `Hoş geldiniz, ${storedUsername}!`;
                 document.getElementById('logoutButton').style.display = 'inline';
-                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('loginContainer').style.display = 'none'; // Giriş panelini gizle
+            } else {
+                document.getElementById('loginContainer').style.display = 'block'; // Giriş panelini göster
             }
         };
     </script>
