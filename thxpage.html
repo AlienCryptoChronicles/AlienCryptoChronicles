@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You for Following!</title>
     <style>
-       body {
+        body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -78,7 +78,7 @@
             gap: 10px;
             margin-top: 20px;
             padding: 0 10px;
-            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
+            margin-bottom: 80px;
         }
 
         .button {
@@ -104,29 +104,30 @@
 
         /* BUY butonu sabitleme */
         .buy-now-btn {
-    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-    color: black;
-    padding: 12px 24px; /* Boyutu küçülttük */
-    border-radius: 10px;
-    font-size: 1.2em; /* Mobil için font küçültme */
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    max-width: 200px;
-    width: auto; /* Tam genişliği kaplamaması için */
-    text-align: center;
-    white-space: nowrap; /* Yazının taşmasını önler */
-}
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            max-width: 200px;
+            width: auto;
+            text-align: center;
+            white-space: nowrap;
+        }
 
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
             color: black;
             box-shadow: 0 0 40px #ff007f, 0 0 50px #fffc00;
         }
- /* Responsive stil */
+
+        /* Responsive stil */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -137,24 +138,24 @@
                 max-width: 160px;
             }
 
-            @media (max-width: 768px) {
-    .buy-now-btn {
-        font-size: 1em;
-        padding: 10px 20px;
-        max-width: 160px; /* Mobilde fazla geniş olmaması için */
-        left: 10px; /* Kenara daha yakın */
-        top: 10px;
-    }
-}
-
-
-
-            button {
-                font-size: 1.2em;
-                max-width: 200px;
+            .button-container {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
             }
 
+            .buy-now-btn {
+                font-size: 1em;
+                padding: 10px 20px;
+                max-width: 160px;
+                left: 10px;
+                top: 10px;
+            }
 
+            .social-links a {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
         }
 
         @media (max-width: 480px) {
@@ -162,29 +163,36 @@
                 font-size: 1.5em;
             }
 
+            .message {
+                font-size: 1em;
+            }
+
+            .user-list-container {
+                padding: 5px;
+            }
+
+            .user-list li {
+                font-size: 0.9em;
+            }
+
             .button {
                 font-size: 1em;
                 max-width: 120px;
             }
 
-           @media (max-width: 480px) {
-    .buy-now-btn {
-        font-size: 0.9em;
-        padding: 8px 16px;
-        max-width: 140px; /* Küçük ekranlarda daha dar */
-        left: 5px;
-        top: 5px;
-    }
-}
-
-
-            button {
-                font-size: 1.1em;
-                max-width: 180px;
+            .buy-now-btn {
+                font-size: 0.9em;
+                padding: 8px 16px;
+                max-width: 140px;
+                left: 5px;
+                top: 5px;
             }
 
+            .social-links a {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
         }
-
 
         .social-links {
             position: fixed;
@@ -213,54 +221,6 @@
             color: #00ff00;
             border-color: #00ff00;
         }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .button-container {
-                flex-direction: column;
-                align-items: stretch;
-                width: 100%;
-            }
-
-            .button {
-                width: 100%;
-                padding: 10px;
-            }
-
-            .user-list-container {
-                height: auto;
-                padding: 10px;
-            }
-
-            .buy-now-btn {
-                top: 10px;
-                left: 10px;
-            }
-
-            .social-links a {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .message {
-                font-size: 1.2em;
-            }
-
-            .user-list li {
-                font-size: 1em;
-            }
-
-            .social-links a {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -275,7 +235,7 @@
         <a href="index.html" class="button">Home</a>
         <a href="About.html" class="button">About</a>
         <a href="market.html" class="button">Space Market</a>
-        <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
+        <a href="earthlings-forum.html" class="button">Earthling's Forum</a>
         <a href="thxpage.html" class="button">Thanks for Community</a>
     </div>
 
