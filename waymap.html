@@ -3,67 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earthlings' Forum & Roadmap</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Space Coin Roadmap</title>
     <style>
         body {
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 0 10px;
-            margin-bottom: 80px;
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #00ff00;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            transition: all 0.3s ease;
-            flex: 1 1 100%;
-            max-width: 200px;
             text-align: center;
+            overflow-x: hidden;
         }
-        .button:hover {
-            background-color: #00ff00;
-            color: #000000;
-            box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin-top: 20px;
-        }
-        
-        /* Roadmap Stil */
         .roadmap {
             position: relative;
             width: 100%;
-            max-width: 900px;
             height: 800px;
             background: url('https://i.imgur.com/YOUR_SPACE_BG.jpg') no-repeat center center/cover;
-            margin-top: 50px;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 0 20px #00ff00;
+            overflow: hidden;
         }
         .stage {
             position: absolute;
@@ -77,6 +31,7 @@
             font-size: 1.2em;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
+            animation: pulse 2s infinite alternate;
         }
         .stage:hover {
             transform: scale(1.2);
@@ -88,48 +43,63 @@
             padding: 10px;
             border-radius: 8px;
             display: none;
-            width: 200px;
+            width: 250px;
             text-align: center;
+            animation: fadeIn 0.5s;
+        }
+        .stars {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            animation: twinkle 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
         }
     </style>
 </head>
 <body>
-    <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
-        BUY
-    </button>
-
-    <div class="button-container">
-        <a href="index.html" class="button">Home</a>
-        <a href="About.html" class="button">About</a>
-        <a href="market.html" class="button">Space Market</a>
-        <a href="earthlings-forum.html" class="button">Earthlings' Forum</a>
-        <a href="#roadmap" class="button">Roadmap</a>
-    </div>
-
-    <div class="container">
-        <h1>Earthlings' Forum</h1>
-        <p>Share your fun and wild crypto stories with other Earthlings!</p>
-    </div>
-
-    <!-- Roadmap Section -->
     <h1>🚀 Space Coin Roadmap 🌌</h1>
-    <div id="roadmap" class="roadmap">
-        <div class="stage" style="top: 100px; left: 10%;" onclick="showPopup(event, 'Phase 1: Launch')">🚀</div>
-        <div class="stage" style="top: 300px; left: 30%;" onclick="showPopup(event, 'Phase 2: Community Expansion')">👽</div>
-        <div class="stage" style="top: 500px; left: 50%;" onclick="showPopup(event, 'Phase 3: Utility Development')">🛸</div>
-        <div class="stage" style="top: 700px; left: 70%;" onclick="showPopup(event, 'Final Phase: NFT Universe!')">🌠</div>
+    <div class="roadmap" id="roadmap">
+        <div class="stage" style="top: 100px; left: 10%;" onclick="showPopup(event, 'Phase 1: Launch - The beginning of our space adventure! 🚀')">🚀</div>
+        <div class="stage" style="top: 300px; left: 30%;" onclick="showPopup(event, 'Phase 2: Community Expansion - The alien army grows! 👽')">👽</div>
+        <div class="stage" style="top: 500px; left: 50%;" onclick="showPopup(event, 'Phase 3: Utility Development - Real space economy begins! 🛸')">🛸</div>
+        <div class="stage" style="top: 700px; left: 70%;" onclick="showPopup(event, 'Final Phase: NFT Universe! - Exclusive intergalactic collectibles 🌠')">🌠</div>
     </div>
     <div id="popup" class="popup"></div>
-
     <script>
         function showPopup(event, text) {
             let popup = document.getElementById('popup');
             popup.style.display = 'block';
-            popup.style.top = event.clientY + 'px';
-            popup.style.left = event.clientX + 'px';
+            popup.style.top = (event.clientY - 30) + 'px';
+            popup.style.left = (event.clientX + 20) + 'px';
             popup.innerHTML = text;
             setTimeout(() => { popup.style.display = 'none'; }, 3000);
         }
+        
+        function createStars() {
+            let roadmap = document.getElementById('roadmap');
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement('div');
+                star.className = 'stars';
+                star.style.top = Math.random() * 800 + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                roadmap.appendChild(star);
+            }
+        }
+        createStars();
     </script>
 </body>
 </html>
