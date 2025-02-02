@@ -24,7 +24,7 @@
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
-        .user-list {
+        .user-list-container {
             margin-top: 30px;
             padding: 10px;
             background-color: rgba(0, 255, 0, 0.3); /* Görselin üstünde görünürlük sağlamak için transparan arka plan */
@@ -36,16 +36,13 @@
             height: 300px; /* Listeyi sığdırmak için sabit yükseklik */
             overflow: hidden; /* Taşan kısmı gizle */
         }
-        .user-list h2 {
-            color: #fff;
-        }
-        .user-list ul {
+        .user-list {
             list-style-type: none;
             padding: 0;
             margin: 0;
             animation: scrollUp 15s linear infinite; /* Listeyi yukarıya doğru kaydıran animasyon */
         }
-        .user-list ul li {
+        .user-list li {
             margin: 10px 0;
             font-size: 1.2em;
             color: #9b4d96; /* Fosforlu mor rengi */
@@ -57,16 +54,35 @@
             0% {
                 transform: translateY(100%);
             }
+            40% {
+                transform: translateY(0);
+            }
             100% {
                 transform: translateY(-100%);
             }
         }
 
+        /* Sabit başlık */
+        .user-list-container h2 {
+            color: #fff;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
         .social-links {
             margin-top: 40px;
+            display: flex;
+            justify-content: center;
         }
+
         .social-links a {
-            margin: 10px 20px;
+            margin: 0 15px;
             padding: 10px 20px;
             text-decoration: none;
             color: #fff;
@@ -93,9 +109,9 @@
     </div>
     
     <!-- Takipçi Listesi (Dinamik olarak doldurulacak) -->
-    <div class="user-list">
+    <div class="user-list-container">
         <h2>Special Thanks to Our Followers:</h2>
-        <ul id="follower-list">
+        <ul class="user-list" id="follower-list">
             <!-- Kullanıcı isimleri buraya dinamik olarak eklenecek -->
         </ul>
     </div>
