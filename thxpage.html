@@ -55,22 +55,23 @@
             color: #9b4d96;
             white-space: nowrap;
         }
-        @keyframes slideUp {
+     @keyframes slideUp {
             0% {
-                transform: translateY(100%);
+                transform: translateY(100%); /* Başlangıç noktası: aşağıda */
             }
             25% {
-                transform: translateY(0%);
+                transform: translateY(0%); /* İlk görünüşü: sıfır noktası */
             }
             50% {
-                transform: translateY(-100%);
+                transform: translateY(-100%); /* Orta noktada yukarı kayma */
             }
             75% {
-                transform: translateY(0%);
+                transform: translateY(0%); /* Tekrar sıfır noktası */
             }
-            
+            100% {
+                transform: translateY(100%); /* Bitiş noktası: aşağıda */
+            }
         }
-
         /* Navbar Sabitleme */
         .button-container {
             display: flex;
