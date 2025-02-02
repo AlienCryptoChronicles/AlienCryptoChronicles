@@ -20,6 +20,30 @@
             justify-content: space-between;
         }
 
+        /* Navbar Stili */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #00ff00;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(0, 255, 0, 0.5);
+            border-radius: 5px;
+        }
+
         /* Başlık stili */
         h1 {
             font-size: 2.5em;
@@ -29,7 +53,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
             border-radius: 10px;
-            margin-top: 20px;
+            margin-top: 80px; /* Navbar yüksekliği kadar boşluk bırakıldı */
         }
 
         /* Kayıt Paneli Stili */
@@ -159,6 +183,14 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Ana Sayfa</a>
+        <a href="#about">Hakkında</a>
+        <a href="#contact">İletişim</a>
+        <a href="#faq">SSS</a>
+    </div>
 
     <!-- BUY button -->
     <button class="buy-now-btn" onclick="window.location.href='https://pump.fun/coin/9XVYA4M92EL7XDYhJYtQjjsBKfb1cLiDam9viFwypump';">
