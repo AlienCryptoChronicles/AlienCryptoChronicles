@@ -8,56 +8,62 @@
         body {
             background-color: black;
             color: white;
-            font-family: 'Orbitron', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             overflow-x: hidden;
+            margin: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #ffcc00;
         }
         .roadmap {
             position: relative;
             width: 100%;
             height: 800px;
-            background: url('https://i.imgur.com/YOUR_NEW_SPACE_BG.jpg') no-repeat center center/cover;
+            background: url('https://i.imgur.com/YOUR_SPACE_BG.jpg') no-repeat center center/cover;
             overflow: hidden;
-            background-size: cover;
+            border-bottom: 5px solid #ffcc00;
         }
         .stage {
             position: absolute;
-            width: 140px;
-            height: 140px;
-            background-color: rgba(0, 255, 255, 0.7);
+            width: 120px;
+            height: 120px;
+            background-color: rgba(0, 255, 0, 0.7);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.5em;
             cursor: pointer;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             animation: pulse 2s infinite alternate;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.8);
         }
         .stage:hover {
             transform: scale(1.2);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            box-shadow: 0px 0px 30px rgba(0, 255, 0, 1);
         }
         .popup {
             position: absolute;
-            background: rgba(0, 0, 0, 0.7);
-            color: #0ff;
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
             padding: 15px;
-            border-radius: 12px;
+            border-radius: 8px;
             display: none;
-            width: 280px;
+            width: 250px;
             text-align: center;
             animation: fadeIn 0.5s;
+            z-index: 10;
         }
         .stars {
             position: absolute;
-            width: 3px;
-            height: 3px;
+            width: 2px;
+            height: 2px;
             background: white;
             opacity: 0.8;
             animation: twinkle 2s infinite;
-            border-radius: 50%;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -77,22 +83,33 @@
 <body>
     <h1>🚀 Space Coin Roadmap 🌌</h1>
     <div class="roadmap" id="roadmap">
-        <div class="stage" style="top: 100px; left: 10%;" onclick="showPopup(event, 'Phase 1: Launch - The beginning of our space adventure! 🚀')">🚀</div>
-        <div class="stage" style="top: 300px; left: 30%;" onclick="showPopup(event, 'Phase 2: Community Expansion - The alien army grows! 👽')">👽</div>
-        <div class="stage" style="top: 500px; left: 50%;" onclick="showPopup(event, 'Phase 3: Utility Development - Real space economy begins! 🛸')">🛸</div>
-        <div class="stage" style="top: 700px; left: 70%;" onclick="showPopup(event, 'Final Phase: NFT Universe! - Exclusive intergalactic collectibles 🌠')">🌠</div>
+        <div class="stage" style="top: 100px; left: 10%;" onclick="showPopup(event, 'Phase 1: Launch - The beginning of our space adventure! 🚀')">
+            🚀
+            <div class="popup">Phase 1: Launch - The beginning of our space adventure! 🚀</div>
+        </div>
+        <div class="stage" style="top: 300px; left: 30%;" onclick="showPopup(event, 'Phase 2: Community Expansion - The alien army grows! 👽')">
+            👽
+            <div class="popup">Phase 2: Community Expansion - The alien army grows! 👽</div>
+        </div>
+        <div class="stage" style="top: 500px; left: 50%;" onclick="showPopup(event, 'Phase 3: Utility Development - Real space economy begins! 🛸')">
+            🛸
+            <div class="popup">Phase 3: Utility Development - Real space economy begins! 🛸</div>
+        </div>
+        <div class="stage" style="top: 700px; left: 70%;" onclick="showPopup(event, 'Final Phase: NFT Universe! - Exclusive intergalactic collectibles 🌠')">
+            🌠
+            <div class="popup">Final Phase: NFT Universe! - Exclusive intergalactic collectibles 🌠</div>
+        </div>
     </div>
-    <div id="popup" class="popup"></div>
     <script>
         function showPopup(event, text) {
-            let popup = document.getElementById('popup');
+            let popup = event.target.querySelector('.popup');
             popup.style.display = 'block';
-            popup.style.top = (event.clientY - 30) + 'px';
-            popup.style.left = (event.clientX + 20) + 'px';
+            popup.style.top = (event.clientY - 50) + 'px';  // Slightly above the stage
+            popup.style.left = (event.clientX + 20) + 'px'; // Slightly to the right of the stage
             popup.innerHTML = text;
-            setTimeout(() => { popup.style.display = 'none'; }, 4000);  // Popup süre artırıldı
+            setTimeout(() => { popup.style.display = 'none'; }, 3000);
         }
-        
+
         function createStars() {
             let roadmap = document.getElementById('roadmap');
             for (let i = 0; i < 100; i++) {
