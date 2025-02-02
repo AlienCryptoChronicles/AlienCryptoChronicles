@@ -31,9 +31,10 @@
             border-radius: 10px;
             display: inline-block;
             position: relative;
-            overflow: hidden;
             width: 100%;
             max-width: 600px;
+            height: 300px; /* Listeyi sığdırmak için sabit yükseklik */
+            overflow: hidden; /* Taşan kısmı gizle */
         }
         .user-list h2 {
             color: #fff;
@@ -42,32 +43,45 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+            animation: scrollUp 15s linear infinite; /* Listeyi yukarıya doğru kaydıran animasyon */
         }
         .user-list ul li {
-            margin: 5px;
+            margin: 10px 0;
             font-size: 1.2em;
             color: #9b4d96; /* Fosforlu mor rengi */
-            animation: slide 10s linear infinite;
-            white-space: nowrap;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
+
+        /* Kaydırma animasyonu */
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
         .social-links {
             margin-top: 40px;
         }
         .social-links a {
-            margin: 0 15px;
+            margin: 10px 20px;
+            padding: 10px 20px;
             text-decoration: none;
-            color: #0f0;
+            color: #fff;
             font-size: 1.5em;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background-color: #0077b5; /* Telegram için mavi */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         }
 
-        /* Kaydırma animasyonu */
-        @keyframes slide {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        /* Hover Efekti */
+        .social-links a:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+            background-color: #005582; /* Daha koyu bir renk */
         }
 
     </style>
@@ -94,7 +108,16 @@
 
     <script>
         // Örnek takipçi listesi
-        const followers = ["@SpaceExplorer1", "@GalacticFan", "@AlienAdventurer", "@StarVoyager", "@CosmicExplorer"];
+        const followers = ["@CryptoGemsBulls",
+"@BankmanCrypto",
+"@MrBitcoinSir",
+"@eth_spilj",
+"@CharlotteHype",
+"@raynft_",
+"@katalina_Crypto",
+"@TheAltcoinZeus",
+"@ShibaKingCalls",
+"@Sabahat_99"];
 
         // Takipçileri listeye ekleme
         const followerList = document.getElementById("follower-list");
