@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Coin Roadmap</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .roadmap {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            background: url('https://i.imgur.com/YOUR_SPACE_BG.jpg') no-repeat center center/cover;
+        }
+        .stage {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(0, 255, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .stage:hover {
+            transform: scale(1.2);
+        }
+        .popup {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Space Coin Roadmap 🌌</h1>
+    <div class="roadmap">
+        <div class="stage" style="top: 100px; left: 10%;" onclick="showPopup(event, 'Phase 1: Launch')">🚀</div>
+        <div class="stage" style="top: 300px; left: 30%;" onclick="showPopup(event, 'Phase 2: Community Expansion')">👽</div>
+        <div class="stage" style="top: 500px; left: 50%;" onclick="showPopup(event, 'Phase 3: Utility Development')">🛸</div>
+        <div class="stage" style="top: 700px; left: 70%;" onclick="showPopup(event, 'Final Phase: NFT Universe!')">🌠</div>
+    </div>
+    <div id="popup" class="popup"></div>
+    <script>
+        function showPopup(event, text) {
+            let popup = document.getElementById('popup');
+            popup.style.display = 'block';
+            popup.style.top = event.clientY + 'px';
+            popup.style.left = event.clientX + 'px';
+            popup.innerHTML = text;
+            setTimeout(() => { popup.style.display = 'none'; }, 3000);
+        }
+    </script>
+</body>
+</html>
