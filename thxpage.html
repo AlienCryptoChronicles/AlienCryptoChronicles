@@ -63,15 +63,17 @@
             }
         }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            position: absolute;
-            top: 20px; /* Sayfanın üst kısmına yakın */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: fixed; /* Sabit pozisyon */
+    top: 0; /* Sayfanın üst kısmına yerleştirilir */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
         }
         .button {
             padding: 10px 20px;
