@@ -64,6 +64,45 @@
             }
         }
 
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            z-index: 100;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ff0080;
+        }
+
+        /* Buy Button */
+        .buy-button {
+            background-color: #ff0080;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .buy-button:hover {
+            background-color: #fff;
+            color: #ff0080;
+        }
+
         .social-links {
             position: fixed; /* Sayfa kaydırıldığında sabit kalacak */
             bottom: 20px;
@@ -74,20 +113,31 @@
         .social-links a {
             margin: 0 15px;
             text-decoration: none;
-            color: #0f0;
             font-size: 1.5em;
-            padding: 10px 20px;
-            border: 2px solid #0f0;
-            border-radius: 5px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
             transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #ff0080; /* İlk başta pembe arka plan */
+            color: white; /* Yazı rengi beyaz */
+            border: 2px solid #ff0080; /* Butonun kenarlığı */
         }
         .social-links a:hover {
-            background-color: #0f0;
-            color: black;
+            background-color: #fff; /* Hoverda beyaz arka plan */
+            color: #ff0080; /* Yazı rengi pembe */
+            border-color: #ff0080; /* Hoverda kenarlık rengi */
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="space-market.html">Space Market</a>
+        <a href="earthlings-forum.html">Earthlings Forum</a>
+        <a href="about.html">About</a>
+    </div>
+
     <h1>🚀 Thank You for Following! 🌌</h1>
     <div class="message">
         We appreciate your support and are excited to have you with us on this intergalactic journey! Stay tuned for more updates. 🌠
@@ -100,6 +150,9 @@
             <!-- Kullanıcı isimleri buraya dinamik olarak eklenecek -->
         </ul>
     </div>
+
+    <!-- Buy Button -->
+    <button class="buy-button" onclick="window.location.href='buy.html'">Buy Now</button>
 
     <!-- Sosyal Medya Bağlantıları -->
     <div class="social-links">
