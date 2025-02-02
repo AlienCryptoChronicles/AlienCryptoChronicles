@@ -63,18 +63,17 @@
             }
         }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    position: fixed; /* Sabit pozisyon */
-    top: 0; /* Sayfanın üst kısmına yerleştirilir */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-}
-
+    .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 0 10px;
+            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
         }
+
         .button {
             padding: 10px 20px;
             font-size: 1.2em;
@@ -85,12 +84,17 @@
             border-radius: 10px;
             box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             transition: all 0.3s ease;
+            flex: 1 1 100%;
+            max-width: 200px;
+            text-align: center;
         }
+
         .button:hover {
             background-color: #00ff00;
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
+
 
         .buy-now-btn {
             background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
