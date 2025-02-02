@@ -12,10 +12,10 @@
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 0; /* Padding'i sıfırladım */
+            margin: 0; /* Margin'i sıfırladım */
             overflow: hidden;
             position: relative;
-            margin-top: 80px; /* Navbarın altına kaymasını sağlar */
         }
         h1 {
             color: #0f0;
@@ -63,15 +63,21 @@
             }
         }
 
-    .button-container {
+        /* Navbar Sabitleme */
+        .button-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            margin-top: 20px;
-            padding: 0 10px;
-            margin-bottom: 80px; /* Alt kısmı daha fazla boşluk bırakmak için */
+            position: fixed; /* Sabit pozisyon */
+            top: 0; /* Sayfanın üst kısmına yerleştirilir */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi ekledim */
+            padding: 10px;
+            z-index: 999; /* Diğer öğelerle karışmaması için z-index ekledim */
+            width: 100%; /* Navbar genişliği 100% */
         }
 
         .button {
@@ -94,7 +100,6 @@
             color: #000000;
             box-shadow: 0 0 40px #00ff00, 0 0 50px #00ff00;
         }
-
 
         .buy-now-btn {
             background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
@@ -151,14 +156,13 @@
         BUY
     </button>
 
-   
-       <!-- Navigation butonları -->
+    <!-- Navbar -->
     <div class="button-container">
         <a href="index.html" class="button">Home</a>
         <a href="About.html" class="button">About</a>
         <a href="market.html" class="button">Space Market</a>
         <a href="earthlings-forum.html" class="button">Eartling's Forum</a>
-          <a href="thxpage.html" class="button">Thanks for Community</a>
+        <a href="thxpage.html" class="button">Thanks for Community</a>
     </div>
 
     <h1>🚀 Thank You for Following! 🌌</h1>
