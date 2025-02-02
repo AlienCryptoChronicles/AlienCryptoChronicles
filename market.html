@@ -143,6 +143,17 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1001;
+            border: 2px solid #800080; /* Mor Çerçeve */
+            animation: neon 1.5s ease-in-out infinite alternate; /* Neon Efekt Animasyonu */
+        }
+
+        @keyframes neon {
+            from {
+                box-shadow: 0 0 5px #800080, 0 0 10px #800080, 0 0 15px #800080, 0 0 20px #800080;
+            }
+            to {
+                box-shadow: 0 0 10px #800080, 0 0 20px #800080, 0 0 30px #800080, 0 0 40px #800080;
+            }
         }
 
         /* Modal Yazı Renkleri */
