@@ -67,22 +67,22 @@
 
         /* BUY butonu sabitleme */
         .buy-now-btn {
-    background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
-    color: black;
-    padding: 12px 24px; /* Boyutu küçülttük */
-    border-radius: 10px;
-    font-size: 1.2em; /* Mobil için font küçültme */
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    max-width: 200px;
-    width: auto; /* Tam genişliği kaplamaması için */
-    text-align: center;
-    white-space: nowrap; /* Yazının taşmasını önler */
-}
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
+            color: black;
+            padding: 12px 24px; /* Boyutu küçülttük */
+            border-radius: 10px;
+            font-size: 1.2em; /* Mobil için font küçültme */
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            max-width: 200px;
+            width: auto; /* Tam genişliği kaplamaması için */
+            text-align: center;
+            white-space: nowrap; /* Yazının taşmasını önler */
+        }
 
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #fffc00, #ff007f, #00ff95, #00f7ff, #ff00ff);
@@ -162,17 +162,6 @@
                 max-width: 160px;
             }
 
-            @media (max-width: 768px) {
-    .buy-now-btn {
-        font-size: 1em;
-        padding: 10px 20px;
-        max-width: 160px; /* Mobilde fazla geniş olmaması için */
-        left: 10px; /* Kenara daha yakın */
-        top: 10px;
-    }
-}
-
-
             #alien-quote {
                 font-size: 1.4em;
             }
@@ -198,16 +187,6 @@
                 max-width: 120px;
             }
 
-           @media (max-width: 480px) {
-    .buy-now-btn {
-        font-size: 0.9em;
-        padding: 8px 16px;
-        max-width: 140px; /* Küçük ekranlarda daha dar */
-        left: 5px;
-        top: 5px;
-    }
-}
-
             #alien-quote {
                 font-size: 1.2em;
                 padding: 10px;
@@ -223,7 +202,6 @@
                 padding: 8px 16px;
             }
         }
-
     </style>
 </head>
 <body>
@@ -249,6 +227,10 @@
         <img id="alien-image" src="placeholder-alien.jpg" alt="Alien" />
         <p id="alien-quote">"I invested in an asteroid coin. It crashed... literally."</p>
     </div>
+
+    <!-- Kullanıcı Girişi -->
+    <div id="user-message"></div>
+    <button id="logoutButton" style="display: none;">Çıkış Yap</button>
 
     <!-- Let's Click butonu -->
     <button class="lets-click-btn" onclick="generateAlienComment()">Let's Click...</button>
@@ -330,10 +312,43 @@
             document.getElementById('alien-quote').innerText = alienQuotes[randomIndex];
         }
 
+        // Kullanıcı Giriş Kontrolü
+        function checkUser() {
+            const storedUsername = localStorage.getItem('username');
+            if (storedUsername) {
+                document.getElementById('user-message').innerText = `Hoş geldiniz, ${storedUsername}!`;
+                document.getElementById('logoutButton').style.display = 'inline';
+            } else {
+                loginUser();
+            }
+        }
+
+        // Kullanıcı Girişi
+        function loginUser() {
+            const username = prompt("Kullanıcı adınızı girin:");
+            if (username) {
+                localStorage.setItem('username', username);
+                document.getElementById('user-message').innerText = `${username} olarak giriş yaptınız!`;
+                document.getElementById('logoutButton').style.display = 'inline';
+            }
+        }
+
+        // Kullanıcı Çıkışı
+        function logoutUser() {
+            localStorage.removeItem('username');
+            document.getElementById('user-message').innerText = "Çıkış yaptınız!";
+            document.getElementById('logoutButton').style.display = 'none';
+            loginUser();
+        }
+
         // Sayfa açıldığında otomatik çalıştır
         window.onload = function() {
             generateAlienComment();
+            checkUser();
         };
+
+        // Çıkış butonuna tıklama olayı
+        document.getElementById('logoutButton').onclick = logoutUser;
     </script>
 
 </body>
