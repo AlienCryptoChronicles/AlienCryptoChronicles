@@ -12,8 +12,8 @@
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 0; /* Padding'i sıfırladım */
-            margin: 0; /* Margin'i sıfırladım */
+            padding: 0;
+            margin: 0;
             overflow: hidden;
             position: relative;
         }
@@ -37,17 +37,17 @@
             max-width: 600px;
             height: 300px;
             overflow: hidden;
-            margin-bottom: 60px; /* Alt kısımda boşluk */
+            margin-bottom: 60px;
         }
         .user-list {
             position: absolute;
-            top: 30;
+            top: 0;
             left: 0;
             width: 100%;
             list-style-type: none;
             padding: 0;
             margin: 0;
-            animation: slideUp 10s linear infinite;
+            animation: slideUp 12s linear infinite;
         }
         .user-list li {
             margin: 5px;
@@ -59,11 +59,17 @@
             0% {
                 transform: translateY(100%);
             }
+            25% {
+                transform: translateY(0%);
+            }
             50% {
-                transform: translateY(-50%); /* Yazı ortalandığında durması */
+                transform: translateY(-100%);
+            }
+            75% {
+                transform: translateY(0%);
             }
             100% {
-                transform: translateY(-100%);
+                transform: translateY(100%);
             }
         }
 
@@ -74,14 +80,14 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            position: fixed; /* Sabit pozisyon */
-            top: 0; /* Sayfanın üst kısmına yerleştirilir */
+            position: fixed;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi ekledim */
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
-            z-index: 999; /* Diğer öğelerle karışmaması için z-index ekledim */
-            width: 100%; /* Navbar genişliği 100% */
+            z-index: 999;
+            width: 100%;
         }
 
         .button {
@@ -131,7 +137,7 @@
             left: 50%;
             transform: translateX(-50%);
             margin-top: 40px;
-            margin-bottom: 1px; /* Alt kısımdan biraz daha boşluk bırakmak için */
+            margin-bottom: 1px;
         }
 
         .social-links a {
