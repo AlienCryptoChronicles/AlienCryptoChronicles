@@ -17,27 +17,35 @@
             overflow: hidden;
             position: relative;
         }
+
         h1 {
+            font-size: 2.5em;
             color: #0f0;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
+
         .message {
             font-size: 1.5em;
             margin: 20px 0;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
+
         .user-list-container {
             margin-top: 30px;
             padding: 10px;
             background-color: rgba(0, 255, 0, 0.3);
             border-radius: 10px;
-            display: inline-block;
-            position: relative;
-            width: 100%;
+            width: 90%;
             max-width: 600px;
             height: 300px;
             overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
         }
+
         .user-list {
             position: absolute;
             top: 0;
@@ -48,12 +56,14 @@
             margin: 0;
             animation: slideUp 10s linear infinite;
         }
+
         .user-list li {
             margin: 5px;
             font-size: 1.2em;
             color: #9b4d96;
             white-space: nowrap;
         }
+
         @keyframes slideUp {
             0% {
                 transform: translateY(100%);
@@ -63,12 +73,11 @@
             }
         }
 
-        /* Navbar Sabitleme */
         .button-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             position: fixed;
             top: 0;
@@ -81,8 +90,8 @@
         }
 
         .button {
-            padding: 10px 20px;
-            font-size: 1.2em;
+            padding: 12px 25px;
+            font-size: 1.1em;
             text-decoration: none;
             color: #00ff00;
             background-color: rgba(0, 0, 0, 0.8);
@@ -90,8 +99,8 @@
             border-radius: 10px;
             box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
             transition: all 0.3s ease;
-            flex: 1 1 100%;
-            max-width: 200px;
+            width: 80%;
+            max-width: 300px;
             text-align: center;
         }
 
@@ -143,21 +152,25 @@
             color: black;
             border: 2px solid #00ff00;
         }
+
         .social-links a:hover {
             background-color: black;
             color: #00ff00;
             border-color: #00ff00;
         }
 
-        /* Media Queries for Responsiveness */
+        /* Media Queries */
         @media (max-width: 768px) {
             .button-container {
                 flex-direction: column;
+                align-items: stretch;
+                width: 100%;
             }
 
             .button {
                 width: 100%;
-                max-width: 300px;
+                max-width: none;
+                padding: 10px;
             }
 
             .user-list-container {
@@ -177,7 +190,7 @@
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
             .message {
@@ -193,7 +206,6 @@
                 font-size: 1em;
             }
         }
-
     </style>
 </head>
 <body>
