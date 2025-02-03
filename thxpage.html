@@ -297,6 +297,7 @@
 
         if (screenWidth < 768) {
            // followers.slice(0, 5).forEach(follower => { // Mobilde sadece 5 takipçi göster//
+   followers.forEach(follower => { 
                 const listItem = document.createElement("li");
                 listItem.textContent = follower;
                 followerList.appendChild(listItem);
