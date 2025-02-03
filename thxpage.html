@@ -51,7 +51,7 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            animation: slideUp 10s linear infinite;
+            animation: slideUp 20s linear infinite;
         }
 
         .user-list li {
@@ -131,17 +131,25 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
+                margin-top: 40px;
+            }
+
+            .message {
+                font-size: 1.2em;
+                margin: 15px 10px;
             }
 
             .button {
-                font-size: 1.1em;
+                font-size: 1em;
                 max-width: 160px;
+                padding: 8px 16px;
             }
 
             .button-container {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
                 width: 100%;
+                gap: 5px;
             }
 
             .buy-now-btn {
@@ -156,11 +164,20 @@
                 padding: 10px 20px;
                 font-size: 1em;
             }
+
+            .user-list-container {
+                height: 200px;
+                margin-top: 20px;
+            }
+
+            .user-list li {
+                font-size: 1em;
+            }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
             .message {
@@ -196,15 +213,17 @@
 
         .social-links {
             position: fixed;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             margin-top: 40px;
             margin-bottom: 1px;
+            width: 100%;
+            text-align: center;
         }
 
         .social-links a {
-            margin: 0 15px;
+            margin: 0 10px;
             text-decoration: none;
             font-size: 1.5em;
             padding: 15px 30px;
@@ -212,12 +231,12 @@
             font-weight: bold;
             transition: background-color 0.3s ease, color 0.3s ease;
             background-color: rgba(0, 0, 0, 0.7);
-            color: black;
+            color:  #00ff00;
             border: 2px solid #00ff00;
         }
 
         .social-links a:hover {
-            background-color: black;
+            background: linear-gradient(45deg, #ff007f, #fffc00, #00ff95, #00f7ff, #ff00ff);
             color: #00ff00;
             border-color: #00ff00;
         }
@@ -239,14 +258,14 @@
         <a href="thxpage.html" class="button">Thanks for Community</a>
     </div>
 
-    <h1>🚀 Special Thanks to Our Community 🌌</h1>
+    <h1>🚀 Thank You for Following! 🌌</h1>
     <div class="message">
         We appreciate your support and are excited to have you with us on this intergalactic journey! Stay tuned for more updates. 🌠
     </div>
     
     <!-- Takipçi Listesi -->
     <div class="user-list-container">
-        
+        <h2>Special Thanks to Our Followers:</h2>
         <ul class="user-list" id="follower-list">
             <!-- Kullanıcı isimleri buraya dinamik olarak eklenecek -->
         </ul>
@@ -275,11 +294,21 @@
 
         // Takipçileri listeye ekleme
         const followerList = document.getElementById("follower-list");
-        followers.forEach(follower => {
-            const listItem = document.createElement("li");
-            listItem.textContent = follower;
-            followerList.appendChild(listItem);
-        });
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 768) {
+            followers.slice(0, 5).forEach(follower => { // Mobilde sadece 5 takipçi göster
+                const listItem = document.createElement("li");
+                listItem.textContent = follower;
+                followerList.appendChild(listItem);
+            });
+        } else {
+            followers.forEach(follower => { // Masaüstünde tüm takipçileri göster
+                const listItem = document.createElement("li");
+                listItem.textContent = follower;
+                followerList.appendChild(listItem);
+            });
+        }
     </script>
 </body>
 </html>
